@@ -17,7 +17,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
   }, [categorie])
 
   return (
-    <div className="absolute flex h-full w-full flex-row p-[4vh] transition-colors">
+    <div className="absolute flex h-full w-full flex-row p-[2vh] transition-colors sm:p-[4vh]">
       <div className="flex w-[8vh] flex-col justify-between">
         <h1
           id="nav"
@@ -30,7 +30,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         </p>
       </div>
       <div className="justify-betweens flex w-full flex-col justify-between">
-        <div className="absolute bottom-[4vh] left-[4vh] inline-flex max-h-fit max-w-fit flex-col gap-4 md:left-1/2 md:top-[4vh] md:-translate-x-1/2 md:flex-row">
+        <div className="absolute bottom-[2vh] left-[2vh] inline-flex max-h-fit max-w-fit flex-col gap-4 md:left-1/2 md:top-[4vh] md:-translate-x-1/2 md:flex-row">
           <NavLink
             to="/"
             onClick={() => {
@@ -99,7 +99,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           </NavLink>
         </div>
         <div
-          className=" absolute bottom-[4vh] left-1/2 mx-auto -translate-x-1/2"
+          className=" absolute bottom-[2vh] left-1/2 -translate-x-1/2 sm:bottom-[4vh]"
           id="scrollIcon"
         >
           <p className="text-primary relative m-0 animate-bounce font-secondaryFont text-xxl uppercase underline">

@@ -31,7 +31,7 @@ function LoadAbout({ anim }: { anim: Function }) {
           }}
         ></div>
       </div>
-      <h1 className=" text-primary relative m-0 w-max p-[4vh] font-primaryFont text-xxl uppercase">
+      <h1 className=" text-primary relative m-0 w-max p-[2vh] font-primaryFont text-xxl uppercase sm:p-[4vh]">
         <Link to={'/'}>AKIRA VALADE</Link>
       </h1>
       <div className="relative px-2 text-xl sm:px-[16vw]">
