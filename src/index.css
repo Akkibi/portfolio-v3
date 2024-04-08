@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'Helvetica-CE';
+  src: url('/public/Helvetica-CE-Bold.otf');
+}
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/public/Helvetica-Ultra-Compressed.otf');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root,
+html,
+body {
+  color: black;
+  background-color: black;
+  scroll-behavior: initial;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @apply m-0 leading-[normal];
+  height: 100%;
+  width: 100%;
+  overscroll-behavior: contain;
+}
+
+*,
+::before,
+::after {
+  border-width: 0;
+  box-sizing: border-box;
+}
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+button,
+input[type='submit'],
+input[type='reset'] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+a {
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: inherit;
+}
+a:visited {
+  color: inherit;
+}
+
+.overflow-y-scroll::-webkit-scrollbar {
+  width: 11px;
+}
+.overflow-y-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #fff #000;
+}
+.overflow-y-scroll::-webkit-scrollbar-track {
+  background: #000;
+}
+.overflow-y-scroll::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border: 3px solid #000;
+}
+
+.track-image {
+  will-change: width;
+  backface-visibility: hidden;
+  transform: translateZ(0px);
+}
+.slide-track {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0px);
+}
+
+.track-image:hover .track-link {
+  opacity: 0;
+}
+
+.track-image .track-link {
+  backdrop-filter: grayscale(100%);
+}
+
+.grid-image {
+  background-image: linear-gradient(
+      rgba(64, 64, 64, 1) 0.3vh,
+      transparent 0.3vh
+    ),
+    linear-gradient(90deg, rgba(64, 64, 64, 1) 0.3vh, transparent 0.3vh);
+  background-size: 4vh 4vh;
+  background-repeat: repeat;
+}
