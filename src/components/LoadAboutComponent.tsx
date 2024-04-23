@@ -2,8 +2,35 @@ import { useNavigationType } from 'react-router-dom'
 import { useEffect } from 'react'
 import { ColorsRender } from './changeColors'
 import { Link } from 'react-router-dom'
+
 function LoadAbout({ anim }: { anim: Function }) {
   const navigationType: string | null = useNavigationType()
+
+  useEffect(() => {
+    const card = document.getElementById('cardParent')
+    const cardChild = document.getElementById('card')
+    if (!card || !cardChild) return
+    card.addEventListener('mousemove', function (e) {
+      var offset = this.getBoundingClientRect()
+      var relX = e.pageX - offset.left
+      var relY = e.pageY - offset.top
+      var offsetMinX = this.offsetWidth
+      var offsetMinY = this.offsetHeight
+      var currentX = (relX += offsetMinX * -0.5)
+      var currentY = (relY += offsetMinY * -0.5)
+      var newX = currentX / 1000000
+      var newY = currentY / 2000000
+
+      //get the id of card to select an other element with the same id
+      cardChild.style.transform =
+        'matrix3d(1,0,0,' + newX + ',0,1,0,' + newY + ',0,0,1,0,0,0,0,1.1)'
+      cardChild.style.zIndex = '10'
+    })
+    card.addEventListener('mouseleave', function () {
+      cardChild.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)'
+      cardChild.style.zIndex = '1'
+    })
+  })
 
   useEffect(() => {
     if (navigationType === 'POP') {
@@ -40,7 +67,7 @@ function LoadAbout({ anim }: { anim: Function }) {
             À propos
           </span>
         </h2>
-        <div className="w-full px-[4vw] py-[3vw] text-[4vw] leading-[5vw] sm:px-[3vw] sm:py-[2vw] sm:text-[3vw] md:text-[2vw] md:leading-[3vw] lg:text-[1.5vw] lg:leading-[2vw]">
+        <div className="w-full px-[4vw] py-[3vw] text-[4vw] leading-[5vw]  sm:px-[3vw] sm:py-[2vw] sm:text-[3vw] md:text-[2vw] md:leading-[3vw]  lg:text-[1.5vw] lg:leading-[2vw]">
           <p>
             Salut, je suis un développeur passionné de web design féru de code
             et de création 3D en autodidacte.
@@ -119,6 +146,11 @@ function LoadAbout({ anim }: { anim: Function }) {
             en cours d'aprentissage de threejs. Ce portfolio est en cours de
             création, restez à l'affut des changements!{' '}
           </p>
+          <p>
+            Je me considère comme créatif, persévérant et rigoureux dans mon
+            travail et on dit souvent de moi que je suis ouvert d'esprit,
+            sociable et intuitif.
+          </p>
           <ul className=" my-20  flex w-full list-none flex-row  flex-wrap justify-center gap-2 p-0 text-black sm:flex-nowrap">
             <li className="group relative aspect-square w-[30%] overflow-hidden rounded-full border-2 border-solid border-white bg-white sm:w-[20%]">
               <a
@@ -141,7 +173,7 @@ function LoadAbout({ anim }: { anim: Function }) {
                     />
                   </svg>
                 </div>
-                <div className=" ease-inout absolute bottom-0 h-0 w-full bg-white mix-blend-difference duration-500 group-hover:h-full"></div>
+                <div className=" ease-inout absolute top-0 h-full w-full bg-white opacity-95 mix-blend-difference duration-500 group-hover:h-0"></div>
               </a>
             </li>
             <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-2  border-solid border-white bg-white sm:w-[20%]">
@@ -171,7 +203,7 @@ function LoadAbout({ anim }: { anim: Function }) {
                     </defs>
                   </svg>
                 </div>
-                <div className=" ease-inout absolute bottom-0 h-0 w-full bg-white mix-blend-difference duration-500 group-hover:h-full"></div>
+                <div className=" ease-inout absolute top-0 h-full w-full bg-white opacity-95 mix-blend-difference duration-500 group-hover:h-0"></div>
               </a>
             </li>
             <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-2  border-solid border-white bg-white sm:w-[20%]">
@@ -201,7 +233,7 @@ function LoadAbout({ anim }: { anim: Function }) {
                     </defs>
                   </svg>
                 </div>
-                <div className=" ease-inout absolute bottom-0 h-0 w-full bg-white mix-blend-difference duration-500 group-hover:h-full"></div>
+                <div className=" ease-inout absolute top-0 h-full w-full bg-white opacity-95 mix-blend-difference duration-500 group-hover:h-0"></div>
               </a>
             </li>
             <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-2  border-solid border-white bg-white sm:w-[20%]">
@@ -226,7 +258,7 @@ function LoadAbout({ anim }: { anim: Function }) {
                     />
                   </svg>
                 </div>
-                <div className=" ease-inout absolute bottom-0 h-0 w-full bg-white mix-blend-difference duration-500 group-hover:h-full"></div>
+                <div className=" ease-inout absolute top-0 h-full w-full bg-white opacity-95 mix-blend-difference duration-500 group-hover:h-0"></div>
               </a>
             </li>
             <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-2  border-solid border-white bg-white sm:w-[20%]">
@@ -249,7 +281,7 @@ function LoadAbout({ anim }: { anim: Function }) {
                     />
                   </svg>
                 </div>
-                <div className=" ease-inout absolute bottom-0 h-0 w-full bg-white mix-blend-difference duration-500 group-hover:h-full"></div>
+                <div className=" ease-inout absolute top-0 h-full w-full bg-white opacity-95 mix-blend-difference duration-500 group-hover:h-0"></div>
               </a>
             </li>
           </ul>
@@ -264,7 +296,7 @@ function LoadAbout({ anim }: { anim: Function }) {
                 >
                   <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
                 </svg>
-                <p className="text-md leading-relaxed">
+                <p className="text-md text-[4vw] leading-relaxed sm:text-[3vw]  md:text-[2vw] md:leading-[3vw] lg:text-[1.5vw] lg:leading-[2vw] ">
                   Akira a des facilités dans le domaine du numérique. Il est
                   volontaire et partage consciencieusement ses connaissances
                   avec beaucoup de zèle et de détails techniques. Il est ouvert
@@ -285,6 +317,53 @@ function LoadAbout({ anim }: { anim: Function }) {
             </div>
           </section>
         </div>
+        <section
+          className="mb-[16vw] w-full px-[4vw] sm:px-0"
+          id="opquast-section"
+        >
+          <div className="mb-10 flex flex-col sm:flex-row">
+            <h2 className="w-full text-center text-[5vh] sm:mb-20 sm:text-left sm:text-[5vw]">
+              Certification
+              <br />
+              Opquast
+            </h2>
+            <div className="min-h-[20vh] w-full" id="cardParent">
+              <div
+                className=" aspect-[12/9] scale-75 bg-[url(https://res.cloudinary.com/opquast/image/upload/w_500/v2/badges/MQW-V4-2020/fr/PNG/badge_avance.png)] bg-contain bg-center bg-no-repeat"
+                id="card"
+              ></div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5 text-[4vw] leading-[5vw] sm:flex-row sm:text-[3vw] md:text-[2vw] md:leading-[3vw] lg:text-[1.5vw] lg:leading-[2vw] ">
+            <p className="m-0 w-full py-2">
+              J'ai obtenu la certification Opquast en 2021, qui est une
+              certification de qualité web. Elle permet de garantir la qualité
+              des sites web en matière de respect des standards du web, de
+              l'accessibilité, de la sécurité et de la compatibilité.
+            </p>
+            <ul className="m-0 mb-10 flex w-full list-none flex-col p-0">
+              <li className="flex w-full justify-between py-2">
+                <p className="m-0 self-center font-bold">TYPE</p>
+                <p className="m-0 self-center">MQW-V4-2020</p>
+              </li>
+              <hr className="w-full border stroke-white text-white" />
+              <li className=" flex w-full justify-between py-2">
+                <p className="m-0 self-center font-bold">DATE</p>
+                <p className="m-0 self-center">07/04/2023</p>
+              </li>
+              <hr className="w-full border stroke-white text-white" />
+              <li className=" flex w-full justify-between py-2">
+                <p className="m-0 self-center font-bold">CODE</p>
+                <a
+                  className="m-0 self-center underline"
+                  href="https://directory.opquast.com/fr/certificat/05YAMH/"
+                >
+                  05YAMH
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
       </div>
       <footer className="body-font bg-black text-gray-400">
         <div className="container mx-auto flex flex-col items-center justify-between px-5 py-8 sm:flex-row">
