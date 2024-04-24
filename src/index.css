@@ -1,10 +1,12 @@
 @font-face {
   font-family: 'Helvetica-CE';
   src: url('/public/Helvetica-CE-Bold.otf');
+  font-weight: normal;
 }
 @font-face {
   font-family: 'Helvetica';
   src: url('/public/Helvetica-Ultra-Compressed.otf');
+  font-weight: normal;
 }
 
 @tailwind base;

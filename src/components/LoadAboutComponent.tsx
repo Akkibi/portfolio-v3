@@ -329,7 +329,7 @@ function LoadAbout({ anim }: { anim: Function }) {
           id="opquast-section"
         >
           <div className="mb-10 flex flex-col sm:flex-row">
-            <h2 className="m-0 w-full self-center text-center font-primaryFont text-xxxxxl sm:mb-20 sm:text-left">
+            <h2 className="m-0 w-full self-center text-center font-primaryFont text-xxxxl sm:mb-20 sm:text-left sm:text-xxxxxl">
               Certifications
             </h2>
             <div className="min-h-[20vh] w-full duration-75" id="cardParent">

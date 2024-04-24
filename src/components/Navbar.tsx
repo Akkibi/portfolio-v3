@@ -30,7 +30,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         </p>
       </div>
       <div className="justify-betweens flex w-full flex-col justify-between">
-        <div className="absolute bottom-[2vh] left-[2vh] inline-flex max-h-fit max-w-fit flex-col gap-4 md:left-1/2 md:top-[4vh] md:-translate-x-1/2 md:flex-row">
+        <div className="dm:gap-4 absolute bottom-[2vh] left-[2vh] inline-flex max-h-fit max-w-fit flex-col md:left-1/2 md:top-[4vh] md:-translate-x-1/2 md:flex-row">
           <NavLink
             to="/"
             onClick={() => {

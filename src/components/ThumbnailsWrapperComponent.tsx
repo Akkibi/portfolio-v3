@@ -160,16 +160,16 @@ const ThumbnailsComponent = ({
   ) {
     track.dataset.percentage = nextValue.toString()
     gsap.to('.thumbnail', {
-      duration: time,
-      ease: 'power3',
-      objectPosition: `${100 + nextValue}% center`,
-      overwrite: 'auto',
+      duration: time * 2,
+      backgroundPosition: `${100 + nextValue}% center`,
+      ease: 'expo.out',
+      overwrite: true,
     })
     gsap.to(trackRef.current, {
-      duration: time + 0.1,
+      duration: time * 2,
       x: nextValue + '%',
       y: '-50%',
-      ease: 'power2',
+      ease: 'expo.out',
       overwrite: 'auto',
     })
     checkCurrentCategory(nextValue)
@@ -364,6 +364,7 @@ const ThumbnailsComponent = ({
       title: project.title,
       image: `/assets/${projectName}/thumbnail.png`,
       webpImage: `/assets/${projectName}/thumbnail.webp`,
+      smallImage: `/assets/${projectName}/thumbnail.opti.png`,
     }
   }
   const getCategoryWithFirstImages = (data: any) => {
@@ -404,15 +405,31 @@ const ThumbnailsComponent = ({
                     key={projectIndex}
                     className="track-image relative block h-[50vh] w-[15vh] overflow-hidden border-0 p-0 hover:opacity-100 hover:grayscale-0"
                   >
-                    <picture id={`imageBanner_${index}_${projectIndex}`}>
-                      <source srcSet={data.webpImage} type="image/webp" />
+                    {/* <picture id={`imageBanner_${index}_${projectIndex}`}>
+                      <source
+                        srcSet={data.smallImage}
+                        width="500"
+                        type="image/png"
+                      />
+                      <source
+                        srcSet={data.webpImage}
+                        width="2500"
+                        type="image/webp"
+                      />
                       <img
                         className="thumbnail absolute top-0 h-full w-full object-cover object-[right_center] duration-200 ease-out"
                         id={`imageBanner_${index}_${projectIndex}`}
                         src={data.image}
                         alt={`Banner_${index}_${projectIndex}`}
                       />
-                    </picture>
+                    </picture> */}
+                    <div
+                      className="thumbnail absolute top-0 h-full w-full bg-cover bg-[right_center] duration-200 ease-out"
+                      id={`imageBanner_${index}_${projectIndex}`}
+                      style={{
+                        backgroundImage: `url(${data.image}), url(${data.smallImage})`,
+                      }}
+                    ></div>
                     <Link
                       className="track-link absolute h-full w-full bg-[rgba(0,0,0,0.25)] text-white no-underline grayscale duration-200 hover:bg-[rgba(0,0,0,0)] hover:grayscale-0"
                       to={data.name}

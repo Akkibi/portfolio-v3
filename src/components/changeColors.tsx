@@ -8,17 +8,17 @@ export const ColorsRender = (
   var tlColors = gsap.timeline()
   tlColors
     .to('.text-primary', {
-      duration: speed,
+      duration: speed * 1.5,
       color: primary,
-      ease: 'power2',
+      ease: 'expo.out',
       overwrite: 'auto',
     })
     .to(
       '.border-primary',
       {
-        duration: speed,
+        duration: speed * 1.5,
         border: `1px solid ${primary}`,
-        ease: 'power2',
+        ease: 'expo.out',
         overwrite: 'auto',
       },
       '<'
@@ -26,9 +26,9 @@ export const ColorsRender = (
     .to(
       '.bg-primary',
       {
-        duration: speed,
+        duration: speed * 1.5,
         backgroundColor: primary,
-        ease: 'power2',
+        ease: 'expo.out',
         overwrite: 'auto',
       },
       '<'
@@ -36,9 +36,9 @@ export const ColorsRender = (
     .to(
       '.text-secondary',
       {
-        duration: speed,
+        duration: speed * 1.5,
         color: secondary,
-        ease: 'power2',
+        ease: 'expo.out',
         overwrite: 'auto',
       },
       '<'
@@ -46,9 +46,9 @@ export const ColorsRender = (
     .to(
       '.border-secondary',
       {
-        duration: speed,
+        duration: speed * 1.5,
         borderColor: secondary,
-        ease: 'power2',
+        ease: 'expo.out',
         overwrite: 'auto',
       },
       '<'
@@ -56,9 +56,9 @@ export const ColorsRender = (
     .to(
       '.bg-secondary',
       {
-        duration: speed,
+        duration: speed * 1.5,
         backgroundColor: secondary,
-        ease: 'power2',
+        ease: 'expo.out',
         overwrite: 'auto',
       },
       '<'
@@ -66,9 +66,9 @@ export const ColorsRender = (
     .to(
       '.secondary-shadow',
       {
-        duration: speed,
+        duration: speed * 1.5,
         textShadow: `0.5vh 0.5vh 0px ${secondary}, -0.5vh -0.5vh 0px ${secondary}, 0.5vh -0.5vh 0px ${secondary}, -0.5vh 0.5vh 0px ${secondary}`,
-        ease: 'power2',
+        ease: 'expo.out',
         overwrite: 'auto',
       },
       '<'
@@ -76,9 +76,9 @@ export const ColorsRender = (
     .to(
       '.transparent-secondary',
       {
-        duration: speed,
+        duration: speed * 1.5,
         backgroundColor: `${secondary}ee`,
-        ease: 'power2',
+        ease: 'expo.out',
         overwrite: 'auto',
       },
       '<'
