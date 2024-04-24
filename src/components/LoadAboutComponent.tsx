@@ -9,7 +9,9 @@ function LoadAbout({ anim }: { anim: Function }) {
   useEffect(() => {
     const card = document.getElementById('cardParent')
     const cardChild = document.getElementById('card')
-    if (!card || !cardChild) return
+    const cardChildEffect = document.getElementById('cardEffect')
+    if (!card || !cardChild || !cardChildEffect) return
+    cardChild.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1.3)'
     card.addEventListener('mousemove', function (e) {
       var offset = this.getBoundingClientRect()
       var relX = e.pageX - offset.left
@@ -23,12 +25,17 @@ function LoadAbout({ anim }: { anim: Function }) {
 
       //get the id of card to select an other element with the same id
       cardChild.style.transform =
-        'matrix3d(1,0,0,' + newX + ',0,1,0,' + newY + ',0,0,1,0,0,0,0,1.1)'
-      cardChild.style.zIndex = '10'
+        'matrix3d(1,0,0,' +
+        newX * 2 +
+        ',0,1,0,' +
+        newY * 2 +
+        ',0,0,1,0,0,0,0,1.2)'
+      cardChildEffect.style.backgroundPositionX = `${(currentX + 100) / 2}%`
     })
     card.addEventListener('mouseleave', function () {
-      cardChild.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)'
-      cardChild.style.zIndex = '1'
+      cardChild.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1.3)'
+
+      cardChildEffect.style.backgroundPositionX = '120%'
     })
   })
 
@@ -322,16 +329,19 @@ function LoadAbout({ anim }: { anim: Function }) {
           id="opquast-section"
         >
           <div className="mb-10 flex flex-col sm:flex-row">
-            <h2 className="w-full text-center text-[5vh] sm:mb-20 sm:text-left sm:text-[5vw]">
-              Certification
-              <br />
-              Opquast
+            <h2 className="m-0 w-full self-center text-center font-primaryFont text-xxxxxl sm:mb-20 sm:text-left">
+              Certifications
             </h2>
-            <div className="min-h-[20vh] w-full" id="cardParent">
+            <div className="min-h-[20vh] w-full duration-75" id="cardParent">
               <div
-                className=" aspect-[12/9] scale-75 bg-[url(https://res.cloudinary.com/opquast/image/upload/w_500/v2/badges/MQW-V4-2020/fr/PNG/badge_avance.png)] bg-contain bg-center bg-no-repeat"
+                className=" duration relative aspect-[12/9] scale-75 rounded-3xl bg-[url(https://res.cloudinary.com/opquast/image/upload/w_500/v2/badges/MQW-V4-2020/fr/PNG/badge_avance.png)] bg-contain bg-center bg-no-repeat duration-75"
                 id="card"
-              ></div>
+              >
+                <div
+                  className="absolute h-full w-full rounded-3xl"
+                  id="cardEffect"
+                ></div>
+              </div>
             </div>
           </div>
           <div className="flex flex-col gap-5 text-[4vw] leading-[5vw] sm:flex-row sm:text-[3vw] md:text-[2vw] md:leading-[3vw] lg:text-[1.5vw] lg:leading-[2vw] ">
