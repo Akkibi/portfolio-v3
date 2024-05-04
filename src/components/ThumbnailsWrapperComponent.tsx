@@ -148,17 +148,21 @@ const ThumbnailsComponent = ({
         Math.min(nextPercentageUnconstrained, min),
         max
       )
-      trackRef.current.dataset.prevValue = nextPercentage.toString()
+      trackRef.current.dataset.prevValue = trackRef.current.dataset.percentage
       makeSliderAnimation(trackRef.current, nextPercentage, 0.4)
     }
   }
-
   function makeSliderAnimation(
     track: HTMLDivElement,
     nextValue: number,
     time: number
   ) {
-    track.dataset.percentage = nextValue.toString()
+    // document.querySelectorAll('.thumbnail').forEach((element) => {
+    //   element.style.backgroundPosition = `${100 + nextValue}% center`
+    // })
+    // document.getElementById('slide-track').style.transform =
+    //   `translate(${nextValue}%, -50%)`
+    // console.log('nextValue', nextValue)
     gsap.to('.thumbnail', {
       duration: time * 2,
       backgroundPosition: `${100 + nextValue}% center`,
@@ -172,6 +176,7 @@ const ThumbnailsComponent = ({
       ease: 'expo.out',
       overwrite: 'auto',
     })
+    track.dataset.percentage = nextValue.toString()
     checkCurrentCategory(nextValue)
   }
 
@@ -291,9 +296,16 @@ const ThumbnailsComponent = ({
   useEffect(() => {
     getCategoryPercents()
     if (trackRef.current && document.getElementById('slide-track') !== null) {
+      if (trackRef.current.dataset.percentage === undefined) {
+        trackRef.current.dataset.prevValue = '-6.5'
+        trackRef.current.dataset.percentage = '-6.5'
+      } else {
+        trackRef.current.dataset.prevValue =
+          document.getElementById('side-track')?.style.transform || '-6.5'
+        trackRef.current.dataset.percentage =
+          document.getElementById('side-track')?.style.transform || '-6.5'
+      }
       trackRef.current.dataset.mouseDownAt = '0'
-      trackRef.current.dataset.prevValue = '-6.5'
-      trackRef.current.dataset.percentage = '-6.5'
       window.addEventListener('keydown', handleKeyPress)
       window.addEventListener('mousedown', handleOnDown)
       window.addEventListener('touchstart', handleOnDown)
@@ -386,7 +398,7 @@ const ThumbnailsComponent = ({
       <div
         id="slide-track"
         ref={trackRef}
-        className="absolute left-1/2 top-1/2 flex -translate-x-[5.17%] select-none flex-row gap-4 text-white ease-out"
+        className="absolute left-1/2 top-1/2 flex -translate-x-[5.17%] select-none flex-row gap-4 text-white"
       >
         {projectsWithFirstImages.map((categoryData, index) => (
           <div key={index} className="flex flex-row gap-4">
@@ -403,7 +415,8 @@ const ThumbnailsComponent = ({
                 (data: any, projectIndex: number) => (
                   <div
                     key={projectIndex}
-                    className="track-image relative block h-[50vh] w-[15vh] overflow-hidden border-0 p-0 hover:opacity-100 hover:grayscale-0"
+                    id={`track-image-${index}-${projectIndex}`}
+                    className="track-image relative block h-[40vh] w-[15vh] overflow-hidden border-0 p-0 hover:opacity-100 hover:grayscale-0 sm:h-[50vh]"
                   >
                     {/* <picture id={`imageBanner_${index}_${projectIndex}`}>
                       <source
@@ -424,14 +437,14 @@ const ThumbnailsComponent = ({
                       />
                     </picture> */}
                     <div
-                      className="thumbnail absolute top-0 h-full w-full bg-cover bg-[right_center] duration-200 ease-out"
+                      className="thumbnail absolute top-0 h-full w-full bg-cover bg-[right_center]"
                       id={`imageBanner_${index}_${projectIndex}`}
                       style={{
                         backgroundImage: `url(${data.image}), url(${data.smallImage})`,
                       }}
                     ></div>
                     <Link
-                      className="track-link absolute h-full w-full bg-[rgba(0,0,0,0.25)] text-white no-underline grayscale duration-200 hover:bg-[rgba(0,0,0,0)] hover:grayscale-0"
+                      className="track-link absolute h-full w-full bg-[rgba(0,0,0,0.25)] text-white no-underline grayscale duration-200 hover:bg-[rgba(0,0,0,0)] hover:opacity-0"
                       to={data.name}
                     >
                       <p className="absolute left-1/2 top-1/2 m-0 -translate-x-1/2 -translate-y-1/2 p-0 text-xl ">

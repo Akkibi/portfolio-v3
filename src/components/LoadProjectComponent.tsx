@@ -20,7 +20,7 @@ interface Project {
   colors: string[]
 }
 
-function LoadProjectComponent({
+function LoadProject({
   projectData,
   projectIndex,
   index,
@@ -185,6 +185,7 @@ function LoadProjectComponent({
       projectIndex < projectList.length
     ) {
       navigate('/' + projectList[projectIndex])
+      console.log('navigate to the right')
       return
     }
     // navigate to the left
@@ -199,6 +200,7 @@ function LoadProjectComponent({
       projectIndex > 1
     ) {
       navigate('/' + projectList[projectIndex - 2])
+      return
     }
     // navigate to the top
     if (
@@ -213,6 +215,7 @@ function LoadProjectComponent({
     ) {
       setIsAtTop(false)
       navigate('/')
+      return
     }
     // navigate to the main menu
     if (
@@ -226,6 +229,7 @@ function LoadProjectComponent({
       isAtTop
     ) {
       setIsAtTop(false)
+      return
     }
   }
 
@@ -555,4 +559,4 @@ function LoadProjectComponent({
   )
 }
 
-export default LoadProjectComponent
+export default LoadProject

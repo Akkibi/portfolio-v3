@@ -3,8 +3,8 @@ export const AboutComponent = (): void => {
   console.log('AboutComponent')
 
   gsap.to('#scrollIcon', {
-    duration: 1,
-    ease: 'power2',
+    duration: 1.5,
+    ease: 'expo.out',
     opacity: 0,
     display: 'hidden',
   })
@@ -15,8 +15,8 @@ export const AboutComponent = (): void => {
       y: '-100%',
     },
     {
-      duration: 0.5,
-      ease: 'power2.out',
+      duration: 1,
+      ease: 'expo.out',
       y: 0,
       x: 0,
     }
@@ -28,9 +28,20 @@ export const AboutComponent = (): void => {
     },
     {
       delay: 0.25,
-      duration: 1,
-      ease: 'power2.out',
+      duration: 1.5,
+      ease: 'expo.out',
       y: 0,
+    }
+  )
+  gsap.fromTo(
+    '#aboutProgressScrollBar',
+    {
+      x: '-10rem',
+    },
+    {
+      duration: 1.5,
+      ease: 'expo.out',
+      x: '0rem',
     }
   )
 }

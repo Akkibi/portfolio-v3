@@ -30,7 +30,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         </p>
       </div>
       <div className="justify-betweens flex w-full flex-col justify-between">
-        <div className="dm:gap-4 absolute bottom-[2vh] left-[2vh] inline-flex max-h-fit max-w-fit flex-col md:left-1/2 md:top-[4vh] md:-translate-x-1/2 md:flex-row">
+        <div className="absolute bottom-[2vh] left-[2vh] inline-flex max-h-fit max-w-fit flex-col md:left-1/2 md:top-[4vh] md:-translate-x-1/2 md:flex-row md:gap-4">
           <NavLink
             to="/"
             onClick={() => {
@@ -173,6 +173,24 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           </Link>
         </div>
         <div className=" text-primary decoration-none flex flex-col items-end font-secondaryFont text-xl uppercase underline visited:text-white ">
+          <a
+            href="CV-Akira-Valade-11-07-2023_compressed.pdf"
+            className="group w-max"
+          >
+            <svg
+              className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0 duration-150 group-hover:opacity-100"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M 1 23 L 23 1"></path>
+              <path d="M 6 1 h 17 v 17"></path>
+            </svg>
+            CV
+          </a>
           <a href="https://www.instagram.com/akkibi_/" className="group w-max">
             <svg
               className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0 duration-150 group-hover:opacity-100"

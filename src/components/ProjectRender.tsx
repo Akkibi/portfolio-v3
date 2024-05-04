@@ -5,46 +5,40 @@ export const ProjectRender = (
   index: number,
   x: MediaQueryList
 ): void => {
-  console.log('HomeComponent')
+  console.log('HomeComponent', projectIndex)
   let selectedWidth: number = window.innerWidth
   if (!x.matches) {
     selectedWidth = window.innerWidth * 0.85
   }
   // Add a class to the selected .track-image element
-  const notSelectedImage = document.querySelectorAll('.track-image')
-  const selectedImage =
-    document.querySelectorAll('.track-image')[projectIndex - 1]
-  console.log('Section', index)
-  gsap.to(notSelectedImage, {
+  gsap.to(document.querySelectorAll('.track-link'), {
+    duration: 1.25,
+    ease: 'expo.out',
+    opacity: 1,
+  })
+  gsap.to(document.querySelectorAll('.track-link')[projectIndex - 1], {
+    duration: 1.25,
+    ease: 'expo.out',
+    opacity: 0,
+  })
+
+  gsap.to(document.querySelectorAll('.track-image'), {
     duration: 1.25,
     width: window.innerHeight * 0.15,
     ease: 'expo.out',
     opacity: 0.75,
-
-    // '-webkit-filter': 'grayscale(100%)',
-    // filter: 'grayscale(100%)',
   })
-  gsap.to(document.querySelectorAll('.track-link'), {
-    clearProps: 'all',
-  })
-  gsap.to(document.querySelectorAll('.track-link')[projectIndex - 1], {
-    opacity: 0,
-    display: 'none',
-  })
-  gsap.to(selectedImage, {
+  gsap.to(document.querySelectorAll('.track-image')[projectIndex - 1], {
     duration: 1.25,
     width: selectedWidth,
     ease: 'expo.out',
     opacity: 1,
-    grayScale: 0,
-    // '-webkit-filter': 'grayscale(0)',
-    // filter: 'grayscale(0)',
   })
+
   gsap.to(document.querySelectorAll('.thumbnail')[projectIndex - 1], {
     duration: 1.25,
     ease: 'expo.out',
-    opacity: 1,
-    objectPosition: `center center`,
+    backgroundPosition: `50% 50%`,
   })
   gsap.to('#scrollIcon', {
     duration: 1.25,
@@ -54,7 +48,7 @@ export const ProjectRender = (
   })
   gsap.to('.title', {
     duration: 0.5,
-    ease: 'expo.out.in',
+    ease: 'expo.inOut',
     x: 0,
     y: '-200%',
     overwrite: 'auto',
