@@ -173,10 +173,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           </Link>
         </div>
         <div className=" text-primary decoration-none flex flex-col items-end font-secondaryFont text-xl uppercase underline visited:text-white ">
-          <a
-            href="CV-Akira-Valade-11-07-2023_compressed.pdf"
-            className="group w-max"
-          >
+          <a href="cv-11-05-2024_compressed.pdf" className="group w-max">
             <svg
               className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0 duration-150 group-hover:opacity-100"
               viewBox="0 0 24 24"

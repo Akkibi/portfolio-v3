@@ -100,7 +100,7 @@ function LoadAbout({ anim }: { anim: Function }) {
     <>
       <div
         id="aboutProgressScrollBar"
-        className=" fixed left-5 top-1/2 z-50 h-[60vh] w-[2px] -translate-y-1/2 bg-white bg-opacity-50 text-white"
+        className=" fixed left-5 top-1/2 z-50 hidden h-[60vh] w-[2px] -translate-y-1/2 bg-white bg-opacity-50 text-white sm:block"
       >
         <div
           ref={percentScrollRef}
@@ -260,7 +260,7 @@ function LoadAbout({ anim }: { anim: Function }) {
             <ul className=" my-20  flex w-full list-none flex-row  flex-wrap justify-center gap-2 p-0 text-black sm:flex-nowrap">
               <li className="group relative aspect-square w-[30%] overflow-hidden rounded-full border-2 border-solid border-white bg-white sm:w-[20%]">
                 <a
-                  href="CV-Akira-Valade-11-07-2023_compressed.pdf"
+                  href="cv-11-05-2024_compressed.pdf"
                   id="CV"
                   className=" absolute h-full w-full"
                 >
