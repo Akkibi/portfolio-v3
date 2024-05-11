@@ -2,7 +2,6 @@ import { gsap } from 'gsap'
 
 export const ProjectRender = (
   projectIndex: number,
-  index: number,
   x: MediaQueryList
 ): void => {
   console.log('HomeComponent', projectIndex)

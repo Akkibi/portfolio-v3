@@ -73,14 +73,14 @@ function LoadProject({
     if (navigationType === 'POP') {
       alignImage(projectIndex, index, x)
       ColorsRender(project.colors[0], project.colors[1], 1)
-      ProjectRender(projectIndex, index, x)
+      ProjectRender(projectIndex, x)
     }
   }, [])
 
   if (navigationType !== 'POP') {
     alignImage(projectIndex, index, x)
     ColorsRender(project.colors[0], project.colors[1], 1)
-    ProjectRender(projectIndex, index, x)
+    ProjectRender(projectIndex, x)
   }
   useEffect(() => {
     ColorsRender(project.colors[0], project.colors[1], 1)

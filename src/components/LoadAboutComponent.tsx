@@ -1,5 +1,5 @@
 import { useNavigationType } from 'react-router-dom'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { ColorsRender } from './changeColors'
 import { Link } from 'react-router-dom'
 
