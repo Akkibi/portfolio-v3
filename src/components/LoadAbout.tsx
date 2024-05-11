@@ -1,6 +1,6 @@
 import { useNavigationType } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
-import { ColorsRender } from './changeColors'
+import { ColorsRender } from '../animations/ColorAnimations'
 import { Link } from 'react-router-dom'
 
 function LoadAbout({ anim }: { anim: Function }) {
@@ -400,9 +400,9 @@ function LoadAbout({ anim }: { anim: Function }) {
               >
                 Certification
               </h2>
-              <div className="min-h-[20vh] w-full duration-75" id="cardParent">
+              <div className="min-h-[20vh] w-full duration-75 " id="cardParent">
                 <div
-                  className=" duration relative aspect-[12/9] scale-75 rounded-3xl bg-[url(https://res.cloudinary.com/opquast/image/upload/w_500/v2/badges/MQW-V4-2020/fr/PNG/badge_avance.png)] bg-contain bg-center bg-no-repeat duration-75"
+                  className="duration relative aspect-[12/9] scale-75 rounded-3xl border-4 border-solid border-black bg-[url(opquast-logo.svg)] bg-contain bg-center bg-no-repeat duration-75"
                   id="card"
                 >
                   <div

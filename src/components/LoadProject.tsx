@@ -1,13 +1,14 @@
 import { useNavigationType } from 'react-router-dom'
 import { useEffect } from 'react'
-import { ProjectRender } from './ProjectRender'
+import { ProjectRender } from '../animations/ProjectAnimations'
 import { gsap } from 'gsap'
-import { ColorsRender } from './changeColors'
+import { ColorsRender } from '../animations/ColorAnimations'
 import { useRef } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Project } from '../types'
 import { countData } from '../main'
+import React from 'react'
 
 const alignImage = (projectIndex: number, index: number, x: MediaQueryList) => {
   const selectedWidth: number = !x.matches
@@ -74,7 +75,6 @@ function LoadProject({
   }, [document.getElementById('projectTitle')])
 
   if (scrollableRef.current) {
-    console.log('test')
     if (isAtTop) {
       gsap.to(scrollableRef.current, {
         duration: 0.5,
@@ -288,7 +288,7 @@ function LoadProject({
   return (
     <div
       ref={scrollableRef}
-      className="transparent-secondary absolute left-1/2 z-50 h-full w-screen -translate-x-1/2 translate-y-full scale-100 overflow-y-scroll px-0 py-[7.5vh] md:px-[10vw]"
+      className="bg-secondary absolute left-1/2 z-50 h-full w-screen -translate-x-1/2 translate-y-full scale-100 overflow-y-scroll px-0 py-[7.5vh] md:px-[10vw]"
     >
       <div className="mb-[7.5vh] w-full">
         <div className="unScrollIcon mx-auto w-max">
@@ -382,27 +382,28 @@ function LoadProject({
             {project.list && (
               <>
                 {Object.entries(project.list).map(([key, value], index) => (
-                  <>
-                    {index != 0 ? (
+                  <React.Fragment key={`${key}-${index}`}>
+                    {index !== 0 && (
                       <hr
-                        key={key + 'hr'}
-                        className=" border-primary border-2"
+                        key={`${key}-${index}-hr`}
+                        className="border-primary border border-solid"
                       />
-                    ) : (
-                      ''
                     )}
-                    <div key={key} className="flex place-content-between">
+                    <div
+                      key={`${key}-${index}`}
+                      className="flex place-content-between"
+                    >
                       <p className="uppercase">{key}</p>
                       <p>{value}</p>
                     </div>
-                  </>
+                  </React.Fragment>
                 ))}
               </>
             )}
 
             {project.link && (
               <>
-                <hr className=" border-primary border-2" />
+                <hr className=" border-primary border border-solid" />
                 <div className="flex place-content-between">
                   <p>LIEN</p>
                   <a

@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { ColorsRender } from './changeColors'
+import { ColorsRender } from '../animations/ColorAnimations'
 
 interface NavbarProps {
   categorie: string

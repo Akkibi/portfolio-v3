@@ -12,16 +12,7 @@ export const ColorsRender = (
       ease: 'expo.out',
       overwrite: 'auto',
     })
-    .to(
-      '.border-primary',
-      {
-        duration: speed * 1.5,
-        border: `1px solid ${primary}`,
-        ease: 'expo.out',
-        overwrite: 'auto',
-      },
-      '<'
-    )
+
     .to(
       '.bg-primary',
       {
@@ -57,16 +48,6 @@ export const ColorsRender = (
       {
         duration: speed * 1.5,
         textShadow: `0.5vh 0.5vh 0px ${secondary}, -0.5vh -0.5vh 0px ${secondary}, 0.5vh -0.5vh 0px ${secondary}, -0.5vh 0.5vh 0px ${secondary}`,
-        ease: 'expo.out',
-        overwrite: 'auto',
-      },
-      '<'
-    )
-    .to(
-      '.transparent-secondary',
-      {
-        duration: speed * 1.5,
-        backgroundColor: `${secondary}ee`,
         ease: 'expo.out',
         overwrite: 'auto',
       },

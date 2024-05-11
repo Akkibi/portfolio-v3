@@ -199,7 +199,6 @@ const ThumbnailsComponent = ({
   const getCategoryPercents = () => {
     const title: HTMLElement | null = document.querySelector('.track-title')
     if (!trackRef.current || !title) {
-      console.log('cassé')
       return
     }
     const trackWidth =
@@ -233,8 +232,6 @@ const ThumbnailsComponent = ({
     ) {
       return
     }
-    console.log('categoryName', categoryName, categoryPercents[categoryName])
-
     const time: number =
       Math.abs(
         parseFloat(trackRef.current.dataset.percentage) +

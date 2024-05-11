@@ -1,6 +1,6 @@
 import { useNavigationType } from 'react-router-dom'
 import { useEffect } from 'react'
-import { ColorsRender } from './changeColors.ts'
+import { ColorsRender } from '../animations/ColorAnimations.ts'
 function LoadAnimation({ anim }: { anim: Function }) {
   const navigationType: string | null = useNavigationType()
 
