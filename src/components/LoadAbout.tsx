@@ -402,7 +402,7 @@ function LoadAbout({ anim }: { anim: Function }) {
               </h2>
               <div className="min-h-[20vh] w-full duration-75 " id="cardParent">
                 <div
-                  className="duration relative aspect-[12/9] scale-75 rounded-3xl border-4 border-solid border-black bg-[url(opquast-logo.svg)] bg-contain bg-center bg-no-repeat duration-75"
+                  className="duration relative aspect-[12/9] scale-75 rounded-3xl border-4 border-solid border-black bg-[url(./opquast-logo.svg)] bg-contain bg-center bg-no-repeat duration-75"
                   id="card"
                 >
                   <div
