@@ -151,9 +151,6 @@ function LoadAbout({ anim }: { anim: Function }) {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
               >
                 <path d="M 1 23 L 23 1"></path>
                 <path d="M 6 1 h 17 v 17"></path>
@@ -487,9 +484,6 @@ function LoadAbout({ anim }: { anim: Function }) {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth="2"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
                 >
                   <path d="M 1 23 L 23 1"></path>
                   <path d="M 6 1 h 17 v 17"></path>
