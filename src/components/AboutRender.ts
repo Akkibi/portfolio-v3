@@ -1,7 +1,5 @@
 import { gsap } from 'gsap'
 export const AboutComponent = (): void => {
-  console.log('AboutComponent')
-
   gsap.to('#scrollIcon', {
     duration: 1.5,
     ease: 'expo.out',

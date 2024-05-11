@@ -1,6 +1,5 @@
 import { gsap } from 'gsap'
 export const HomeComponent = (): void => {
-  console.log('HomeComponent')
   gsap.to('.track-image', {
     duration: 1,
     ease: 'expo.out',

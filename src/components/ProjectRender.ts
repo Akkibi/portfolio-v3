@@ -4,7 +4,6 @@ export const ProjectRender = (
   projectIndex: number,
   x: MediaQueryList
 ): void => {
-  console.log('HomeComponent', projectIndex)
   let selectedWidth: number = window.innerWidth
   if (!x.matches) {
     selectedWidth = window.innerWidth * 0.85

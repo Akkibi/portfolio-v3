@@ -157,12 +157,6 @@ const ThumbnailsComponent = ({
     nextValue: number,
     time: number
   ) {
-    // document.querySelectorAll('.thumbnail').forEach((element) => {
-    //   element.style.backgroundPosition = `${100 + nextValue}% center`
-    // })
-    // document.getElementById('slide-track').style.transform =
-    //   `translate(${nextValue}%, -50%)`
-    // console.log('nextValue', nextValue)
     gsap.to('.thumbnail', {
       duration: time * 2,
       backgroundPosition: `${100 + nextValue}% center`,

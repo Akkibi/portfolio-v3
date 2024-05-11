@@ -9,64 +9,42 @@ import './index.css'
 import projectData from './data.json'
 import LoadProject from './components/LoadProjectComponent'
 import LoadAbout from './components/LoadAboutComponent'
+import { Project } from './types'
 
-interface Project {
-  name: string
-  date: string
-  title: string
-  description: string
-  images: string[]
-  webpImages: string[]
-  videos: string[]
-  list: { [key: string]: string }
-  link: string[]
-  colors: string[]
-}
-
-const categorie0Projects = Object.keys(projectData['Developpeur']).length
-const categorie1Projects = Object.keys(projectData['Artiste2D']).length
-const categorie2Projects = Object.keys(projectData['Artiste3D']).length
-const countData: Array<number> = [
-  categorie0Projects,
-  categorie1Projects,
-  categorie2Projects,
-  categorie0Projects + categorie1Projects + categorie2Projects,
+export const countData: number[] = [
+  projectData['Developpeur'].length,
+  projectData['Artiste2D'].length,
+  projectData['Artiste3D'].length,
+  projectData['Developpeur'].length +
+    projectData['Artiste2D'].length +
+    projectData['Artiste3D'].length,
 ]
 
-let categoryList: Array<string> = []
-
-projectData['Developpeur'].forEach((element) => {
-  categoryList.push(element.name)
-})
-projectData['Artiste2D'].forEach((element) => {
-  categoryList.push(element.name)
-})
-projectData['Artiste3D'].forEach((element) => {
-  categoryList.push(element.name)
-})
+const categoryList: string[] = [
+  ...projectData['Developpeur'].map((element) => element.name),
+  ...projectData['Artiste2D'].map((element) => element.name),
+  ...projectData['Artiste3D'].map((element) => element.name),
+]
 
 const generateProjectRoutes = (data: any) => {
   const categoryArrays = Object.values(data)
-  let ProjectIndex = 0
-  const output: any = categoryArrays.flatMap((category: any, index: number) => {
-    return category.map(
-      (project: Project) => (
-        ProjectIndex++,
-        {
-          path: project.name,
-          element: (
-            <LoadProject
-              projectData={project}
-              projectIndex={ProjectIndex}
-              index={index + 1}
-              countData={countData}
-              projectList={categoryList}
-            />
-          ),
-        }
-      )
-    )
-  })
+  let projectIndex = 0
+  const output: any = categoryArrays.flatMap((category: any, index: number) =>
+    category.map((project: Project) => {
+      projectIndex++
+      return {
+        path: project.name,
+        element: (
+          <LoadProject
+            projectData={project}
+            projectIndex={projectIndex}
+            index={index + 1}
+            projectList={categoryList}
+          />
+        ),
+      }
+    })
+  )
   return output
 }
 
@@ -94,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!container) {
     container = document.getElementById('root') as HTMLElement
     const root = createRoot(container)
-    console.log(router)
     root.render(<RouterProvider router={router} />)
   }
 })

@@ -4,7 +4,6 @@ export const ColorsRender = (
   secondary: string,
   speed: number
 ): void => {
-  console.log('Change Colors')
   var tlColors = gsap.timeline()
   tlColors
     .to('.text-primary', {
@@ -38,16 +37,6 @@ export const ColorsRender = (
       {
         duration: speed * 1.5,
         color: secondary,
-        ease: 'expo.out',
-        overwrite: 'auto',
-      },
-      '<'
-    )
-    .to(
-      '.border-secondary',
-      {
-        duration: speed * 1.5,
-        borderColor: secondary,
         ease: 'expo.out',
         overwrite: 'auto',
       },

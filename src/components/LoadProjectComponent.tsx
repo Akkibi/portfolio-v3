@@ -6,66 +6,53 @@ import { ColorsRender } from './changeColors'
 import { useRef } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Project } from '../types'
+import { countData } from '../main'
 
-interface Project {
-  name: string
-  date: string
-  title: string
-  description: string
-  images: string[]
-  webpImages: string[]
-  videos: string[]
-  list: { [key: string]: string }
-  link: string[]
-  colors: string[]
+const alignImage = (projectIndex: number, index: number, x: MediaQueryList) => {
+  const selectedWidth: number = !x.matches
+    ? window.innerWidth * 0.85
+    : window.innerWidth
+  const track = document.getElementById('slide-track')
+  const title: HTMLElement | null = document.querySelector('.track-title')
+  if (track && title) {
+    const offset =
+      window.innerHeight * 0.15 * (projectIndex - 1) +
+      title.getBoundingClientRect().width * index +
+      (projectIndex + index - 1) * 16 +
+      selectedWidth / 2
+
+    const trackWidth =
+      window.innerHeight * 0.15 * (countData[3] - 1) +
+      title.getBoundingClientRect().width * 3 +
+      (countData[3] + 3 - 1) * 16 +
+      selectedWidth
+
+    const offsetPercent = (offset / trackWidth) * -100
+    gsap.to(track, {
+      duration: 0.75,
+      x: `${offsetPercent}%`,
+      y: '-50%',
+      ease: 'circ.out',
+      overwrite: true,
+    })
+  }
 }
-
 function LoadProject({
-  projectData,
+  projectData: project,
   projectIndex,
   index,
-  countData,
   projectList,
 }: {
   projectData: Project
   projectIndex: number
   index: number
-  countData: Array<number>
   projectList: Array<string>
 }) {
-  function alignImage(projectIndex: number, index: number, x: MediaQueryList) {
-    let selectedWidth: number = window.innerWidth
-    if (!x.matches) {
-      selectedWidth = window.innerWidth * 0.85
-    }
-    const track = document.getElementById('slide-track')
-    const image: HTMLElement | null = document.querySelector('.track-image')
-    const title: HTMLElement | null = document.querySelector('.track-title')
-    if (track !== null && image !== null && title !== null) {
-      const offset =
-        window.innerHeight * 0.15 * (projectIndex - 1) +
-        title.getBoundingClientRect().width * index +
-        (projectIndex + index - 1) * 16 +
-        selectedWidth / 2
-
-      const trackWidth =
-        window.innerHeight * 0.15 * (countData[3] - 1) +
-        title.getBoundingClientRect().width * 3 +
-        (countData[3] + 3 - 1) * 16 +
-        selectedWidth
-
-      const offsetPercent = (offset / trackWidth) * -100
-      gsap.to(track, {
-        duration: 0.75,
-        x: offsetPercent + '%',
-        y: '-50%',
-        ease: 'circ.out',
-        overwrite: true,
-      })
-    }
-  }
+  const scrollableRef = useRef<HTMLDivElement>(null)
+  const [isAtTop, setIsAtTop] = useState(true)
+  const navigate = useNavigate()
   const navigationType: string | null = useNavigationType()
-  const project = projectData
 
   var x: MediaQueryList = window.matchMedia('(max-width: 768px)')
 
@@ -86,10 +73,8 @@ function LoadProject({
     ColorsRender(project.colors[0], project.colors[1], 1)
   }, [document.getElementById('projectTitle')])
 
-  const scrollableRef = useRef<HTMLDivElement>(null)
-  const [isAtTop, setIsAtTop] = useState(true)
-
   if (scrollableRef.current) {
+    console.log('test')
     if (isAtTop) {
       gsap.to(scrollableRef.current, {
         duration: 0.5,
@@ -110,8 +95,7 @@ function LoadProject({
         y: 0,
         overwrite: 'auto',
       })
-    }
-    if (!isAtTop) {
+    } else {
       gsap.to(scrollableRef.current, {
         duration: 0.5,
         ease: 'power2',
@@ -140,9 +124,6 @@ function LoadProject({
       setIsAtTop(false)
     }
   }
-  useEffect(() => {
-    return () => {}
-  }, [])
   const handleScroll = () => {
     if (scrollableRef.current) {
       setIsAtTop(scrollableRef.current.scrollTop <= 10)
@@ -155,17 +136,11 @@ function LoadProject({
     if (scrollableRef.current) {
       scrollableRef.current.dataset.touchDownAtX = clientX.toString()
       scrollableRef.current.dataset.touchDownAtY = clientY.toString()
-      // console.log(
-      //   scrollableRef.current.dataset.touchDownAtX,
-      //   scrollableRef.current.dataset.touchDownAtY
-      // )
     }
   }
-  const navigate = useNavigate()
   const handleWindowOnUp = (e: TouchEvent | MouseEvent) => {
     const clientX = 'touches' in e ? e.changedTouches[0].clientX : e.clientX
     const clientY = 'touches' in e ? e.changedTouches[0].clientY : e.clientY
-    // console.log(clientX, clientY)
     if (
       !isAtTop ||
       !scrollableRef.current ||
@@ -185,7 +160,6 @@ function LoadProject({
       projectIndex < projectList.length
     ) {
       navigate('/' + projectList[projectIndex])
-      console.log('navigate to the right')
       return
     }
     // navigate to the left
@@ -410,7 +384,10 @@ function LoadProject({
                 {Object.entries(project.list).map(([key, value], index) => (
                   <>
                     {index != 0 ? (
-                      <hr className=" border-primary border-2" />
+                      <hr
+                        key={key + 'hr'}
+                        className=" border-primary border-2"
+                      />
                     ) : (
                       ''
                     )}
