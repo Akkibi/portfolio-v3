@@ -2,6 +2,7 @@ import { FunctionComponent, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { ColorsRender } from '../animations/ColorAnimations'
+import Button from './button'
 
 interface NavbarProps {
   categorie: string
@@ -23,7 +24,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           id="nav"
           className="text-primary relative m-0 w-max font-primaryFont text-xxl uppercase"
         >
-          <Link to={'/'}>Akira Valade</Link>
+          <Link to="/">Akira Valade</Link>
         </h1>
         <p className="text-primary relative m-0 hidden w-max font-secondaryFont text-xl uppercase md:block">
           Développeur créatif front-end <br /> disponible à partir de septembre
@@ -141,73 +142,27 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         </div>
       </div>
       <div className="flex w-[8vh] flex-col justify-between">
-        <div className="text-primary decoration-none flex flex-col items-end font-secondaryFont text-xl uppercase underline visited:text-white">
-          <Link className="group w-max" to="/about">
-            <svg
-              className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0 duration-150 group-hover:opacity-100"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M 1 23 L 23 1"></path>
-              <path d="M 6 1 h 17 v 17"></path>
-            </svg>
+        <div className="right-0 flex items-end self-end">
+          <Button path="/about" innerSite={true}>
             À propos
-          </Link>
+          </Button>
         </div>
         <div className=" text-primary decoration-none flex flex-col items-end font-secondaryFont text-xl uppercase underline visited:text-white ">
-          <a href="cv-11-05-2024_compressed.pdf" className="group w-max">
-            <svg
-              className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0 duration-150 group-hover:opacity-100"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M 1 23 L 23 1"></path>
-              <path d="M 6 1 h 17 v 17"></path>
-            </svg>
+          <Button path="cv-11-05-2024_compressed.pdf" innerSite={false}>
             CV
-          </a>
-          <a href="https://www.instagram.com/akkibi_/" className="group w-max">
-            <svg
-              className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0 duration-150 group-hover:opacity-100"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M 1 23 L 23 1"></path>
-              <path d="M 6 1 h 17 v 17"></path>
-            </svg>
+          </Button>
+          <Button path="https://www.instagram.com/akkibi_/" innerSite={false}>
             Instagram
-          </a>
-          <a
-            target="_top"
-            href="mailto:akiravalade@gmail.com subject=Hello%20Akira"
-            className="group w-max"
+          </Button>
+          <Button
+            path="mailto:akiravalade@gmail.com subject=Hello%20Akira"
+            innerSite={false}
           >
-            <svg
-              className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0  duration-150 group-hover:opacity-100"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M 1 23 L 23 1"></path>
-              <path d="M 6 1 h 17 v 17"></path>
-            </svg>
             Email
-          </a>
-          <a href="https://github.com/Akkibi" className="group w-max">
-            <svg
-              className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0 duration-150 group-hover:opacity-100"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M 1 23 L 23 1"></path>
-              <path d="M 6 1 h 17 v 17"></path>
-            </svg>
+          </Button>
+          <Button path="https://github.com/Akkibi" innerSite={false}>
             Github
-          </a>
+          </Button>
         </div>
       </div>
     </div>

@@ -397,7 +397,7 @@ const ThumbnailsComponent = ({
               id={`${categoryData.category}`}
               className="track-title relative m-0 h-[16vh] w-[16vh] -rotate-90 p-0"
             >
-              <h2 className=" text-primary absolute bottom-0 right-0 m-0 p-0 text-right font-primaryFont text-xxxxl tracking-wider opacity-100">
+              <h2 className=" text-primary absolute bottom-0 right-0 m-0 p-0 text-right font-primaryFont text-xxxl tracking-wider opacity-100 sm:text-xxxxl">
                 {categoryData.category.toUpperCase()}
               </h2>
             </div>

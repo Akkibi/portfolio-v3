@@ -15,9 +15,8 @@ export default {
         darkgray: '#494949',
       },
       fontFamily: {
-        primaryFont: 'Helvetica',
+        primaryFont: 'Helvetica, sans-serif',
         secondaryFont: 'Helvetica-CE, sans-serif',
-        terdiaryFont: 'Helvetica',
       },
     },
     fontSize: {

@@ -2,6 +2,7 @@ import { useNavigationType } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
 import { ColorsRender } from '../animations/ColorAnimations'
 import { Link } from 'react-router-dom'
+import Button from './button'
 
 function LoadAbout({ anim }: { anim: Function }) {
   const navigationType: string | null = useNavigationType()
@@ -10,6 +11,7 @@ function LoadAbout({ anim }: { anim: Function }) {
   const percentScrollRef = useRef<HTMLDivElement>(null)
 
   const handleScroll = () => {
+    console.log('scroll')
     const { current } = aboutRef
 
     if (current && percentScrollRef.current) {
@@ -25,43 +27,23 @@ function LoadAbout({ anim }: { anim: Function }) {
     element.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const cardRef = useRef<HTMLDivElement>(null)
+  const cardChildRef = useRef<HTMLDivElement>(null)
+  const cardChildEffectRef = useRef<HTMLDivElement>(null)
+  const clickAboutTitleRef = useRef<HTMLHeadingElement>(null)
+  const clickCertificationTitleRef = useRef<HTMLHeadingElement>(null)
+  const clickTestimonyTitleRef = useRef<HTMLHeadingElement>(null)
+
   useEffect(() => {
-    const card = document.getElementById('cardParent')
-    const cardChild = document.getElementById('card')
-    const cardChildEffect = document.getElementById('cardEffect')
-    if (!card || !cardChild || !cardChildEffect) return
-    cardChild.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1.3)'
-    card.addEventListener('mousemove', function (e) {
-      var offset = this.getBoundingClientRect()
-      var relX = e.pageX - offset.left
-      var relY = e.pageY - offset.top
-      var offsetMinX = this.offsetWidth
-      var offsetMinY = this.offsetHeight
-      var currentX = (relX += offsetMinX * -0.5)
-      var currentY = (relY += offsetMinY * -0.5)
-      var newX = currentX / 1000000
-      var newY = currentY / 2000000
-
-      //get the id of card to select an other element with the same id
-      cardChild.style.transform =
-        'matrix3d(1,0,0,' +
-        newX * 2 +
-        ',0,1,0,' +
-        newY * 2 +
-        ',0,0,1,0,0,0,0,1.2)'
-      cardChildEffect.style.backgroundPositionX = `${(currentX + 100) / 2}%`
-    })
-    card.addEventListener('mouseleave', function () {
-      cardChild.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1.3)'
-
-      cardChildEffect.style.backgroundPositionX = '120%'
-    })
+    const card = cardRef.current
+    const cardChild = cardChildRef.current
+    const cardChildEffect = cardChildEffectRef.current
+    const clickAboutTitle = clickAboutTitleRef.current
+    const clickCertificationTitle = clickCertificationTitleRef.current
+    const clickTestimonyTitle = clickTestimonyTitleRef.current
     const { current } = aboutRef
-    const clickAboutTitle = document.getElementById('click-about-title')
-    const clickCertificationTitle = document.getElementById(
-      'click-certification-title'
-    )
-    const clickTestimonyTitle = document.getElementById('click-testimony-title')
+    console.log(card, cardChild, cardChildEffect)
+    console.log(clickAboutTitle, clickCertificationTitle, clickTestimonyTitle)
     if (
       current &&
       clickAboutTitle &&
@@ -78,11 +60,38 @@ function LoadAbout({ anim }: { anim: Function }) {
       clickTestimonyTitle.addEventListener('click', () => {
         scrollTo(document.getElementById('testimony-title'))
       })
+    }
+    if (current && card && cardChild && cardChildEffect) {
+      cardChild.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1.3)'
+      const handleMouseMove = (e: MouseEvent) => {
+        const offset = card.getBoundingClientRect()
+        const relX = e.pageX - offset.left
+        const relY = e.pageY - offset.top
+        const offsetMinX = card.offsetWidth
+        const offsetMinY = card.offsetHeight
+        const currentX = relX + offsetMinX * -0.5
+        const currentY = relY + offsetMinY * -0.5
+        const newX = currentX / 1000000
+        const newY = currentY / 2000000
+
+        cardChild.style.transform = `matrix3d(1,0,0,${newX * 2},0,1,0,${newY * 2},0,0,1,0,0,0,0,1.2)`
+        cardChildEffect.style.backgroundPositionX = `${(currentX + 100) / 2}%`
+      }
+
+      const handleMouseLeave = () => {
+        cardChild.style.transform =
+          'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1.3)'
+        cardChildEffect.style.backgroundPositionX = '120%'
+      }
+      card.addEventListener('mousemove', handleMouseMove)
+      card.addEventListener('mouseleave', handleMouseLeave)
       return () => {
         current.removeEventListener('scroll', handleScroll)
+        card.removeEventListener('mousemove', handleMouseMove)
+        card.removeEventListener('mouseleave', handleMouseLeave)
       }
     }
-  })
+  }, [])
 
   useEffect(() => {
     if (navigationType === 'POP') {
@@ -100,7 +109,7 @@ function LoadAbout({ anim }: { anim: Function }) {
     <>
       <div
         id="aboutProgressScrollBar"
-        className=" fixed left-5 top-1/2 z-50 hidden h-[60vh] w-[2px] -translate-y-1/2 bg-white bg-opacity-50 text-white sm:block"
+        className=" fixed left-5 top-1/2 z-50 hidden h-[60vh] w-[2px] -translate-y-1/2 bg-white bg-opacity-50 text-white md:block"
       >
         <div
           ref={percentScrollRef}
@@ -108,20 +117,23 @@ function LoadAbout({ anim }: { anim: Function }) {
           id="currentScrollPositionAbout"
         ></div>
         <h3
-          className="absolute left-4 top-0 m-0 min-w-max font-primaryFont text-xxl opacity-50 hover:opacity-100"
+          className="absolute left-4 top-0 m-0 min-w-max font-primaryFont text-xl opacity-50 hover:opacity-100"
           id="click-about-title"
+          ref={clickAboutTitleRef}
         >
           À propos
         </h3>
         <h3
-          className="absolute left-4 top-[50%] m-0 min-w-max font-primaryFont text-xxl opacity-50 hover:opacity-100"
+          className="absolute left-4 top-[50%] m-0 min-w-max font-primaryFont text-xl opacity-50 hover:opacity-100"
           id="click-certification-title"
+          ref={clickCertificationTitleRef}
         >
           Certification
         </h3>
         <h3
-          className="absolute left-4 top-[75%] m-0 min-w-max font-primaryFont text-xxl opacity-50 hover:opacity-100"
+          className="absolute left-4 top-[75%] m-0 min-w-max font-primaryFont text-xl opacity-50 hover:opacity-100"
           id="click-testimony-title"
+          ref={clickTestimonyTitleRef}
         >
           Témoignage
         </h3>
@@ -142,25 +154,16 @@ function LoadAbout({ anim }: { anim: Function }) {
         </div>
         <div className="flex justify-between">
           <h1 className=" text-primary relative m-0 w-max p-[2vh] font-primaryFont text-xxl uppercase sm:p-[4vh]">
-            <Link to={'/'}>AKIRA VALADE</Link>
+            <Link to="/">AKIRA VALADE</Link>
           </h1>
-          <div className="text-primary decoration-none relative flex flex-col items-end p-[2vh] font-secondaryFont text-xl uppercase underline visited:text-white sm:p-[4vh]">
-            <Link className="group w-max" to="/">
-              <svg
-                className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0 duration-150 group-hover:opacity-100"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M 1 23 L 23 1"></path>
-                <path d="M 6 1 h 17 v 17"></path>
-              </svg>
+          <div className="p-[2vh] sm:p-[4vh]">
+            <Button path="/" innerSite={true}>
               Projets
-            </Link>
+            </Button>
           </div>
         </div>
         <div className="relative px-2 text-xl sm:px-[16vw]">
-          <h2 className="relative mb-[8vh] overflow-hidden font-primaryFont text-xxxxxl">
+          <h2 className="relative mb-[8vh] overflow-hidden font-primaryFont text-xxxxl">
             <span className="relative inline-block" id="about-title">
               À propos
             </span>
@@ -390,19 +393,25 @@ function LoadAbout({ anim }: { anim: Function }) {
             </ul>
           </section>
           <section className="w-full px-[4vw] sm:px-0" id="opquast-section">
-            <div className="mb-10 flex flex-col sm:flex-row">
+            <div className="mb-10 flex flex-col md:flex-row">
               <h2
-                className="m-0 w-full self-center text-center font-primaryFont text-xxxl sm:mb-20 sm:text-left sm:text-xxxxl"
+                className="m-0 w-full self-center text-left font-primaryFont text-xxxl sm:mb-20 sm:text-xxxl"
                 id="certification-title"
               >
                 Certification
               </h2>
-              <div className="min-h-[20vh] w-full duration-75 " id="cardParent">
+              <div
+                className="min-h-[20vh] w-full duration-75 "
+                id="cardParent"
+                ref={cardRef}
+              >
                 <div
-                  className="duration relative aspect-[12/9] scale-75 rounded-3xl border-4 border-solid border-black bg-[url('./opquast-logo.svg')] bg-contain bg-center bg-no-repeat duration-75"
+                  ref={cardChildRef}
+                  className="duration relative aspect-[12/9] scale-75 rounded-3xl border-4 border-solid border-black bg-[url('/opquast-logo.svg')] bg-contain bg-center bg-no-repeat duration-75"
                   id="card"
                 >
                   <div
+                    ref={cardChildEffectRef}
                     className="absolute h-full w-full rounded-3xl"
                     id="cardEffect"
                   ></div>
@@ -439,15 +448,15 @@ function LoadAbout({ anim }: { anim: Function }) {
               </ul>
             </div>
           </section>
-          <section className="body-font mb-[16vw] w-full px-[4vw] text-white sm:px-0">
-            <div className="container mx-auto px-5 py-24">
+          <section className="body-font mb-[16vw] w-full px-[4vw] pt-[10vh] text-white sm:px-0">
+            <h2
+              className=" text-left font-primaryFont text-xxxl"
+              id="testimony-title"
+            >
+              Témoignage
+            </h2>
+            <div className="container mx-auto w-full items-center justify-center gap-10 px-5 align-middle  md:flex">
               <div className="mx-auto w-full text-center">
-                <h2
-                  className="text-left font-primaryFont text-xxxxl"
-                  id="testimony-title"
-                >
-                  Témoignage
-                </h2>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -474,24 +483,35 @@ function LoadAbout({ anim }: { anim: Function }) {
                   Facilitateur_Fabmanager FacLab®
                 </p>
               </div>
+              <div className="mx-auto w-full text-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  className="mb-8 inline-block h-8 w-8 text-white"
+                  viewBox="0 0 975.036 975.036"
+                >
+                  <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+                </svg>
+                <p className="text-md text-[4vw] leading-relaxed sm:text-[3vw]  md:text-[2vw] md:leading-[3vw] lg:text-[1.5vw] lg:leading-[2vw] ">
+                  Que dire d'Akira ? C'est une personne qui n'hésite pas à aider
+                  les autres et à partager ses connaissances. Akira cherche
+                  toujours à apprendre de nouvelles choses, quelque soit le
+                  domaine, il s'y intéresse sincèrement. On peut dire que c'est
+                  une vraie mine de connaissances. Je vous conseille vivement de
+                  travailler avec lui 👀
+                </p>
+                <span className="mb-6 mt-8 inline-block h-1 w-10 rounded bg-white opacity-50"></span>
+                <h2 className="title-font text-sm font-medium tracking-wider text-white">
+                  MANY CLARA
+                </h2>
+                <p className="text-white opacity-50">UX/UI Designer</p>
+              </div>
             </div>
           </section>
-          <div className="flex justify-center">
-            <div className="text-primary decoration-none relative flex flex-col items-end p-[4vh] font-secondaryFont text-xl uppercase underline visited:text-white">
-              <Link className="group w-max" to="/">
-                <svg
-                  className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0 duration-150 group-hover:opacity-100"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  fill="none"
-                >
-                  <path d="M 1 23 L 23 1"></path>
-                  <path d="M 6 1 h 17 v 17"></path>
-                </svg>
-                Voir les projets
-              </Link>
-            </div>
+          <div className="flex justify-center pb-[6vh]">
+            <Button path="/" innerSite={true}>
+              voir les projets
+            </Button>
           </div>
         </div>
         <footer className="body-font bg-black text-gray-400">
