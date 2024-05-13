@@ -4,6 +4,11 @@ import ThumbnailsWrapperComponent from './components/ThumbnailsWrapperComponent'
 import { useNavigationType } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
+const disappear = (
+  event: React.SyntheticEvent<HTMLDivElement, Event>
+): void => {
+  console.log(event, 'load')
+}
 
 function App({
   countData,
@@ -15,6 +20,12 @@ function App({
   const [categorie, setCategorie] = useState('dev')
   const navigationType: string | null = useNavigationType()
   useEffect(() => {
+    gsap.to('#transition', {
+      duration: 0.75,
+      opacity: 0,
+      ease: 'power2',
+      delay: 0.1,
+    })
     if (navigationType === 'POP') {
       gsap.to('#slide-track', {
         duration: 0.75,
@@ -49,6 +60,10 @@ function App({
         projectList={projectList}
       />
       <Outlet />
+      <div
+        className="pointer-events-none absolute inset-0 z-50 select-none bg-black"
+        id="transition"
+      ></div>
     </div>
   )
 }

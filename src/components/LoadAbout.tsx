@@ -11,7 +11,6 @@ function LoadAbout({ anim }: { anim: Function }) {
   const percentScrollRef = useRef<HTMLDivElement>(null)
 
   const handleScroll = () => {
-    console.log('scroll')
     const { current } = aboutRef
 
     if (current && percentScrollRef.current) {
@@ -42,8 +41,6 @@ function LoadAbout({ anim }: { anim: Function }) {
     const clickCertificationTitle = clickCertificationTitleRef.current
     const clickTestimonyTitle = clickTestimonyTitleRef.current
     const { current } = aboutRef
-    console.log(card, cardChild, cardChildEffect)
-    console.log(clickAboutTitle, clickCertificationTitle, clickTestimonyTitle)
     if (
       current &&
       clickAboutTitle &&
