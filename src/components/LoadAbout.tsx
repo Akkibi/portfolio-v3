@@ -144,7 +144,7 @@ function LoadAbout({ anim }: { anim: Function }) {
           <h1 className=" text-primary relative m-0 w-max p-[2vh] font-primaryFont text-xxl uppercase sm:p-[4vh]">
             <Link to={'/'}>AKIRA VALADE</Link>
           </h1>
-          <div className="text-primary decoration-none relative flex flex-col items-end font-secondaryFont text-xl uppercase underline visited:text-white sm:p-[4vh]">
+          <div className="text-primary decoration-none relative flex flex-col items-end p-[2vh] font-secondaryFont text-xl uppercase underline visited:text-white sm:p-[4vh]">
             <Link className="group w-max" to="/">
               <svg
                 className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0 duration-150 group-hover:opacity-100"
@@ -399,7 +399,7 @@ function LoadAbout({ anim }: { anim: Function }) {
               </h2>
               <div className="min-h-[20vh] w-full duration-75 " id="cardParent">
                 <div
-                  className="duration relative aspect-[12/9] scale-75 rounded-3xl border-4 border-solid border-black bg-[url(./opquast-logo.svg)] bg-contain bg-center bg-no-repeat duration-75"
+                  className="duration relative aspect-[12/9] scale-75 rounded-3xl border-4 border-solid border-black bg-[url('./opquast-logo.svg')] bg-contain bg-center bg-no-repeat duration-75"
                   id="card"
                 >
                   <div
@@ -477,13 +477,14 @@ function LoadAbout({ anim }: { anim: Function }) {
             </div>
           </section>
           <div className="flex justify-center">
-            <div className="text-primary decoration-none relative flex flex-col items-end font-secondaryFont text-xl uppercase underline visited:text-white sm:p-[4vh]">
+            <div className="text-primary decoration-none relative flex flex-col items-end p-[4vh] font-secondaryFont text-xl uppercase underline visited:text-white">
               <Link className="group w-max" to="/">
                 <svg
                   className="mr-2 h-[1.5vh] w-[1.5vh] opacity-0 duration-150 group-hover:opacity-100"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth="2"
+                  fill="none"
                 >
                   <path d="M 1 23 L 23 1"></path>
                   <path d="M 6 1 h 17 v 17"></path>
