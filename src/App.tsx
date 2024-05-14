@@ -4,11 +4,6 @@ import ThumbnailsWrapperComponent from './components/ThumbnailsWrapperComponent'
 import { useNavigationType } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
-const disappear = (
-  event: React.SyntheticEvent<HTMLDivElement, Event>
-): void => {
-  console.log(event, 'load')
-}
 
 function App({
   countData,
