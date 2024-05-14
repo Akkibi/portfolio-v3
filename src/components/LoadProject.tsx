@@ -336,18 +336,24 @@ function LoadProject({
           </p>
         </div>
       </div>
-      <picture id={`image_${index}_${projectIndex}`}>
-        <source
-          srcSet={`/assets/${project.name}/${project.webpImages[0]}`}
-          type="image/webp"
-        />
-        <img
-          className="aspect-vidaeo max-h-[200vh] w-full bg-center object-contain"
+      <div className="relative w-full">
+        <div className="bg-primary absolute inset-0 z-0 opacity-10"></div>
+        <picture
+          className=" relative z-20 max-h-[120vh] w-full bg-center object-contain"
           id={`image_${index}_${projectIndex}`}
-          src={`/assets/${project.name}/${project.images[0]}`}
-          alt={`${project.images[index]}`}
-        />
-      </picture>
+        >
+          <source
+            srcSet={`/assets/${project.name}/${project.webpImages[0]}`}
+            type="image/webp"
+          />
+          <img
+            className="relative z-20 max-h-[120vh] w-full bg-center object-contain"
+            id={`image_${index}_${projectIndex}`}
+            src={`/assets/${project.name}/${project.images[0]}`}
+            alt={`${project.images[index]}`}
+          />
+        </picture>
+      </div>
       <div className="px-5 py-20 pb-32 md:px-0">
         <h2
           className="text-primary m-0  mb-10 font-primaryFont text-xxl sm:text-xxxl"
@@ -356,9 +362,10 @@ function LoadProject({
           {project.title}
         </h2>
         <div className="text-primary flex flex-col gap-10 font-secondaryFont md:flex-row ">
-          <div className=" w-full">
-            <h3 className="font-medium">DÉTAILS DU PROJET</h3>
-            {/* <div className="flex place-content-between">
+          {project.list || project.link ? (
+            <div className=" w-full">
+              <h3 className="font-medium">DÉTAILS DU PROJET</h3>
+              {/* <div className="flex place-content-between">
               <p>DATE</p>
               <p>{project.date}</p>
             </div>
@@ -370,41 +377,44 @@ function LoadProject({
             <div className="flex place-content-between">
               <p>SERVICE</p>
             </div> */}
-            {/* list elements from data.list */}
-            {project.list && (
-              <>
-                {Object.entries(project.list).map(([key, value], index) => (
-                  <React.Fragment key={`${key}-${index}`}>
-                    {index !== 0 && (
-                      <hr
-                        key={`${key}-${index}-hr`}
-                        className="border-primary border border-solid"
-                      />
-                    )}
-                    <div
-                      key={`${key}-${index}`}
-                      className="flex place-content-between gap-5"
-                    >
-                      <p className="uppercase">{key}</p>
-                      <p className="text-right">{value}</p>
-                    </div>
-                  </React.Fragment>
-                ))}
-              </>
-            )}
+              {/* list elements from data.list */}
+              {project.list && (
+                <>
+                  {Object.entries(project.list).map(([key, value], index) => (
+                    <React.Fragment key={`${key}-${index}`}>
+                      {index !== 0 && (
+                        <hr
+                          key={`${key}-${index}-hr`}
+                          className="border-primary border border-solid"
+                        />
+                      )}
+                      <div
+                        key={`${key}-${index}`}
+                        className="flex place-content-between gap-5"
+                      >
+                        <p className="uppercase">{key}</p>
+                        <p className="text-right">{value}</p>
+                      </div>
+                    </React.Fragment>
+                  ))}
+                </>
+              )}
 
-            {project.link && (
-              <>
-                <hr className=" border-primary border border-solid" />
-                <div className="flex place-content-between items-center">
-                  <p>LIEN</p>
-                  <Button path={project.link[0]} innerSite={false}>
-                    {project.link[1]}
-                  </Button>
-                </div>
-              </>
-            )}
-          </div>
+              {project.link && (
+                <>
+                  <hr className=" border-primary border border-solid" />
+                  <div className="flex place-content-between items-center">
+                    <p>LIEN</p>
+                    <Button path={project.link[0]} innerSite={false}>
+                      {project.link[1]}
+                    </Button>
+                  </div>
+                </>
+              )}
+            </div>
+          ) : (
+            <></>
+          )}
           <div className="w-full">
             <h3 className=" font-medium">DESCRIPTION</h3>
             <p className=" inline-block">{project.description}</p>
