@@ -385,7 +385,7 @@ const ThumbnailsComponent = ({
   const projectsWithFirstImages = getCategoryWithFirstImages(projectData)
 
   return (
-    <div className="absolute top-1/2 h-[60vh] w-full -translate-y-1/2">
+    <div className="absolute top-1/2 h-[50vh] w-full -translate-y-1/2 sm:h-[60vh]">
       <div
         id="slide-track"
         ref={trackRef}
@@ -397,9 +397,9 @@ const ThumbnailsComponent = ({
               id={`${categoryData.category}`}
               className="track-title relative m-0 h-[16vh] w-[16vh] -rotate-90 p-0"
             >
-              <h2 className=" text-primary absolute bottom-0 right-0 m-0 p-0 text-right font-primaryFont text-xxxl tracking-wider opacity-100 sm:text-xxxxl">
+              <h1 className=" text-primary absolute bottom-0 right-0 m-0 p-0 text-right font-primaryFont text-xxxl tracking-wider opacity-100 sm:text-xxxxl">
                 {categoryData.category.toUpperCase()}
-              </h2>
+              </h1>
             </div>
             <div className="relative flex flex-row gap-4">
               {categoryData.firstImages.map(
@@ -456,13 +456,13 @@ const ThumbnailsComponent = ({
         {projectsWithFirstImages.map((categoryData, index) => (
           <div key={index} className="allTitles" id={`titles_${index}`}>
             {categoryData.firstImages.map((data: any, projectIndex: number) => (
-              <h1
+              <h2
                 key={projectIndex}
                 id={`title_${data.name}`}
-                className="title text-primary secondary-shadow absolute left-0 top-0 my-0 origin-left px-2 font-primaryFont text-xxxl md:px-[5vw] md:text-xxxxxl"
+                className="title text-primary secondary-shadow absolute left-0 top-0 my-0 origin-left px-2 font-primaryFont text-xxl md:px-[5vw] md:text-xxxxl"
               >
                 {data.title.toUpperCase()}
-              </h1>
+              </h2>
             ))}
           </div>
         ))}

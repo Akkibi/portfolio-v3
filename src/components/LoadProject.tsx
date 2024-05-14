@@ -349,15 +349,15 @@ function LoadProject({
         />
       </picture>
       <div className="px-5 py-20 pb-32 md:px-0">
-        <h1
+        <h2
           className="text-primary m-0  mb-10 font-primaryFont text-xxl sm:text-xxxl"
           id="projectTitle"
         >
           {project.title}
-        </h1>
+        </h2>
         <div className="text-primary flex flex-col gap-10 font-secondaryFont md:flex-row ">
           <div className=" w-full">
-            <h2>DÉTAILS DU PROJET</h2>
+            <h3 className="font-medium">DÉTAILS DU PROJET</h3>
             {/* <div className="flex place-content-between">
               <p>DATE</p>
               <p>{project.date}</p>
@@ -406,7 +406,7 @@ function LoadProject({
             )}
           </div>
           <div className="w-full">
-            <h2>DESCRIPTION</h2>
+            <h3 className=" font-medium">DESCRIPTION</h3>
             <p className=" inline-block">{project.description}</p>
           </div>
         </div>
@@ -425,7 +425,7 @@ function LoadProject({
           </div>
         )
       })}
-      <div className="my-2 grid grid-cols-2 gap-2">
+      <div className=" m-2  grid grid-cols-2 gap-2 sm:mx-0">
         {project.images?.map((image, index) => {
           if (index > 0) {
             return (
@@ -458,8 +458,8 @@ function LoadProject({
                   strokeWidth="2"
                   fill="none"
                 >
-                  <path d="M 6 1 h -5 v 21 h 21 v -6"></path>
-                  <path d="M 5 18 L 22 1"></path>
+                  <path d="M 6 1 h -5 v 21 h 21 v -5"></path>
+                  <path d="M 6 18 L 22 1"></path>
                   <path d="M 10 1 h 12 v 12"></path>
                 </svg>
               </div>
