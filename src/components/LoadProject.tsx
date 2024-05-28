@@ -139,70 +139,44 @@ function LoadProject({
       scrollableRef.current.dataset.touchDownAtY = clientY.toString()
     }
   }
+
   const handleWindowOnUp = (e: TouchEvent | MouseEvent) => {
+    console.log('should only be called once')
     const clientX = 'touches' in e ? e.changedTouches[0].clientX : e.clientX
     const clientY = 'touches' in e ? e.changedTouches[0].clientY : e.clientY
     if (
       !isAtTop ||
-      !scrollableRef.current ||
-      !scrollableRef.current.dataset.touchDownAtY ||
-      !scrollableRef.current.dataset.touchDownAtX
+      !scrollableRef.current?.dataset.touchDownAtX ||
+      !scrollableRef.current?.dataset.touchDownAtY
     )
       return
-    // navigate to the right
+
+    const touchDownAtX = parseFloat(scrollableRef.current.dataset.touchDownAtX)
+    const touchDownAtY = parseFloat(scrollableRef.current.dataset.touchDownAtY)
+
+    const deltaY = Math.abs(clientY - touchDownAtY)
+    const deltaX = Math.abs(clientX - touchDownAtX)
     if (
-      Math.abs(
-        clientY - parseFloat(scrollableRef.current.dataset.touchDownAtY)
-      ) <
-        Math.abs(
-          clientX - parseFloat(scrollableRef.current.dataset.touchDownAtX)
-        ) &&
-      clientX < parseFloat(scrollableRef.current.dataset.touchDownAtX) &&
+      deltaY < deltaX &&
+      clientX < touchDownAtX &&
       projectIndex < projectList.length
     ) {
       navigate('/' + projectList[projectIndex])
       return
     }
-    // navigate to the left
-    if (
-      Math.abs(
-        clientY - parseFloat(scrollableRef.current.dataset.touchDownAtY)
-      ) <
-        Math.abs(
-          clientX - parseFloat(scrollableRef.current.dataset.touchDownAtX)
-        ) &&
-      clientX > parseFloat(scrollableRef.current.dataset.touchDownAtX) &&
-      projectIndex > 1
-    ) {
+
+    if (deltaY < deltaX && clientX > touchDownAtX && projectIndex > 1) {
       navigate('/' + projectList[projectIndex - 2])
       return
     }
-    // navigate to the top
-    if (
-      Math.abs(
-        clientY - parseFloat(scrollableRef.current.dataset.touchDownAtY)
-      ) >
-        Math.abs(
-          clientX - parseFloat(scrollableRef.current.dataset.touchDownAtX)
-        ) &&
-      clientY > parseFloat(scrollableRef.current.dataset.touchDownAtY) &&
-      isAtTop
-    ) {
+
+    if (deltaY > deltaX && clientY > touchDownAtY && isAtTop) {
       setIsAtTop(false)
       navigate('/')
       return
     }
-    // navigate to the main menu
-    if (
-      Math.abs(
-        clientY - parseFloat(scrollableRef.current.dataset.touchDownAtY)
-      ) >
-        Math.abs(
-          clientX - parseFloat(scrollableRef.current.dataset.touchDownAtX)
-        ) &&
-      clientY < parseFloat(scrollableRef.current.dataset.touchDownAtY) &&
-      isAtTop
-    ) {
+
+    if (deltaY > deltaX && clientY < touchDownAtY && isAtTop) {
       setIsAtTop(false)
       return
     }
@@ -266,7 +240,9 @@ function LoadProject({
         scrollableRef.current.removeEventListener('scroll', handleScroll)
         window.removeEventListener('wheel', handleWindowScroll)
         window.removeEventListener('touchstart', handleWindowOnDown)
+        window.removeEventListener('mousedown', handleWindowOnDown)
         window.removeEventListener('touchend', handleWindowOnUp)
+        window.removeEventListener('mouseup', handleWindowOnUp)
         document
           .getElementById('scrollIcon')!
           .removeEventListener('click', () => {
@@ -284,7 +260,7 @@ function LoadProject({
           })
       }
     }
-  }, [navigate, isAtTop])
+  })
 
   return (
     <div
@@ -372,7 +348,7 @@ function LoadProject({
                       {index !== 0 && (
                         <hr
                           key={`${key}-${index}-hr`}
-                          className="border-primary border border-solid"
+                          className="primary-border border border-solid"
                         />
                       )}
                       <div
@@ -389,7 +365,7 @@ function LoadProject({
 
               {project.link && (
                 <>
-                  <hr className=" border-primary border border-solid" />
+                  <hr className=" primary-border border border-solid" />
                   <div className="flex place-content-between items-center">
                     <p>LIEN</p>
                     <Button path={project.link[0]} innerSite={false}>

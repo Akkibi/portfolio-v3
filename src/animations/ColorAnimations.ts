@@ -5,9 +5,10 @@ export const ColorsRender = (
   speed: number
 ): void => {
   var tlColors = gsap.timeline()
+  const speedMultiplier = 1.5
   tlColors
     .to('.text-primary', {
-      duration: speed * 1.5,
+      duration: speed * speedMultiplier,
       color: primary,
       ease: 'expo.out',
       overwrite: 'auto',
@@ -16,7 +17,7 @@ export const ColorsRender = (
     .to(
       '.bg-primary',
       {
-        duration: speed * 1.5,
+        duration: speed * speedMultiplier,
         backgroundColor: primary,
         ease: 'expo.out',
         overwrite: 'auto',
@@ -26,7 +27,7 @@ export const ColorsRender = (
     .to(
       '.text-secondary',
       {
-        duration: speed * 1.5,
+        duration: speed * speedMultiplier,
         color: secondary,
         ease: 'expo.out',
         overwrite: 'auto',
@@ -36,7 +37,7 @@ export const ColorsRender = (
     .to(
       '.bg-secondary',
       {
-        duration: speed * 1.5,
+        duration: speed * speedMultiplier,
         backgroundColor: secondary,
         ease: 'expo.out',
         overwrite: 'auto',
@@ -46,8 +47,18 @@ export const ColorsRender = (
     .to(
       '.secondary-shadow',
       {
-        duration: speed * 1.5,
+        duration: speed * speedMultiplier,
         textShadow: `0.5vh 0.5vh 0px ${secondary}, -0.5vh -0.5vh 0px ${secondary}, 0.5vh -0.5vh 0px ${secondary}, -0.5vh 0.5vh 0px ${secondary}`,
+        ease: 'expo.out',
+        overwrite: 'auto',
+      },
+      '<'
+    )
+    .to(
+      '.primary-border',
+      {
+        duration: speed * speedMultiplier,
+        borderColor: primary,
         ease: 'expo.out',
         overwrite: 'auto',
       },
