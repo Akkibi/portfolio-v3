@@ -17,7 +17,7 @@ function LoadAbout({ anim }: { anim: Function }) {
       const scrollTop = current.scrollTop
       const scrollHeight = current.scrollHeight
       const clientHeight = current.clientHeight
-      const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 90
+      const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 80
       percentScrollRef.current.style.top = `${scrollPercentage}%`
     }
   }
@@ -106,11 +106,11 @@ function LoadAbout({ anim }: { anim: Function }) {
     <>
       <div
         id="aboutProgressScrollBar"
-        className=" fixed left-5 top-1/2 z-50 hidden h-[60vh] w-[2px] -translate-y-1/2 bg-white bg-opacity-50 text-white md:block"
+        className=" fixed left-5 top-1/2 z-50 hidden h-[60vh] w-[1.5px] -translate-y-1/2 bg-white bg-opacity-50 text-white md:block"
       >
         <div
           ref={percentScrollRef}
-          className=" absolute right-[2px] h-[10%] w-[1vh] bg-white opacity-50"
+          className=" absolute right-[1.5px] h-[20%] w-[1vh] bg-white opacity-25"
           id="currentScrollPositionAbout"
         ></div>
         <h3
@@ -121,14 +121,14 @@ function LoadAbout({ anim }: { anim: Function }) {
           À propos
         </h3>
         <h3
-          className="absolute left-4 top-[40%] m-0 min-w-max font-primaryFont text-xl opacity-50 hover:opacity-100"
+          className="absolute left-4 top-[37%] m-0 min-w-max font-primaryFont text-xl opacity-50 hover:opacity-100"
           id="click-certification-title"
           ref={clickCertificationTitleRef}
         >
           Certification
         </h3>
         <h3
-          className="absolute left-4 top-[65%] m-0 min-w-max font-primaryFont text-xl opacity-50 hover:opacity-100"
+          className="absolute left-4 top-[57%] m-0 min-w-max font-primaryFont text-xl opacity-50 hover:opacity-100"
           id="click-testimony-title"
           ref={clickTestimonyTitleRef}
         >
@@ -375,53 +375,53 @@ function LoadAbout({ anim }: { anim: Function }) {
             </Button>
           </div>
           <ul className=" my-20  flex w-full list-none flex-row  flex-wrap justify-center gap-2 p-0 text-black sm:flex-nowrap">
-            <li className="group relative aspect-square w-[30%] overflow-hidden rounded-full border-2 border-solid border-white bg-white sm:w-[20%]">
+            <li className="group relative aspect-square w-[30%] overflow-hidden rounded-full border-[1.5px] border-solid border-white bg-white sm:w-[20%]">
               <a
                 href="cv-11-05-2024_compressed.pdf"
                 id="CV"
                 className=" absolute h-full w-full"
               >
-                <div className="ease-inout bg-fit absolute left-1/2 top-1/2 m-0 h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 bg-[url(./cv.svg)] bg-no-repeat duration-500 group-hover:scale-125"></div>
+                <div className="ease-inout bg-fit absolute left-1/2 top-1/2 m-0 h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 bg-[url(/cv.svg)] bg-no-repeat duration-500 group-hover:scale-125"></div>
                 <div className=" ease-inout absolute top-0 h-full w-full bg-white opacity-95 mix-blend-difference duration-500 group-hover:h-0"></div>
               </a>
             </li>
-            <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-2  border-solid border-white bg-white sm:w-[20%]">
+            <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-[1.5px]  border-solid border-white bg-white sm:w-[20%]">
               <a
                 href="https://www.instagram.com/akkibi_/"
                 id="Instagram"
                 className=" absolute h-full w-full"
               >
-                <div className="ease-inout bg-fit absolute left-1/2 top-1/2 m-0 h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 bg-[url(./instagram.svg)] bg-no-repeat duration-500 group-hover:scale-125"></div>
+                <div className="ease-inout bg-fit absolute left-1/2 top-1/2 m-0 h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 bg-[url(/instagram.svg)] bg-no-repeat duration-500 group-hover:scale-125"></div>
                 <div className=" ease-inout absolute top-0 h-full w-full bg-white opacity-95 mix-blend-difference duration-500 group-hover:h-0"></div>
               </a>
             </li>
-            <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-2  border-solid border-white bg-white sm:w-[20%]">
+            <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-[1.5px]  border-solid border-white bg-white sm:w-[20%]">
               <a
                 href="https://github.com/Akkibi"
                 id="Github"
                 className=" absolute h-full w-full"
               >
-                <div className="scale ease-inout bg-fit absolute left-1/2 top-1/2 m-0 h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 bg-[url(./github.svg)] bg-no-repeat duration-500 group-hover:scale-125"></div>
+                <div className="scale ease-inout bg-fit absolute left-1/2 top-1/2 m-0 h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 bg-[url(/github.svg)] bg-no-repeat duration-500 group-hover:scale-125"></div>
                 <div className=" ease-inout absolute top-0 h-full w-full bg-white opacity-95 mix-blend-difference duration-500 group-hover:h-0"></div>
               </a>
             </li>
-            <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-2  border-solid border-white bg-white sm:w-[20%]">
+            <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-[1.5px]  border-solid border-white bg-white sm:w-[20%]">
               <a
                 href="mailto:akiravalade@gmail.com"
                 id="Mail"
                 className=" absolute h-full  w-full"
               >
-                <div className="ease-inout bg-fit absolute left-1/2 top-1/2 m-0 h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 bg-[url(./mail.svg)] bg-no-repeat duration-500 group-hover:scale-125"></div>
+                <div className="ease-inout bg-fit absolute left-1/2 top-1/2 m-0 h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 bg-[url(/mail.svg)] bg-no-repeat duration-500 group-hover:scale-125"></div>
                 <div className=" ease-inout absolute top-0 h-full w-full bg-white opacity-95 mix-blend-difference duration-500 group-hover:h-0"></div>
               </a>
             </li>
-            <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-2  border-solid border-white bg-white sm:w-[20%]">
+            <li className="group relative aspect-square w-[30%]  overflow-hidden rounded-full border-[1.5px]  border-solid border-white bg-white sm:w-[20%]">
               <a
                 href="https://www.linkedin.com/in/akira-valade-60956b200/"
                 id="Linkedin"
                 className=" absolute h-full w-full"
               >
-                <div className="ease-inout bg-fit absolute left-1/2 top-1/2 m-0 h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 bg-[url(./linkedin.svg)] bg-no-repeat duration-500 group-hover:scale-125"></div>
+                <div className="ease-inout bg-fit absolute left-1/2 top-1/2 m-0 h-[25%] w-[25%] -translate-x-1/2 -translate-y-1/2 bg-[url(/linkedin.svg)] bg-no-repeat duration-500 group-hover:scale-125"></div>
                 <div className=" ease-inout absolute top-0 h-full w-full bg-white opacity-95 mix-blend-difference duration-500 group-hover:h-0"></div>
               </a>
             </li>
