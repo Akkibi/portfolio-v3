@@ -3,6 +3,7 @@ import projectData from '../data.json'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { useNavigate } from 'react-router-dom'
+import { Project } from '../types'
 
 const ThumbnailsComponent = ({
   countData,
@@ -23,6 +24,23 @@ const ThumbnailsComponent = ({
     if (trackRef.current) {
       trackRef.current.dataset.mouseDownAt = clientX.toString()
     }
+  }
+
+  const calculatePercentage = (quantity: number) => {
+    if (!trackRef.current) {
+      return 0
+    }
+
+    const title: HTMLElement | null = document.querySelector('.track-title')
+    if (!title) {
+      return 0
+    }
+
+    const titleWidth = title.getBoundingClientRect().width
+    const trackWidth = trackRef.current.getBoundingClientRect().width
+    const min = ((titleWidth + 16 + titleWidth / 2) / trackWidth) * -100
+    const max = ((trackWidth - titleWidth / 2) / trackWidth) * -100
+    return Math.max(Math.min(quantity, min), max)
   }
 
   const handleOnUp = () => {
@@ -49,18 +67,6 @@ const ThumbnailsComponent = ({
       title &&
       image
     ) {
-      const min =
-        ((title.getBoundingClientRect().width +
-          16 +
-          image.getBoundingClientRect().width / 2) /
-          trackRef.current.getBoundingClientRect().width) *
-        -100
-
-      const max =
-        ((trackRef.current.getBoundingClientRect().width -
-          image.getBoundingClientRect().width / 2) /
-          trackRef.current.getBoundingClientRect().width) *
-        -100
       const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
       const mouseDelta =
         parseFloat(trackRef.current.dataset.mouseDownAt) - clientX
@@ -68,9 +74,9 @@ const ThumbnailsComponent = ({
       const percentage = (mouseDelta / maxDelta) * -100 * scrollSpeed
       const nextPercentageUnconstrained =
         parseFloat(trackRef.current.dataset.prevValue) + percentage
-      const nextPercentage = Math.max(
-        Math.min(nextPercentageUnconstrained, min),
-        max
+      // next percentage needs to be number
+      const nextPercentage: number = calculatePercentage(
+        nextPercentageUnconstrained
       )
 
       trackRef.current.dataset.percentage = nextPercentage.toString()
@@ -91,26 +97,12 @@ const ThumbnailsComponent = ({
       title &&
       image
     ) {
-      const min =
-        ((title.getBoundingClientRect().width +
-          16 +
-          image.getBoundingClientRect().width / 2) /
-          trackRef.current.getBoundingClientRect().width) *
-        -100
-
-      const max =
-        ((trackRef.current.getBoundingClientRect().width -
-          image.getBoundingClientRect().width / 2) /
-          trackRef.current.getBoundingClientRect().width) *
-        -100
-
-      const percentage =
+      const nextPercentageUnconstrained =
         parseFloat(trackRef.current.dataset.percentage) +
         (e.deltaY / 15) * scrollSpeed
-      const nextPercentageUnconstrained = percentage
-      const nextPercentage = Math.max(
-        Math.min(nextPercentageUnconstrained, min),
-        max
+
+      const nextPercentage: number = calculatePercentage(
+        nextPercentageUnconstrained
       )
       trackRef.current.dataset.prevValue = nextPercentage.toString()
       makeSliderAnimation(trackRef.current, nextPercentage, 0.4)
@@ -128,25 +120,11 @@ const ThumbnailsComponent = ({
       title &&
       image
     ) {
-      const min =
-        ((title.getBoundingClientRect().width +
-          16 +
-          image.getBoundingClientRect().width / 2) /
-          trackRef.current.getBoundingClientRect().width) *
-        -100
-
-      const max =
-        ((trackRef.current.getBoundingClientRect().width -
-          image.getBoundingClientRect().width / 2) /
-          trackRef.current.getBoundingClientRect().width) *
-        -100
-
-      const percentage =
+      const nextPercentageUnconstrained =
         parseFloat(trackRef.current.dataset.percentage) + quantity / 15
-      const nextPercentageUnconstrained = percentage
-      const nextPercentage = Math.max(
-        Math.min(nextPercentageUnconstrained, min),
-        max
+
+      const nextPercentage: number = calculatePercentage(
+        nextPercentageUnconstrained
       )
       trackRef.current.dataset.prevValue = trackRef.current.dataset.percentage
       makeSliderAnimation(trackRef.current, nextPercentage, 0.4)
@@ -359,7 +337,7 @@ const ThumbnailsComponent = ({
     }
   }, [navigate])
 
-  const getFirstImageLink = (project: any, categoryName: string) => {
+  const getFirstImageLink = (project: Project, categoryName: string) => {
     const [projectName] = project.name.split('.')
     return {
       section: categoryName,
@@ -368,13 +346,14 @@ const ThumbnailsComponent = ({
       image: `/assets/${projectName}/thumbnail.png`,
       webpImage: `/assets/${projectName}/thumbnail.webp`,
       smallImage: `/assets/${projectName}/thumbnail.opti.png`,
+      verySmallImage: `/assets/${projectName}/500-thumbnail.opti.png`,
     }
   }
   const getCategoryWithFirstImages = (data: any) => {
     const categoriesWithFirstImages = []
     for (const category in data) {
-      const projects = data[category]
-      const firstImages = projects.map((project: any) =>
+      const projects: Array<Project> = data[category]
+      const firstImages = projects.map((project: Project) =>
         getFirstImageLink(project, category)
       )
       categoriesWithFirstImages.push({ category, firstImages })
@@ -409,29 +388,11 @@ const ThumbnailsComponent = ({
                     id={`track-image-${index}-${projectIndex}`}
                     className="track-image relative block h-[40vh] w-[15vh] overflow-hidden border-0 p-0 hover:opacity-100 hover:grayscale-0 sm:h-[50vh]"
                   >
-                    {/* <picture id={`imageBanner_${index}_${projectIndex}`}>
-                      <source
-                        srcSet={data.smallImage}
-                        width="500"
-                        type="image/png"
-                      />
-                      <source
-                        srcSet={data.webpImage}
-                        width="2500"
-                        type="image/webp"
-                      />
-                      <img
-                        className="thumbnail absolute top-0 h-full w-full object-cover object-[right_center] duration-200 ease-out"
-                        id={`imageBanner_${index}_${projectIndex}`}
-                        src={data.image}
-                        alt={`Banner_${index}_${projectIndex}`}
-                      />
-                    </picture> */}
                     <div
                       className="thumbnail absolute top-0 h-full w-full bg-cover bg-[right_center]"
                       id={`imageBanner_${index}_${projectIndex}`}
                       style={{
-                        backgroundImage: `url(${data.image}), url(${data.smallImage})`,
+                        backgroundImage: `url(${data.image}), url(${data.smallImage}), url(${data.verySmallImage})`,
                       }}
                     ></div>
                     <Link
@@ -454,7 +415,11 @@ const ThumbnailsComponent = ({
         id="titles"
       >
         {projectsWithFirstImages.map((categoryData, index) => (
-          <div key={index} className="allTitles" id={`titles_${index}`}>
+          <div
+            key={index}
+            className="allTitles relative top-0 h-0 w-full"
+            id={`titles_${index}`}
+          >
             {categoryData.firstImages.map((data: any, projectIndex: number) => (
               <h2
                 key={projectIndex}

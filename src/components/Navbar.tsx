@@ -40,8 +40,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({
             id="dev"
             className={
               categorie === 'dev'
-                ? ' bg-primary max-w-fit px-4 py-2 '
-                : 'bg-secondary max-w-fit px-4 py-2 '
+                ? ' bg-primary h-fit max-w-fit px-4 py-2'
+                : 'bg-secondary h-fit max-w-fit px-4 py-2'
             }
           >
             <p
@@ -62,8 +62,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({
             id="2d"
             className={
               categorie === '2d'
-                ? 'bg-primary max-w-fit px-4 py-2'
-                : 'bg-secondary max-w-fit px-4 py-2'
+                ? 'bg-primary h-fit max-w-fit px-4 py-2'
+                : 'bg-secondary h-fit max-w-fit px-4 py-2'
             }
           >
             <p
@@ -84,8 +84,8 @@ const Navbar: FunctionComponent<NavbarProps> = ({
             id="3d"
             className={
               categorie === '3d'
-                ? 'bg-primary max-w-fit px-4 py-2'
-                : 'bg-secondary max-w-fit px-4 py-2'
+                ? 'bg-primary h-fit max-w-fit px-4 py-2'
+                : 'bg-secondary h-fit max-w-fit px-4 py-2'
             }
           >
             <p

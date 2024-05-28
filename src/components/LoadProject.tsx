@@ -365,19 +365,6 @@ function LoadProject({
           {project.list || project.link ? (
             <div className=" w-full">
               <h3 className="font-medium">DÉTAILS DU PROJET</h3>
-              {/* <div className="flex place-content-between">
-              <p>DATE</p>
-              <p>{project.date}</p>
-            </div>
-            <hr className=" border-primary border-2" />
-            <div className="flex place-content-between">
-              <p>CLIENT</p>
-            </div>
-            <hr className=" border-primary border-2" />
-            <div className="flex place-content-between">
-              <p>SERVICE</p>
-            </div> */}
-              {/* list elements from data.list */}
               {project.list && (
                 <>
                   {Object.entries(project.list).map(([key, value], index) => (
@@ -469,7 +456,7 @@ function LoadProject({
                   fill="none"
                 >
                   <path d="M 6 1 h -5 v 21 h 21 v -5"></path>
-                  <path d="M 6 18 L 22 1"></path>
+                  <path d="M 7 16 L 22 1"></path>
                   <path d="M 10 1 h 12 v 12"></path>
                 </svg>
               </div>

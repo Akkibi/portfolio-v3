@@ -3,7 +3,10 @@
     {
       "name": "african-proud",
       "title": "Création site African Proud",
-      "description": "Ce projet a été réalisé dans le cadre d'un stage de deux mois dans l'entreprise PAY ME NOW Production. En temp que développeur full-stack, ma mission à été de créer la plateforme du concours avec une gestion de compte public et artistes, toutes les informations concernant l'evenement ainsi que des pages de post de video, plannings, et news autour de celui-ci. Le site à entièrement été créé par mes soins en Next.js, TailwindCSS, TypeScript et Figma pour le front-end et Prisma et PosgresSQL pour le back-end sur OVH. Le site a été versioné sur GitHub et réalisé en moins d'un mois et demis.",
+      "description": [
+        "Ce projet a été réalisé dans le cadre d'un stage de deux mois dans l'entreprise PAY ME NOW Production. En temp que développeur full-stack, ma mission à été de créer la plateforme du concours avec une gestion de compte public et artistes, toutes les informations concernant l'evenement ainsi que des pages de post de video, plannings, et news autour de celui-ci.",
+        "Le site à entièrement été créé par mes soins en Next.js, TailwindCSS, TypeScript et Figma pour le front-end et Prisma et PosgresSQL pour le back-end sur OVH. Le site a été versioné sur GitHub et réalisé en moins d'un mois et demis."
+      ],
       "images": [
         "homepage.png",
         "register.png",
@@ -33,7 +36,10 @@
     {
       "name": "SLAPPING",
       "title": "Redesign Media Slapping",
-      "description": "Ce projet a été réalisé dans le cadre d'un stage de deux mois dans l'entreprise PAY ME NOW Production. En temp que creatif developpeur, ma mission était de reprendre le développement du site pour l'adapter à la direction artistique déjà mise en place. La dernière image est l'avant et les autres, l'après le redesign. Le site serà en ligne fin 2023",
+      "description": [
+        "Ce projet a été réalisé dans le cadre d'un stage de deux mois dans l'entreprise PAY ME NOW Production.",
+        "En temp que creatif developpeur, ma mission était de reprendre le développement du site pour l'adapter à la direction artistique déjà mise en place. La dernière image est l'avant et les autres, l'après le redesign. Le site serà en ligne fin 2023"
+      ],
       "images": [
         "after.png",
         "homepage.png",
@@ -82,7 +88,10 @@
     {
       "name": "nuit-de-linfo",
       "title": "La Nuit de L'info",
-      "description": "Ce site a été créé lors de l'évènement de la Nuit De l'Info, concours qui a lieu chaque année dans lequel on doit faire un site web en 24h dans un thème donné. Le thème de cette année était les MST. Ce site à été fait en Javascript, HTML, en utilisant Node.js et Git ainsi que Figma pour les designs.",
+      "description": [
+        "Ce site a été créé lors de l'évènement de la Nuit De l'Info, concours qui a lieu chaque année dans lequel on doit faire un site web en 24h dans un thème donné.",
+        "Le thème de cette année était les MST. Ce site à été fait en Javascript, HTML, en utilisant Node.js et Git ainsi que Figma pour les designs."
+      ],
       "images": [
         "pagedacceuil.png",
         "acceuil.png",
@@ -119,7 +128,10 @@
     {
       "name": "portrait-chinois",
       "title": "Portrait Chinois",
-      "description": "Ce projet me représente (de 2021) avec 8 éléments. Ce site a été créé dans le but d'en apprendre plus sur le code en JavaScript. C'est aussi le premier site avec lequel j'ai utilisé Git et Github.",
+      "description": [
+        "Ce projet me représente (de 2021) avec 8 éléments.",
+        "Ce site a été créé dans le but d'en apprendre plus sur le code en JavaScript. C'est aussi le premier site avec lequel j'ai utilisé Git et Github."
+      ],
       "images": [
         "ecran.png",
         "Frame3.png",
@@ -150,7 +162,10 @@
     {
       "name": "dataviz",
       "title": "Dataviz",
-      "description": "Ce projet de groupe m'a appris à utiliser d3js pour faire de la visualisation de données. Le but de ce site est de comparer les courbes de croissance des utilisateurs de Netflix, des entrées de cinéma et celle du Covid pour y voir une corellation.",
+      "description": [
+        "Ce projet de groupe m'a appris à utiliser d3js pour faire de la visualisation de données.",
+        "Le but de ce site est de comparer les courbes de croissance des utilisateurs de Netflix, des entrées de cinéma et celle du Covid pour y voir une corellation."
+      ],
       "images": [
         "Maquette-Resp-desktop-version-exportable-lisible-2.png",
         "Maquette-Resp-desktop-version-exportable-lisible.png",
@@ -351,7 +366,7 @@
         "https://drive.google.com/file/d/1ZnBO2kTXkFXPy29Gp7WRxDrfUxAalJ6g/view?usp=sharing",
         "Voir l'analyse."
       ],
-      "colors": ["#ff6e14", "#ffffff"]
+      "colors": ["#4183D7", "#F6F9FD"]
     },
     {
       "name": "background",
