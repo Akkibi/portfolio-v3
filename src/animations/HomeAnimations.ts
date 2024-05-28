@@ -5,6 +5,7 @@ export const HomeComponent = (): void => {
     ease: 'expo.out',
     width: window.innerHeight * 0.15,
     opacity: 0.75,
+    overwrite: true,
     // '-webkit-filter': 'grayscale(100%)',
     // filter: 'grayscale(100%)',
   })
@@ -19,10 +20,11 @@ export const HomeComponent = (): void => {
   })
   gsap.to('.title', {
     duration: 0.5,
-    ease: 'expo.out.in',
+    ease: 'expo.in',
     rotation: 0,
     x: 0,
     y: '-200%',
+    overwrite: true,
   })
   gsap.to('#titles', {
     duration: 0.5,

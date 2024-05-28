@@ -2,7 +2,7 @@ import { useNavigationType } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
 import { ColorsRender } from '../animations/ColorAnimations'
 import { Link } from 'react-router-dom'
-import Button from './button'
+import Button from './Button'
 
 function LoadAbout({ anim }: { anim: Function }) {
   const navigationType: string | null = useNavigationType()
