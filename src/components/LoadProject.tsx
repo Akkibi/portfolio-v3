@@ -142,7 +142,6 @@ function LoadProject({
   }
 
   const handleWindowOnUp = (e: TouchEvent | MouseEvent) => {
-    console.log('should only be called once')
     const clientX = 'touches' in e ? e.changedTouches[0].clientX : e.clientX
     const clientY = 'touches' in e ? e.changedTouches[0].clientY : e.clientY
     if (

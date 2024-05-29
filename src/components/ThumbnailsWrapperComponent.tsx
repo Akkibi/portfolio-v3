@@ -91,15 +91,22 @@ const ThumbnailsComponent = ({
     const image: HTMLElement | null = document.querySelector('.track-image')
     if (
       trackRef.current &&
-      e.deltaY &&
       trackRef.current.dataset.percentage &&
       window.location.pathname === '/' &&
       title &&
       image
     ) {
+      let delta = 0
+      if (e.deltaX !== 0) {
+        delta = -e.deltaX
+      }
+      if (e.deltaY !== 0) {
+        delta = e.deltaY
+      }
+
       const nextPercentageUnconstrained =
         parseFloat(trackRef.current.dataset.percentage) +
-        (e.deltaY / 15) * scrollSpeed
+        (delta / 15) * scrollSpeed
 
       const nextPercentage: number = calculatePercentage(
         nextPercentageUnconstrained
