@@ -32,6 +32,7 @@ const alignImage = (projectIndex: number, index: number, x: MediaQueryList) => {
       selectedWidth
 
     const offsetPercent = (offset / trackWidth) * -100
+    track.dataset.percentage = offsetPercent.toString()
     gsap.to(track, {
       duration: 0.75,
       x: `${offsetPercent}%`,

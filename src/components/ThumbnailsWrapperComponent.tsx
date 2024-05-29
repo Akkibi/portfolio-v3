@@ -19,124 +19,24 @@ const ThumbnailsComponent = ({
   //onclick&drag
   const scrollSpeed = 0.5
   const trackRef = useRef<HTMLDivElement>(null)
-  const handleOnDown = (e: MouseEvent | TouchEvent) => {
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
-    if (trackRef.current) {
-      trackRef.current.dataset.mouseDownAt = clientX.toString()
+
+  const checkCurrentCategory = (percent: number) => {
+    switch (true) {
+      case percent <= categoryPercents.Artiste3D && categorie !== 'Artiste3D':
+        setCategorie('3d')
+        break
+      case percent <= categoryPercents.Artiste2D && categorie !== 'Artiste2D':
+        setCategorie('2d')
+        break
+      case percent <= categoryPercents.Developpeur &&
+        categorie !== 'Developpeur':
+        setCategorie('dev')
+        break
+      default:
+        break
     }
   }
 
-  const calculatePercentage = (quantity: number) => {
-    if (!trackRef.current) {
-      return 0
-    }
-
-    const title: HTMLElement | null = document.querySelector('.track-title')
-    if (!title) {
-      return 0
-    }
-
-    const titleWidth = title.getBoundingClientRect().width
-    const trackWidth = trackRef.current.getBoundingClientRect().width
-    const min = ((titleWidth + 16 + titleWidth / 2) / trackWidth) * -100
-    const max = ((trackWidth - titleWidth / 2) / trackWidth) * -100
-    return Math.max(Math.min(quantity, min), max)
-  }
-
-  const handleOnUp = () => {
-    if (
-      trackRef.current &&
-      window
-        .getComputedStyle(trackRef.current)
-        .transform.match(/matrix.*\((.+)\)/) !== null
-    ) {
-      trackRef.current.dataset.mouseDownAt = '0'
-      trackRef.current.dataset.prevValue = trackRef.current.dataset.percentage
-    }
-  }
-
-  const handleOnMove = (e: MouseEvent | TouchEvent) => {
-    const title: HTMLElement | null = document.querySelector('.track-title')
-    const image: HTMLElement | null = document.querySelector('.track-image')
-    if (
-      trackRef.current &&
-      trackRef.current.dataset.mouseDownAt !== '0' &&
-      trackRef.current.dataset.mouseDownAt !== undefined &&
-      trackRef.current.dataset.prevValue !== undefined &&
-      window.location.pathname === '/' &&
-      title &&
-      image
-    ) {
-      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
-      const mouseDelta =
-        parseFloat(trackRef.current.dataset.mouseDownAt) - clientX
-      const maxDelta = window.innerWidth * 1.5
-      const percentage = (mouseDelta / maxDelta) * -100 * scrollSpeed
-      const nextPercentageUnconstrained =
-        parseFloat(trackRef.current.dataset.prevValue) + percentage
-      // next percentage needs to be number
-      const nextPercentage: number = calculatePercentage(
-        nextPercentageUnconstrained
-      )
-
-      trackRef.current.dataset.percentage = nextPercentage.toString()
-
-      makeSliderAnimation(trackRef.current, nextPercentage, 0.4)
-    }
-  }
-
-  //onscroll
-  const transformScroll = (e: WheelEvent) => {
-    const title: HTMLElement | null = document.querySelector('.track-title')
-    const image: HTMLElement | null = document.querySelector('.track-image')
-    if (
-      trackRef.current &&
-      trackRef.current.dataset.percentage &&
-      window.location.pathname === '/' &&
-      title &&
-      image
-    ) {
-      let delta = 0
-      if (e.deltaX !== 0) {
-        delta = -e.deltaX
-      }
-      if (e.deltaY !== 0) {
-        delta = e.deltaY
-      }
-
-      const nextPercentageUnconstrained =
-        parseFloat(trackRef.current.dataset.percentage) +
-        (delta / 15) * scrollSpeed
-
-      const nextPercentage: number = calculatePercentage(
-        nextPercentageUnconstrained
-      )
-      trackRef.current.dataset.prevValue = nextPercentage.toString()
-      makeSliderAnimation(trackRef.current, nextPercentage, 0.4)
-    }
-  }
-
-  const transformArrow = (quantity: number) => {
-    const title: HTMLElement | null = document.querySelector('.track-title')
-    const image: HTMLElement | null = document.querySelector('.track-image')
-    if (
-      trackRef.current &&
-      quantity &&
-      trackRef.current.dataset.percentage &&
-      window.location.pathname === '/' &&
-      title &&
-      image
-    ) {
-      const nextPercentageUnconstrained =
-        parseFloat(trackRef.current.dataset.percentage) + quantity / 15
-
-      const nextPercentage: number = calculatePercentage(
-        nextPercentageUnconstrained
-      )
-      trackRef.current.dataset.prevValue = trackRef.current.dataset.percentage
-      makeSliderAnimation(trackRef.current, nextPercentage, 0.4)
-    }
-  }
   function makeSliderAnimation(
     track: HTMLDivElement,
     nextValue: number,
@@ -165,19 +65,111 @@ const ThumbnailsComponent = ({
     Artiste3D: 0,
   }
 
-  const checkCurrentCategory = (percent: number) => {
-    if (percent <= categoryPercents.Artiste3D && categorie !== 'Artiste3D') {
-      setCategorie('3d')
-    } else if (
-      percent <= categoryPercents.Artiste2D &&
-      categorie !== 'Artiste2D'
+  const calculatePercentage = (quantity: number) => {
+    if (!trackRef.current) {
+      return 0
+    }
+
+    const title: HTMLElement | null = document.querySelector('.track-title')
+    if (!title) {
+      return 0
+    }
+
+    const titleWidth = title.getBoundingClientRect().width
+    const trackWidth = trackRef.current.getBoundingClientRect().width
+    const min = ((titleWidth + 16 + titleWidth / 2) / trackWidth) * -100
+    const max = ((trackWidth - titleWidth / 2) / trackWidth) * -100
+    return Math.max(Math.min(quantity, min), max)
+  }
+
+  const handleOnDown = (e: MouseEvent | TouchEvent) => {
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
+    if (trackRef.current) {
+      trackRef.current.dataset.mouseDownAt = clientX.toString()
+    }
+  }
+
+  const handleOnUp = () => {
+    if (
+      trackRef.current &&
+      window
+        .getComputedStyle(trackRef.current)
+        .transform.match(/matrix.*\((.+)\)/) !== null
     ) {
-      setCategorie('2d')
-    } else if (
-      percent <= categoryPercents.Developpeur &&
-      categorie !== 'Developpeur'
+      trackRef.current.dataset.mouseDownAt = '0'
+    }
+  }
+
+  const handleOnMove = (e: MouseEvent | TouchEvent) => {
+    const title: HTMLElement | null = document.querySelector('.track-title')
+    const image: HTMLElement | null = document.querySelector('.track-image')
+    if (
+      trackRef.current &&
+      trackRef.current.dataset.mouseDownAt !== '0' &&
+      trackRef.current.dataset.mouseDownAt !== undefined &&
+      trackRef.current.dataset.percentage !== undefined &&
+      window.location.pathname === '/' &&
+      title &&
+      image
     ) {
-      setCategorie('dev')
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
+      const mouseDelta =
+        parseFloat(trackRef.current.dataset.mouseDownAt) - clientX
+      const percentage = (mouseDelta / window.innerWidth) * -3 * scrollSpeed
+
+      const nextPercentageUnconstrained =
+        parseFloat(trackRef.current.dataset.percentage) + percentage
+      // next percentage needs to be number
+      const nextPercentage: number = calculatePercentage(
+        nextPercentageUnconstrained
+      )
+
+      trackRef.current.dataset.percentage = nextPercentage.toString()
+
+      makeSliderAnimation(trackRef.current, nextPercentage, 0.4)
+    }
+  }
+
+  const transformScroll = (e: WheelEvent) => {
+    const title: HTMLElement | null = document.querySelector('.track-title')
+    const image: HTMLElement | null = document.querySelector('.track-image')
+    if (
+      trackRef.current &&
+      trackRef.current.dataset.percentage &&
+      window.location.pathname === '/' &&
+      title &&
+      image
+    ) {
+      const delta = e.deltaX !== 0 ? -e.deltaX : e.deltaY
+      const nextPercentageUnconstrained =
+        parseFloat(trackRef.current.dataset.percentage) +
+        (delta / 15) * scrollSpeed
+
+      const nextPercentage: number = calculatePercentage(
+        nextPercentageUnconstrained
+      )
+      makeSliderAnimation(trackRef.current, nextPercentage, 0.4)
+    }
+  }
+
+  const transformArrow = (quantity: number) => {
+    const title: HTMLElement | null = document.querySelector('.track-title')
+    const image: HTMLElement | null = document.querySelector('.track-image')
+    if (
+      trackRef.current &&
+      quantity &&
+      trackRef.current.dataset.percentage &&
+      window.location.pathname === '/' &&
+      title &&
+      image
+    ) {
+      const nextPercentageUnconstrained =
+        parseFloat(trackRef.current.dataset.percentage) + quantity / 15
+
+      const nextPercentage: number = calculatePercentage(
+        nextPercentageUnconstrained
+      )
+      makeSliderAnimation(trackRef.current, nextPercentage, 0.4)
     }
   }
 
@@ -186,35 +178,35 @@ const ThumbnailsComponent = ({
     if (!trackRef.current || !title) {
       return
     }
+    const titleWidth = title.getBoundingClientRect().width
+    const space = 16
+    const imageWidth = window.innerHeight * 0.15
+
     const trackWidth =
-      window.innerHeight * 0.15 * countData[3] +
-      title.getBoundingClientRect().width * 3 +
-      (countData[3] + 3 - 1) * 16
-    const category1Percent = 16 + title.getBoundingClientRect().width
+      imageWidth * countData[3] +
+      titleWidth * 3 +
+      (countData[3] + 3 - 1) * space
+    const category1Percent = space + titleWidth
     categoryPercents.Developpeur =
-      ((category1Percent + (window.innerHeight * 0.15) / 2) / trackWidth) * -100
+      ((category1Percent + imageWidth / 2) / trackWidth) * -100
     const category2Percent =
-      countData[0] * window.innerHeight * 0.15 +
-      countData[0] * 16 +
-      title.getBoundingClientRect().width * 2 +
-      16 * 2
+      countData[0] * imageWidth +
+      countData[0] * space +
+      titleWidth * 2 +
+      space * 2
     categoryPercents.Artiste2D =
-      ((category2Percent + (window.innerHeight * 0.15) / 2) / trackWidth) * -100
+      ((category2Percent + imageWidth / 2) / trackWidth) * -100
     const category3Percent =
-      (countData[0] + countData[1]) * window.innerHeight * 0.15 +
-      (countData[0] + countData[1]) * 16 +
-      title.getBoundingClientRect().width * 3 +
-      16 * 3
+      (countData[0] + countData[1]) * imageWidth +
+      (countData[0] + countData[1]) * space +
+      titleWidth * 3 +
+      space * 3
     categoryPercents.Artiste3D =
-      ((category3Percent + (window.innerHeight * 0.15) / 2) / trackWidth) * -100
+      ((category3Percent + imageWidth / 2) / trackWidth) * -100
   }
 
   const alignCategory = (categoryName: string) => {
-    if (
-      !trackRef.current ||
-      !trackRef.current.dataset.percentage ||
-      !trackRef.current.dataset.prevValue
-    ) {
+    if (!trackRef.current || !trackRef.current.dataset.percentage) {
       return
     }
     const time: number =
@@ -229,8 +221,6 @@ const ThumbnailsComponent = ({
 
     trackRef.current.dataset.categorie = categoryName
     trackRef.current.dataset.percentage =
-      categoryPercents[categoryName].toString()
-    trackRef.current.dataset.prevValue =
       categoryPercents[categoryName].toString()
   }
 
@@ -259,7 +249,7 @@ const ThumbnailsComponent = ({
               Math.round(
                 Math.abs(
                   (Math.round(parseFloat(trackRef.current.dataset.percentage)) /
-                    100) *
+                    99) *
                     countData[3]
                 )
               ) - 1
@@ -273,11 +263,8 @@ const ThumbnailsComponent = ({
     getCategoryPercents()
     if (trackRef.current && document.getElementById('slide-track') !== null) {
       if (trackRef.current.dataset.percentage === undefined) {
-        trackRef.current.dataset.prevValue = '-6.5'
         trackRef.current.dataset.percentage = '-6.5'
       } else {
-        trackRef.current.dataset.prevValue =
-          document.getElementById('side-track')?.style.transform || '-6.5'
         trackRef.current.dataset.percentage =
           document.getElementById('side-track')?.style.transform || '-6.5'
       }
