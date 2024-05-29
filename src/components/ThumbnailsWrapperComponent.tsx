@@ -17,7 +17,7 @@ const ThumbnailsComponent = ({
   setCategorie: (category: string) => void
 }) => {
   //onclick&drag
-  const scrollSpeed = 0.5
+  const scrollSpeedMultiplier = 1
   const trackRef = useRef<HTMLDivElement>(null)
 
   const checkCurrentCategory = (percent: number) => {
@@ -43,13 +43,13 @@ const ThumbnailsComponent = ({
     time: number
   ) {
     gsap.to('.thumbnail', {
-      duration: time * 2,
+      duration: time,
       backgroundPosition: `${100 + nextValue}% center`,
       ease: 'expo.out',
       overwrite: true,
     })
     gsap.to(trackRef.current, {
-      duration: time * 2,
+      duration: time,
       x: nextValue + '%',
       y: '-50%',
       ease: 'expo.out',
@@ -115,7 +115,8 @@ const ThumbnailsComponent = ({
       const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
       const mouseDelta =
         parseFloat(trackRef.current.dataset.mouseDownAt) - clientX
-      const percentage = (mouseDelta / window.innerWidth) * -3 * scrollSpeed
+      const percentage =
+        (mouseDelta / window.innerWidth) * -3 * scrollSpeedMultiplier
 
       const nextPercentageUnconstrained =
         parseFloat(trackRef.current.dataset.percentage) + percentage
@@ -126,7 +127,7 @@ const ThumbnailsComponent = ({
 
       trackRef.current.dataset.percentage = nextPercentage.toString()
 
-      makeSliderAnimation(trackRef.current, nextPercentage, 0.4)
+      makeSliderAnimation(trackRef.current, nextPercentage, 0.1)
     }
   }
 
@@ -143,7 +144,7 @@ const ThumbnailsComponent = ({
       const delta = e.deltaX !== 0 ? -e.deltaX : e.deltaY
       const nextPercentageUnconstrained =
         parseFloat(trackRef.current.dataset.percentage) +
-        (delta / 15) * scrollSpeed
+        (delta / 15) * scrollSpeedMultiplier
 
       const nextPercentage: number = calculatePercentage(
         nextPercentageUnconstrained

@@ -6,10 +6,9 @@ interface Props {
 
 const MyComponent: React.FC<Props> = ({ moving }) => {
   return (
-    <p
+    <span
       className={
-        'text-primary m-0 font-secondaryFont text-xxl uppercase underline' +
-        (moving ? ' animate-bounce' : '')
+        'text-primary m-0 font-secondaryFont text-xxl uppercase underline'
       }
     >
       <svg
@@ -23,7 +22,10 @@ const MyComponent: React.FC<Props> = ({ moving }) => {
         <circle cx="12" cy="12" r="4"></circle>
       </svg>
       <svg
-        className="mr-1 h-[4vh] w-[4vh] rotate-180"
+        className={
+          'relative mr-1 h-[4vh] w-[4vh]' +
+          (moving ? ' rotate-180' : 'rotate-0')
+        }
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -37,21 +39,23 @@ const MyComponent: React.FC<Props> = ({ moving }) => {
             strokeWidth="1"
             fill="none"
           ></path>
+        </g>
+        <g id="SVGRepo_iconCarrier" className="rotate-180 animate-bounce">
           <path
-            d="M12 6V14"
+            d="M12 12V18"
             stroke="currentColor"
             strokeWidth="1"
             fill="none"
           ></path>
           <path
-            d="M15 11L12 14L9 11"
+            d="M15 15L12 18L9 15"
             stroke="currentColor"
             strokeWidth="1"
             fill="none"
           ></path>
         </g>
       </svg>
-    </p>
+    </span>
   )
 }
 

@@ -100,10 +100,32 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           </NavLink>
         </div>
         <div
-          className=" absolute bottom-[2vh] left-1/2 -translate-x-1/2 sm:bottom-[4vh]"
+          className=" text-primary absolute bottom-[2vh] left-1/2 -translate-x-1/2 sm:bottom-[4vh]"
           id="scrollIcon"
         >
-          <EyeSvg moving={true} />
+          <p>
+            <EyeSvg moving={true} />
+            {/* <svg
+              className="ml-2 inline-block h-[4vh] w-[4vh]"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                fill="none"
+                stroke="currentColor"
+              />
+              <path
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1"
+                d="M15 9l-6 6M9 9l6 6"
+              />
+            </svg> */}
+          </p>
         </div>
       </div>
       <div className="flex w-[8vh] flex-col justify-between">

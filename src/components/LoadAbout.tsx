@@ -369,12 +369,12 @@ function LoadAbout({ anim }: { anim: Function }) {
               </div>
             </div>
           </section>
-          <div className="flex justify-center pb-[6vh]">
+          <section className="mb-10 flex w-full justify-center py-10">
             <Button path="/" innerSite={true}>
-              voir les projets
+              Retour aux projets
             </Button>
-          </div>
-          <ul className=" my-20  flex w-full list-none flex-row  flex-wrap justify-center gap-2 p-0 text-black sm:flex-nowrap">
+          </section>
+          <ul className=" flex w-full list-none flex-row  flex-wrap justify-center gap-2 pb-10 text-black sm:flex-nowrap">
             <li className="group relative aspect-square w-[30%] overflow-hidden rounded-full border-[1.5px] border-solid border-white bg-white sm:w-[20%]">
               <a
                 href="cv-11-05-2024_compressed.pdf"
