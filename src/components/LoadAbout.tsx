@@ -281,10 +281,10 @@ function LoadAbout({ anim }: { anim: Function }) {
             </div>
             <div className="flex flex-col gap-5 text-[4vw] leading-[5vw] sm:flex-row sm:text-[3vw] md:text-[2vw] md:leading-[3vw] lg:text-[1.5vw] lg:leading-[2vw] ">
               <p className="m-0 w-full py-2">
-                J'ai obtenu la certification Opquast en 2021, qui est une
-                certification de qualité web. Elle permet de garantir la qualité
-                des sites web en matière de respect des standards du web, de
-                l'accessibilité, de la sécurité et de la compatibilité.
+                Opquast est une certification de qualité web. Elle permet de
+                garantir la qualité des sites web en matière de respect des
+                standards du web, de l'accessibilité, de la sécurité et de la
+                compatibilité.
               </p>
               <ul className="m-0 mb-10 flex w-full list-none flex-col p-0">
                 <li className="flex w-full justify-between py-2">
