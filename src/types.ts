@@ -2,7 +2,7 @@ export interface Project {
   name: string
   date: string
   title: string
-  description: string
+  description: string[]
   images: string[]
   webpImages: string[]
   videos: string[]

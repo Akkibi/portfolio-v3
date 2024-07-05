@@ -95,7 +95,7 @@ function LoadProject({
       gsap.to('#titles', {
         duration: 0.5,
         ease: 'power2',
-        y: 0,
+        y: '-50%',
         overwrite: 'auto',
       })
     } else {
@@ -341,7 +341,11 @@ function LoadProject({
           )}
           <div className="w-full">
             <h3 className=" font-medium">DESCRIPTION</h3>
-            <p className=" inline-block">{project.description}</p>
+            {project.description.map((paragraph, index) => (
+              <p key={index} className="m-0 mb-2 mt-2 inline-block">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </div>

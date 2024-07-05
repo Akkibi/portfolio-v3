@@ -29,6 +29,6 @@ export const HomeComponent = (): void => {
   gsap.to('#titles', {
     duration: 0.5,
     ease: 'expo.out',
-    y: 0,
+    y: '-50%',
   })
 }

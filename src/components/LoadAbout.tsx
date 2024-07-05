@@ -172,9 +172,15 @@ function LoadAbout({ anim }: { anim: Function }) {
             </p>
             <br />
             <p>
-              20 ans et actuellement en{' '}
+              Rentrant prochainement aux{' '}
               <b>
-                fin de de BUT{' '}
+                <a href="https://www.gobelins.fr/design-interactif/formations/di51-expert-creation-numerique-interactive">
+                  Gobelins
+                </a>
+              </b>{' '}
+              pour un Master expert en création numériques interactives et
+              sortant d'un DUT{' '}
+              <b>
                 <a
                   className="underline"
                   href="https://iutmmi.fr/home/dut-mmi/dut-mmi-formation-pluridisciplinaire/"
@@ -188,17 +194,18 @@ function LoadAbout({ anim }: { anim: Function }) {
             <br />
             <ul className="list-disc pl-[4vw]">
               <li>
-                Une alternance chez{' '}
+                Une alternance à{' '}
                 <a className="underline" href="https://www.frenchflair.pro">
                   Frenchflair
                 </a>{' '}
-                où j'ai assuré le rôle de Webmaster
+                où j'ai assuré le rôle de Webmaster et développé des experiences
+                interactives pour tablettes.
               </li>
               <br />
               <li>
-                Un stage chez{' '}
+                Un stage à{' '}
                 <a className="underline" href="https://paymenowdigital.com/">
-                  PAY ME NOW
+                  PAY ME NOW digital
                 </a>{' '}
                 ou j'ai fais le redesign du site{' '}
                 <a href="akiravalade.vercel.app/slapping" className="underline">
