@@ -159,7 +159,9 @@
     {
       "name": "gallerie-des-reves",
       "title": "Gallerie des Rêves",
-      "description": "Ce site a été créé dans le cadre d'un projet scolaire. Je me suis chargé de créer un dispositif interractif pour une exposition de notre agence d'expositions. Ce site a été fait avec Three.js et Tailwind,  en utilisant Git ainsi que Figma pour les designs.",
+      "description": [
+        "Ce site a été créé dans le cadre d'un projet scolaire. Je me suis chargé de créer un dispositif interractif pour une exposition de notre agence d'expositions. Ce site a été fait avec Three.js et Tailwind,  en utilisant Git ainsi que Figma pour les designs."
+      ],
       "images": ["affiche.png", "affiche-vide.png"],
       "webpImages": ["affiche.webp", "affiche-vide.webp"],
       "videos": ["1VQM0jca-FQ"],
@@ -285,7 +287,9 @@
     {
       "name": "akkibi-chromatic",
       "title": "Animation logo Akkibi",
-      "description": "Ce projet m'a appris à faire des animations sur Figma en utilisant un peu de créativité et de morphing avec Smart Animate.",
+      "description": [
+        "Ce projet m'a appris à faire des animations sur Figma en utilisant un peu de créativité et de morphing avec Smart Animate."
+      ],
       "images": ["carre.jpg", "stretch.jpg", "normal.jpg", "colors-break.jpg"],
       "webpImages": [
         "carre.webp",
@@ -305,7 +309,9 @@
     {
       "name": "refonte-mmi",
       "title": "Refonte éditoriale de MMind",
-      "description": "Voici la participation au concours de refonte de la ligne éditoriale de MMind de mon groupe de travail.",
+      "description": [
+        "Voici la participation au concours de refonte de la ligne éditoriale de MMind de mon groupe de travail."
+      ],
       "images": [
         "Frame22.png",
         "Frame17.png",
@@ -338,7 +344,9 @@
       "name": "stable-diffusion",
       "date": "01/03/2023",
       "title": "Stable diffusion",
-      "description": "Ce projet consistait à aider un developpeur à trouver un design pour sa page d'acceuil pour de multiples projets autour de Stable diffusion.",
+      "description": [
+        "Ce projet consistait à aider un developpeur à trouver un design pour sa page d'acceuil pour de multiples projets autour de Stable diffusion."
+      ],
       "images": ["Frame1.png", "Frame341.png", "Frame343.png"],
       "webpImages": ["Frame1.webp", "Frame341.webp", "Frame343.webp"],
 
@@ -347,7 +355,9 @@
     {
       "name": "allo-infirmier",
       "title": "Maquettes Allo Infirmier",
-      "description": "Ce projet a été de créer des maquettes d'une application de mise en relation d'infirmier à des patients en suivant les directives d'un product owner.",
+      "description": [
+        "Ce projet a été de créer des maquettes d'une application de mise en relation d'infirmier à des patients en suivant les directives d'un product owner."
+      ],
       "images": [
         "Frame59.png",
         "Connexion.png",
@@ -375,7 +385,9 @@
     {
       "name": "petsitting",
       "title": "Maquettes Petsitting",
-      "description": "L'objectif de ce projet était de créer des maquettes d'une start up fictive 'Petsitting' dans le but de créer une image marketting à la hauteur du service qu'il donne.",
+      "description": [
+        "L'objectif de ce projet était de créer des maquettes d'une start up fictive 'Petsitting' dans le but de créer une image marketting à la hauteur du service qu'il donne."
+      ],
       "images": [
         "Logo.png",
         "Offres.png",
@@ -404,7 +416,9 @@
     {
       "name": "wireframe-but-mmi",
       "title": "Refonte But MMi",
-      "description": "Ce projet a été de refaire le site de mon université avec un design plus récent, la maquette à été réalisée sur Figma. La première image est une référence pour les détails et les couleurs et les autres sont les wireframes.",
+      "description": [
+        "Ce projet a été de refaire le site de mon université avec un design plus récent, la maquette à été réalisée sur Figma. La première image est une référence pour les détails et les couleurs et les autres sont les wireframes."
+      ],
       "images": [
         "Frame38.png",
         "Frame37.png",
@@ -433,7 +447,9 @@
     {
       "name": "leboncoin",
       "title": "Redesign Leboncoin",
-      "description": "L'objectif de ce projet était de faire une analyse du site de Leboncoin sur ordinateur pour ajouter des fonctionalités utiles au site tout en mettant à jour ses visuels.",
+      "description": [
+        "L'objectif de ce projet était de faire une analyse du site de Leboncoin sur ordinateur pour ajouter des fonctionalités utiles au site tout en mettant à jour ses visuels."
+      ],
       "images": [
         "Pagedacceuil.png",
         "Pagecompte.png",
@@ -461,7 +477,9 @@
     {
       "name": "background",
       "title": "Fond d'écran",
-      "description": "Voici les différentes étapes qui ont menés à mon fond d'écran actuel. Je suis parti d'une base simple, deux logos, Figma et Blender qui me passionnent (pas la place pour les multiples langages de code) que j'ai utilisé pour la composition et les éléments 3D.",
+      "description": [
+        "Voici les différentes étapes qui ont menés à mon fond d'écran actuel. Je suis parti d'une base simple, deux logos, Figma et Blender qui me passionnent (pas la place pour les multiples langages de code) que j'ai utilisé pour la composition et les éléments 3D."
+      ],
       "images": [
         "background-new.png",
         "v05.png",
@@ -494,7 +512,9 @@
     {
       "name": "portrait-chinois-design",
       "title": "Portrait Chinois Designs",
-      "description": "Ce projet m'a appris à céeer des illustrations vectorielles pour illustrer des propos (toutes les illustrations ont été faites avec Figma).",
+      "description": [
+        "Ce projet m'a appris à céeer des illustrations vectorielles pour illustrer des propos (toutes les illustrations ont été faites avec Figma)."
+      ],
       "images": [
         "thumbnail.png",
         "Frame89.png",
@@ -547,7 +567,9 @@
     {
       "name": "gatesnfences",
       "title": "Refonte de Gates N Fences",
-      "description": "Ce projet m'a appris à céeer une identitée visuelle pour un site qui n'en a pas ou peu.",
+      "description": [
+        "Ce projet m'a appris à céeer une identitée visuelle pour un site qui n'en a pas ou peu."
+      ],
       "images": [
         "Frame2.png",
         "Frame25.png",
@@ -578,7 +600,9 @@
     {
       "name": "skvry",
       "title": "Charte graphique skvry",
-      "description": "Ce projet à été réalisé pour la marque skvry dont les ventes n'ont pas commencé qui est sur le marché des masques d'horreur en série limitée.",
+      "description": [
+        "Ce projet à été réalisé pour la marque skvry dont les ventes n'ont pas commencé qui est sur le marché des masques d'horreur en série limitée."
+      ],
       "images": ["skvry.png", "maquette.png", "skvr2y.png", "skvr3y.png"],
       "webpImages": [
         "skvry.webp",
@@ -598,7 +622,9 @@
     {
       "name": "polices",
       "title": "Cloudy Round Serif et Cloudy Round Sans",
-      "description": "Voici ma première police d'écriture, basée sur des formes simples elle peut représenter une marque épurée, à formes rondes.",
+      "description": [
+        "Voici ma première police d'écriture, basée sur des formes simples elle peut représenter une marque épurée, à formes rondes."
+      ],
       "images": ["letters.jpg", "true.jpg", "Frame14.jpg", "see-more.jpg"],
       "webpImages": [
         "letters.webp",
@@ -618,7 +644,9 @@
     {
       "name": "letters",
       "title": "Illustration caractères",
-      "description": "Le but de cet exercice était de créer des illustrations à base uniquement de police d'ecriture, chaques courbe, chaque angle visibles sont donc une partie de lettre.",
+      "description": [
+        "Le but de cet exercice était de créer des illustrations à base uniquement de police d'ecriture, chaques courbe, chaque angle visibles sont donc une partie de lettre."
+      ],
       "images": ["Frame1.png", "original.png"],
       "webpImages": ["Frame1.webp", "original.webp"],
 
@@ -633,7 +661,9 @@
     {
       "name": "kirby",
       "title": "kirby design",
-      "description": "Ce projet m'a appris à faire des effets 3d sur Figma en jouant avec les lumières.",
+      "description": [
+        "Ce projet m'a appris à faire des effets 3d sur Figma en jouant avec les lumières."
+      ],
       "images": ["kirby.png", "kirby-king.png"],
       "webpImages": ["kirby.webp", "kirby-king.webp"],
 
@@ -648,7 +678,9 @@
     {
       "name": "depression",
       "title": "Illustration dépression",
-      "description": "Cette illustration est une partie d'un projet plus gros nommé le livre des sept mots dans lequel 7 mots forts ont été choisis pour les illustrer de façon créative.",
+      "description": [
+        "Cette illustration est une partie d'un projet plus gros nommé le livre des sept mots dans lequel 7 mots forts ont été choisis pour les illustrer de façon créative."
+      ],
       "images": ["Page2.png", "Page1.png"],
       "webpImages": ["Page2.webp", "Page1.webp"],
 
@@ -665,7 +697,9 @@
     {
       "name": "araignee-qui-marche",
       "title": "Mr spider walkin'",
-      "description": "Ce projet m'a appris à créer une animation procédurale de marche pour une araignée.",
+      "description": [
+        "Ce projet m'a appris à créer une animation procédurale de marche pour une araignée."
+      ],
       "images": ["step4.png", "no-shader.png"],
       "webpImages": ["step4.webp", "no-shader.webp"],
       "videos": ["tTwpU5etMNE", "_X9301nrFYA", "XbXeqAd5QDg"],
@@ -680,7 +714,9 @@
     {
       "name": "cv-video",
       "title": "My ancestors",
-      "description": "Ce projet m'a appris à faire du montage vidéo sur Blender, à utiliser Stable Diffusion ainsi que d'autres IA de génération d'images pour la création d'image, de depth map et autres éléments.",
+      "description": [
+        "Ce projet m'a appris à faire du montage vidéo sur Blender, à utiliser Stable Diffusion ainsi que d'autres IA de génération d'images pour la création d'image, de depth map et autres éléments."
+      ],
       "images": [
         "miniature.png",
         "end-screen.png",
@@ -711,7 +747,9 @@
     {
       "name": "video-eiffel",
       "title": "L'histoire de Claire Eiffel",
-      "description": "Ce projet a été produit dans le cadre d'un travail à l'université Gustave Eiffel. L'objectif du projet est de faire un podcast sur le thème de la femme de Gustave Eiffel, pour ce faire j'ai du prendre rendez-vous avec Savun Yeatman Eiffel ainsi que faire des visuels en 3d pour l'illustrer. Ce projet m'a appris à créer des scènes Blender complexes en utilisant des géometry nodes.",
+      "description": [
+        "Ce projet a été produit dans le cadre d'un travail à l'université Gustave Eiffel. L'objectif du projet est de faire un podcast sur le thème de la femme de Gustave Eiffel, pour ce faire j'ai du prendre rendez-vous avec Savun Yeatman Eiffel ainsi que faire des visuels en 3d pour l'illustrer. Ce projet m'a appris à créer des scènes Blender complexes en utilisant des géometry nodes."
+      ],
       "images": [
         "3d-video.png",
         "image-eiffel-4.jpg",
@@ -738,7 +776,9 @@
     {
       "name": "space-trou-noir",
       "title": "Black hole",
-      "description": "Ce projet m'a appris à utiliser du compositing pour accélerer la production d'un plan ainsi qu'à utiliser certains shaders et volumes",
+      "description": [
+        "Ce projet m'a appris à utiliser du compositing pour accélerer la production d'un plan ainsi qu'à utiliser certains shaders et volumes"
+      ],
       "images": ["miniature.png", "spaceship.png", "trou-noir.png"],
       "webpImages": ["miniature.webp", "spaceship.webp", "trou-noir.webp"],
       "videos": ["NQF0whHEVkY", "Dt3rhUTB5qA"],
@@ -754,7 +794,9 @@
       "name": "robot-rating",
       "date": "10/11/2022",
       "title": "Chilling with the boys",
-      "description": "Une animations de robots humains dans un hangar, ce projet m'a appris à utiliser du compositing pour accélerer la production d'un plan ainsi que l'utilisation de certains shaders et volumes",
+      "description": [
+        "Une animations de robots humains dans un hangar, ce projet m'a appris à utiliser du compositing pour accélerer la production d'un plan ainsi que l'utilisation de certains shaders et volumes"
+      ],
       "images": ["hangar.png", "hangar-with-man.png"],
       "webpImages": ["hangar.webp", "hangar-with-man.webp"],
       "videos": ["0j72j8q1Egg", "79bDVgpSPBc"],
@@ -764,7 +806,9 @@
     {
       "name": "firby",
       "title": "3D Cursed worm Firby",
-      "description": "C'est mon premier personnage 3D avec des poils, un Furby étrange. Je l'ai créé avec l'intention d'en apprendre plus sur la génération de particules sur Blender.",
+      "description": [
+        "C'est mon premier personnage 3D avec des poils, un Furby étrange. Je l'ai créé avec l'intention d'en apprendre plus sur la génération de particules sur Blender."
+      ],
       "images": [
         "firby-close-128-lighten.jpg",
         "firby-large.jpg",
