@@ -30,5 +30,6 @@ export const HomeComponent = (): void => {
     duration: 0.5,
     ease: 'expo.out',
     y: '-50%',
+    overwrite: 'auto',
   })
 }

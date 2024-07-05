@@ -406,7 +406,7 @@ const ThumbnailsComponent = ({
         ))}
       </div>
       <div
-        className=" pointer-events-none absolute left-1/2 top-1/2 my-0 h-full w-full -translate-x-1/2 -translate-y-1/2 select-none overflow-clip py-0"
+        className=" pointer-events-none absolute left-1/2 top-1/2 my-0 h-full w-full -translate-x-1/2 select-none overflow-clip py-0"
         id="titles"
       >
         {projectsWithFirstImages.map((categoryData, index) => (
