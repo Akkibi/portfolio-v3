@@ -127,8 +127,8 @@
       "name": "SLAPPING",
       "title": "Redesign Media Slapping",
       "description": [
-        "Ce projet a été réalisé dans le cadre d'un stage de deux mois dans l'entreprise PAY ME NOW Production.",
-        "En temp que creatif developpeur, ma mission était de reprendre le développement du site pour l'adapter à la direction artistique déjà mise en place. La dernière image est l'avant et les autres, l'après le redesign. Le site serà en ligne fin 2023"
+        "Ce projet a été réalisé dans le cadre d'un stage de deux mois dans l'entreprise PAY ME NOW Digital.",
+        "En temp que creatif developpeur, ma mission était de reprendre le développement du site pour l'adapter à la direction artistique déjà mise en place. La dernière image est une capture d'écran de l'état du site avant le redesign. Le site serà en ligne fin 2023"
       ],
       "images": [
         "after.png",
@@ -339,18 +339,6 @@
         "Compte à l'origine de la refonte."
       ],
       "colors": ["#1ed7a3", "#000000"]
-    },
-    {
-      "name": "stable-diffusion",
-      "date": "01/03/2023",
-      "title": "Stable diffusion",
-      "description": [
-        "Ce projet consistait à aider un developpeur à trouver un design pour sa page d'acceuil pour de multiples projets autour de Stable diffusion."
-      ],
-      "images": ["Frame1.png", "Frame341.png", "Frame343.png"],
-      "webpImages": ["Frame1.webp", "Frame341.webp", "Frame343.webp"],
-
-      "colors": ["#4853e2", "#dcdce6"]
     },
     {
       "name": "allo-infirmier",

@@ -105,32 +105,15 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         >
           <p>
             <EyeSvg moving={true} />
-            {/* <svg
-              className="ml-2 inline-block h-[4vh] w-[4vh]"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                cx="12"
-                cy="12"
-                r="10"
-                fill="none"
-                stroke="currentColor"
-              />
-              <path
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M15 9l-6 6M9 9l6 6"
-              />
-            </svg> */}
           </p>
         </div>
       </div>
       <div className="flex w-[8vh] flex-col justify-between">
         <div className="right-0 flex items-end self-end">
-          <Button path="/about" innerSite={true}>
+          <Button
+            path="https://about-akira-valade.vercel.app/"
+            innerSite={false}
+          >
             À propos
           </Button>
         </div>

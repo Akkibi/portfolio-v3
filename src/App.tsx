@@ -4,6 +4,8 @@ import ThumbnailsWrapperComponent from './components/ThumbnailsWrapperComponent'
 import { useNavigationType } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
+gsap.registerPlugin(useGSAP)
 
 function App({
   countData,
@@ -14,13 +16,17 @@ function App({
 }): JSX.Element {
   const [categorie, setCategorie] = useState('dev')
   const navigationType: string | null = useNavigationType()
-  useEffect(() => {
-    gsap.to('#transition', {
-      duration: 0.75,
-      opacity: 0,
-      ease: 'power2',
-      delay: 0.1,
-    })
+  useGSAP(() => {
+    gsap.fromTo(
+      '#app',
+      { opacity: 0, clipPath: 'polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)' },
+      {
+        duration: 2,
+        opacity: 1,
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        ease: 'expo.inOut',
+      }
+    )
     if (navigationType === 'POP') {
       gsap.to('#slide-track', {
         duration: 0.75,
@@ -33,13 +39,15 @@ function App({
       })
     }
   }, [])
-  if (navigationType !== 'POP') {
-    gsap.to('#slide-track', {
-      duration: 0.75,
-      y: '-50%',
-      ease: 'power2',
-    })
-  }
+  useGSAP(() => {
+    if (navigationType !== 'POP') {
+      gsap.to('#slide-track', {
+        duration: 0.75,
+        y: '-50%',
+        ease: 'power2',
+      })
+    }
+  }, [navigationType])
   return (
     <div
       className="bg-secondary absolute left-0 top-0 h-full w-full overflow-hidden p-0 font-secondaryFont"
@@ -55,10 +63,10 @@ function App({
         projectList={projectList}
       />
       <Outlet />
-      <div
+      {/* <div
         className="pointer-events-none absolute inset-0 z-50 select-none bg-black"
         id="transition"
-      ></div>
+      ></div> */}
     </div>
   )
 }
