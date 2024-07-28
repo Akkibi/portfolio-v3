@@ -2,7 +2,7 @@ import Navbar from './components/Navbar'
 import { Outlet } from 'react-router-dom'
 import ThumbnailsWrapperComponent from './components/ThumbnailsWrapperComponent'
 import { useNavigationType } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 gsap.registerPlugin(useGSAP)

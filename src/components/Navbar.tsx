@@ -118,7 +118,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
           </Button>
         </div>
         <div className=" text-primary decoration-none flex flex-col items-end font-secondaryFont text-xl uppercase underline visited:text-white ">
-          <Button path="cv-11-05-2024_compressed.pdf" innerSite={false}>
+          <Button path="akira-valade-cv-28-07-2024.pdf" innerSite={false}>
             CV
           </Button>
           <Button path="https://www.instagram.com/akkibi_/" innerSite={false}>
