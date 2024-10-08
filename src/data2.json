@@ -1,0 +1,115 @@
+{
+  "Developpeur": [
+    {
+      "name": "fiber-slider",
+      "title": "Three Fiber Slider",
+      "description": [
+        "J'ai fait ce projet dans l'objectif de découvrir React thee fiber car je ne connaissais pas cette librairie. J'ai donc décidé de faire un slider 3D avec un objet 3D que j'ai créé sur Blender.",
+        "Le slider peut être utilisé avec la souris ou le clavier ou un téléphone. Il est aussi possible de changer le nombre d'objet 3D.",
+        "J'ai tellement apprécié faire ce projet que je travaille actuellement sur une version plus complexe avec des objets 3D plus détaillés et des animations plus poussées qui sera en ligne sur ce portfolio prochainement."
+      ],
+      "images": ["start.png", "end.png", "middle.png", "movement.png"],
+      "webpImages": ["start.webp", "end.webp", "middle.webp", "movement.webp"],
+      "list": {
+        "Date": "15/6/2024",
+        "Cadre": "Projet personnel",
+        "Technologies": "React.js, Three.js, React-three-fiber, Gsap"
+      },
+      "link": ["https://fiber-slider.vercel.app/", "Voir le site"],
+      "colors": ["#440022", "#ffbbdd"]
+    },
+    {
+      "name": "elios-os",
+      "title": "Elios OS",
+      "description": [
+        "Elios OS est un faux système d'exploitation que j'ai créé avec une équipe sur un projet d'escape game dans le cadre de notre formation en MMI.",
+        "L'histoire de notre escape game se passe en 2080, et ce site est l'ordinateur personnel de Mr Shneider, un milliardaire à la tête de la seule dernière entreprise.",
+        "La première epreuve dans l'escape game est de trouver le mot de passe de l'ordinateur grâce aux élements départis dans la salle pour accéder à une liste de vidéos qui donnent le code vers la prochaine enigme.",
+        "Dans ce projet je me suis occupé de faire la maquette low-fi et le développement du gestionnaire de fenètre et de l'arboréscence des fichiers de cet Os."
+      ],
+      "images": [
+        "home.png",
+        "mdp-filled.png",
+        "pages-around.png",
+        "pages-resized.png",
+        "video-stack.png",
+        "fullscreen",
+        "home-terminal.png"
+      ],
+      "webpImages": [
+        "home.webp",
+        "mdp-filled.webp",
+        "pages-around.webp",
+        "pages-resized.webp",
+        "video-stack.webp",
+        "fullscreen.webp",
+        "home-terminal.webp"
+      ],
+      "list": {
+        "Date": "15/10/2023",
+        "Cadre": "BUT MMI",
+        "Technologies": "React.js, TailwindCSS, React-draggable, Gsap"
+      },
+      "link": ["https://elios-os.vercel.app/", "Voir le site"],
+      "colors": ["#d2f8ef", "#05080d"]
+    }
+  ],
+  "Artiste2D": [
+    {
+      "name": "akkibi-chromatic",
+      "title": "Animation logo Akkibi",
+      "description": [
+        "Ce projet m'a appris à faire des animations sur Figma en utilisant un peu de créativité et de morphing avec Smart Animate."
+      ],
+      "images": ["carre.jpg", "stretch.jpg", "normal.jpg", "colors-break.jpg"],
+      "webpImages": [
+        "carre.webp",
+        "stretch.webp",
+        "normal.webp",
+        "colors-break.webp"
+      ],
+      "videos": ["iulmVPjB35U"],
+      "list": {
+        "Date": "26/12/2022",
+        "Cadre": "Projet personnel",
+        "Technologies": "Figma"
+      },
+
+      "colors": ["#ffffff", "#000000"]
+    },
+    {
+      "name": "refonte-mmi",
+      "title": "Refonte éditoriale de MMind",
+      "description": [
+        "Voici la participation au concours de refonte de la ligne éditoriale de MMind de mon groupe de travail."
+      ],
+      "images": [
+        "Frame22.png",
+        "Frame17.png",
+        "Frame24.png",
+        "Frame25.png",
+        "Frame26.png",
+        "Frame23.png"
+      ],
+      "webpImages": [
+        "Frame22.webp",
+        "Frame17.webp",
+        "Frame24.webp",
+        "Frame25.webp",
+        "Frame26.webp",
+        "Frame23.webp"
+      ],
+
+      "list": {
+        "Date": "5/10/2022",
+        "Cadre": "BUT MMI",
+        "Outils": "Figma"
+      },
+      "link": [
+        "https://www.instagram.com/mmind_mmi/",
+        "Compte à l'origine de la refonte."
+      ],
+      "colors": ["#1ed7a3", "#000000"]
+    }
+  ]
+}

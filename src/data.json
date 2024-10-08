@@ -1,837 +1,839 @@
-{
-  "Developpeur": [
-    {
-      "name": "shredder",
-      "title": "Shredder",
-      "description": [
-        "Shredder est un site de vente de guitare en ligne. Ce projet a été réalisé dans le cadre de ma formation en MMI. J'ai été en charge de la création du site, de la gestion de la base de données et de la gestion des utilisateurs.",
-        "Le site a été réalisé en PHP, HTML, CSS, JavaScript, MySQL et Git. Il a été réalisé en 3 mois avec une équipe de 4 personnes."
-      ],
-      "images": ["thumbnail.png"],
-      "webpImages": [],
-      "list": {
-        "Date": "26/09/2024",
-        "Cadre": "Projet perso",
-        "Technologies": "React.js, TailwindCSS, Gsap",
-        "Durée": "2 jours"
-      },
-      "link": ["https://shredder-liart.vercel.app/", "Voir le site"],
-      "colors": ["#f4f4f4", "#101010"]
+[
+  {
+    "type": "Developpeur",
+    "name": "shredder",
+    "title": "Shredder",
+    "description": [
+      "C'est lorsque j'ai decouvert l'animation sur ios de destruction de carte que je me suis demandé comment je m'y serait pris pour le faire, s'en s'est suivis deux jour de developpement ou j'ai tenté de recréer leur effet.",
+      "Realisé avec React Gsap et tailwind, je n'ai utilisé que des outils que je conaissait dejà, le challenge à été de les utiliser dans un cadre nouveau."
+    ],
+    "images": ["start.png", "shredding.png", "shredded.png"],
+    "webpImages": ["start.webp", "shredding.webp", "shredded.webp"],
+    "list": {
+      "Date": "17/10/2024",
+      "Cadre": "Projet personnel",
+      "Technologies": "React.js, Gsap, TailwindCSS"
     },
-    {
-      "name": "fiber-slider",
-      "title": "Three Fiber Slider",
-      "description": [
-        "J'ai fait ce projet dans l'objectif de découvrir React thee fiber car je ne connaissais pas cette librairie. J'ai donc décidé de faire un slider 3D avec un objet 3D que j'ai créé sur Blender.",
-        "Le slider peut être utilisé avec la souris ou le clavier ou un téléphone. Il est aussi possible de changer le nombre d'objet 3D.",
-        "J'ai tellement apprécié faire ce projet que je travaille actuellement sur une version plus complexe avec des objets 3D plus détaillés et des animations plus poussées qui sera en ligne sur ce portfolio prochainement."
-      ],
-      "images": ["start.png", "end.png", "middle.png", "movement.png"],
-      "webpImages": ["start.webp", "end.webp", "middle.webp", "movement.webp"],
-      "list": {
-        "Date": "15/6/2024",
-        "Cadre": "Projet personnel",
-        "Technologies": "React.js, Three.js, React-three-fiber, Gsap"
-      },
-      "link": ["https://fiber-slider.vercel.app/", "Voir le site"],
-      "colors": ["#440022", "#ffbbdd"]
+    "link": ["https://shredder-liart.vercel.app/", "Voir le site"],
+    "colors": ["#eed0ff", "#100020"]
+  },
+  {
+    "type": "Developpeur",
+    "name": "fiber-slider",
+    "title": "Three Fiber Slider",
+    "description": [
+      "J'ai fait ce projet dans l'objectif de découvrir React thee fiber car je ne connaissais pas cette librairie. J'ai donc décidé de faire un slider 3D avec un objet 3D que j'ai créé sur Blender.",
+      "Le slider peut être utilisé avec la souris ou le clavier ou un téléphone. Il est aussi possible de changer le nombre d'objet 3D.",
+      "J'ai tellement apprécié faire ce projet que je travaille actuellement sur une version plus complexe avec des objets 3D plus détaillés et des animations plus poussées qui sera en ligne sur ce portfolio prochainement."
+    ],
+    "images": ["start.png", "end.png", "middle.png", "movement.png"],
+    "webpImages": ["start.webp", "end.webp", "middle.webp", "movement.webp"],
+    "list": {
+      "Date": "15/6/2024",
+      "Cadre": "Projet personnel",
+      "Technologies": "React.js, Three.js, React-three-fiber, Gsap"
     },
-    {
-      "name": "elios-os",
-      "title": "Elios OS",
-      "description": [
-        "Elios OS est un faux système d'exploitation que j'ai créé avec une équipe sur un projet d'escape game dans le cadre de notre formation en MMI.",
-        "L'histoire de notre escape game se passe en 2080, et ce site est l'ordinateur personnel de Mr Shneider, un milliardaire à la tête de la seule dernière entreprise.",
-        "La première epreuve dans l'escape game est de trouver le mot de passe de l'ordinateur grâce aux élements départis dans la salle pour accéder à une liste de vidéos qui donnent le code vers la prochaine enigme.",
-        "Dans ce projet je me suis occupé de faire la maquette low-fi et le développement du gestionnaire de fenètre et de l'arboréscence des fichiers de cet Os."
-      ],
-      "images": [
-        "home.png",
-        "mdp-filled.png",
-        "pages-around.png",
-        "pages-resized.png",
-        "video-stack.png",
-        "fullscreen",
-        "home-terminal.png"
-      ],
-      "webpImages": [
-        "home.webp",
-        "mdp-filled.webp",
-        "pages-around.webp",
-        "pages-resized.webp",
-        "video-stack.webp",
-        "fullscreen.webp",
-        "home-terminal.webp"
-      ],
-      "list": {
-        "Date": "15/10/2023",
-        "Cadre": "BUT MMI",
-        "Technologies": "React.js, TailwindCSS, React-draggable, Gsap"
-      },
-      "link": ["https://elios-os.vercel.app/", "Voir le site"],
-      "colors": ["#d2f8ef", "#05080d"]
+    "link": ["https://fiber-slider.vercel.app/", "Voir le site"],
+    "colors": ["#440022", "#ffbbdd"]
+  },
+  {
+    "type": "Developpeur",
+    "name": "elios-os",
+    "title": "Elios OS",
+    "description": [
+      "Elios OS est un faux système d'exploitation que j'ai créé avec une équipe sur un projet d'escape game dans le cadre de notre formation en MMI.",
+      "L'histoire de notre escape game se passe en 2080, et ce site est l'ordinateur personnel de Mr Shneider, un milliardaire à la tête de la seule dernière entreprise.",
+      "La première epreuve dans l'escape game est de trouver le mot de passe de l'ordinateur grâce aux élements départis dans la salle pour accéder à une liste de vidéos qui donnent le code vers la prochaine enigme.",
+      "Dans ce projet je me suis occupé de faire la maquette low-fi et le développement du gestionnaire de fenètre et de l'arboréscence des fichiers de cet Os."
+    ],
+    "images": [
+      "home.png",
+      "mdp-filled.png",
+      "pages-around.png",
+      "pages-resized.png",
+      "video-stack.png",
+      "fullscreen",
+      "home-terminal.png"
+    ],
+    "webpImages": [
+      "home.webp",
+      "mdp-filled.webp",
+      "pages-around.webp",
+      "pages-resized.webp",
+      "video-stack.webp",
+      "fullscreen.webp",
+      "home-terminal.webp"
+    ],
+    "list": {
+      "Date": "15/10/2023",
+      "Cadre": "BUT MMI",
+      "Technologies": "React.js, TailwindCSS, React-draggable, Gsap"
     },
-    {
-      "name": "sound-visualizer",
-      "title": "Sound Visualizer",
-      "description": [
-        "Ce projet construit en cours permet de visualiser les ondes sonores d'une musique en utilisant la librairie Three js.",
-        "Le projet utilise l'API de Deezer pour récupérer les musiques et les analyser en temps réel pour les afficher en 3D."
-      ],
-      "images": [
-        "cube02.png",
-        "cube.png",
-        "line.png",
-        "logo.png",
-        "board.png",
-        "cover.png",
-        "idle.png",
-        "cover02.png",
-        "cover03.png"
-      ],
-      "webpImages": [
-        "cube02.webp",
-        "cube.webp",
-        "line.webp",
-        "logo.webp",
-        "board.webp",
-        "cover.webp",
-        "idle.webp",
-        "cover02.webp",
-        "cover03.webp"
-      ],
-      "list": {
-        "Date": "15/10/2023",
-        "Cadre": "BUT MMI",
-        "Technologies": "React.js, TailwindCSS, Three.js, Deezer API"
-      },
-      "link": ["https://3d-web-music-viewer.vercel.app/", "Voir le site"],
-      "colors": ["#ffffff", "#043b47"]
+    "link": ["https://elios-os.vercel.app/", "Voir le site"],
+    "colors": ["#d2f8ef", "#05080d"]
+  },
+  {
+    "type": "Developpeur",
+    "name": "sound-visualizer",
+    "title": "Sound Visualizer",
+    "description": [
+      "Ce projet construit en cours permet de visualiser les ondes sonores d'une musique en utilisant la librairie Three js.",
+      "Le projet utilise l'API de Deezer pour récupérer les musiques et les analyser en temps réel pour les afficher en 3D."
+    ],
+    "images": [
+      "cube02.png",
+      "cube.png",
+      "line.png",
+      "logo.png",
+      "board.png",
+      "cover.png",
+      "idle.png",
+      "cover02.png",
+      "cover03.png"
+    ],
+    "webpImages": [
+      "cube02.webp",
+      "cube.webp",
+      "line.webp",
+      "logo.webp",
+      "board.webp",
+      "cover.webp",
+      "idle.webp",
+      "cover02.webp",
+      "cover03.webp"
+    ],
+    "list": {
+      "Date": "15/10/2023",
+      "Cadre": "BUT MMI",
+      "Technologies": "React.js, TailwindCSS, Three.js, Deezer API"
     },
-    {
-      "name": "african-proud",
-      "title": "Création site African Proud",
-      "description": [
-        "Ce projet a été réalisé dans le cadre d'un stage de deux mois dans l'entreprise PAY ME NOW Production. En temp que développeur full-stack, ma mission à été de créer la plateforme du concours avec une gestion de compte public et artistes, toutes les informations concernant l'evenement ainsi que des pages de post de video, plannings, et news autour de celui-ci.",
-        "Le site à entièrement été créé par mes soins en Next.js, TailwindCSS, TypeScript et Figma pour le front-end et Prisma et PosgresSQL pour le back-end sur OVH. Le site a été versioné sur GitHub et réalisé en moins d'un mois et demis."
-      ],
-      "images": [
-        "homepage.png",
-        "register.png",
-        "register-phone.png",
-        "affiche1.png",
-        "affiche2.png",
-        "affiche3.png"
-      ],
-      "webpImages": [
-        "homepage.webp",
-        "register.webp",
-        "register-phone.webp",
-        "affiche1.webp",
-        "affiche2.webp",
-        "affiche3.webp"
-      ],
-      "videos": ["V7kypRDQ1-Q"],
-      "list": {
-        "Date": "12/07/2023",
-        "Client": "Pay me now digital",
-        "Technologies": "Next.js, TailwindCSS, TypeScript, Prisma, PosgresSQL",
-        "Durée": "1.5 mois"
-      },
-      "link": ["https://africanproud.org/", "Voir le site"],
-      "colors": ["#f29f03", "#232323"]
+    "link": ["https://3d-web-music-viewer.vercel.app/", "Voir le site"],
+    "colors": ["#ffffff", "#043b47"]
+  },
+  {
+    "type": "Developpeur",
+    "name": "african-proud",
+    "title": "Création site African Proud",
+    "description": [
+      "Ce projet a été réalisé dans le cadre d'un stage de deux mois dans l'entreprise PAY ME NOW Production. En temp que développeur full-stack, ma mission à été de créer la plateforme du concours avec une gestion de compte public et artistes, toutes les informations concernant l'evenement ainsi que des pages de post de video, plannings, et news autour de celui-ci.",
+      "Le site à entièrement été créé par mes soins en Next.js, TailwindCSS, TypeScript et Figma pour le front-end et Prisma et PosgresSQL pour le back-end sur OVH. Le site a été versioné sur GitHub et réalisé en moins d'un mois et demis."
+    ],
+    "images": [
+      "homepage.png",
+      "register.png",
+      "register-phone.png",
+      "affiche1.png",
+      "affiche2.png",
+      "affiche3.png"
+    ],
+    "webpImages": [
+      "homepage.webp",
+      "register.webp",
+      "register-phone.webp",
+      "affiche1.webp",
+      "affiche2.webp",
+      "affiche3.webp"
+    ],
+    "videos": ["V7kypRDQ1-Q"],
+    "list": {
+      "Date": "12/07/2023",
+      "Client": "Pay me now digital",
+      "Technologies": "Next.js, TailwindCSS, TypeScript, Prisma, PosgresSQL",
+      "Durée": "1.5 mois"
     },
-    {
-      "name": "SLAPPING",
-      "title": "Redesign Media Slapping",
-      "description": [
-        "Ce projet a été réalisé dans le cadre d'un stage de deux mois dans l'entreprise PAY ME NOW Digital.",
-        "En temp que creatif developpeur, ma mission était de reprendre le développement du site pour l'adapter à la direction artistique déjà mise en place. La dernière image est une capture d'écran de l'état du site avant le redesign. Le site serà en ligne fin 2023"
-      ],
-      "images": [
-        "after.png",
-        "homepage.png",
-        "videos.png",
-        "news.png",
-        "menu.png",
-        "before.png"
-      ],
-      "webpImages": [
-        "after.webp",
-        "homepage.webp",
-        "videos.webp",
-        "news.webp",
-        "menu.webp",
-        "before.webp"
-      ],
-      "videos": ["vETp_zL0tFg"],
-      "list": {
-        "date": "12/06/2023",
-        "Client": "Pay me now digital",
-        "Technologies": "PHP, SCSS, Javascript",
-        "Durée": "1.5 mois"
-      },
-      "link": ["https://slapping.fr/", "Lien vers le site de Slapping"],
-      "colors": ["#ffffff", "#171749"]
+    "link": ["https://africanproud.org/", "Voir le site"],
+    "colors": ["#f29f03", "#232323"]
+  },
+  {
+    "type": "Developpeur",
+    "name": "SLAPPING",
+    "title": "Redesign Media Slapping",
+    "description": [
+      "Ce projet a été réalisé dans le cadre d'un stage de deux mois dans l'entreprise PAY ME NOW Digital.",
+      "En temp que creatif developpeur, ma mission était de reprendre le développement du site pour l'adapter à la direction artistique déjà mise en place. La dernière image est une capture d'écran de l'état du site avant le redesign. Le site serà en ligne fin 2023"
+    ],
+    "images": [
+      "after.png",
+      "homepage.png",
+      "videos.png",
+      "news.png",
+      "menu.png",
+      "before.png"
+    ],
+    "webpImages": [
+      "after.webp",
+      "homepage.webp",
+      "videos.webp",
+      "news.webp",
+      "menu.webp",
+      "before.webp"
+    ],
+    "videos": ["vETp_zL0tFg"],
+    "list": {
+      "date": "12/06/2023",
+      "Client": "Pay me now digital",
+      "Technologies": "PHP, SCSS, Javascript",
+      "Durée": "1.5 mois"
     },
-    {
-      "name": "gallerie-des-reves",
-      "title": "Gallerie des Rêves",
-      "description": [
-        "Ce site a été créé dans le cadre d'un projet scolaire. Je me suis chargé de créer un dispositif interractif pour une exposition de notre agence d'expositions. Ce site a été fait avec Three.js et Tailwind,  en utilisant Git ainsi que Figma pour les designs."
-      ],
-      "images": ["affiche.png", "affiche-vide.png"],
-      "webpImages": ["affiche.webp", "affiche-vide.webp"],
-      "videos": ["1VQM0jca-FQ"],
-      "list": {
-        "Date": "1-2/12/2022",
-        "Cadre": "BUT MMI",
-        "Technologies": "Three.js, TailwindCSS, Git",
-        "Durée": "2 jours"
-      },
-      "link": [
-        "https://akkibi.github.io/SAE-S4-dispositif-interactif/",
-        "Lien du site du dispositif"
-      ],
-      "colors": ["#bae074", "#1a1a1a"]
+    "link": ["https://slapping.fr/", "Lien vers le site de Slapping"],
+    "colors": ["#ffffff", "#171749"]
+  },
+  {
+    "type": "Developpeur",
+    "name": "gallerie-des-reves",
+    "title": "Gallerie des Rêves",
+    "description": [
+      "Ce site a été créé dans le cadre d'un projet scolaire. Je me suis chargé de créer un dispositif interractif pour une exposition de notre agence d'expositions. Ce site a été fait avec Three.js et Tailwind,  en utilisant Git ainsi que Figma pour les designs."
+    ],
+    "images": ["affiche.png", "affiche-vide.png"],
+    "webpImages": ["affiche.webp", "affiche-vide.webp"],
+    "videos": ["1VQM0jca-FQ"],
+    "list": {
+      "Date": "1-2/12/2022",
+      "Cadre": "BUT MMI",
+      "Technologies": "Three.js, TailwindCSS, Git",
+      "Durée": "2 jours"
     },
-    {
-      "name": "nuit-de-linfo",
-      "title": "La Nuit de L'info",
-      "description": [
-        "Ce site a été créé lors de l'évènement de la Nuit De l'Info, concours qui a lieu chaque année dans lequel on doit faire un site web en 24h dans un thème donné.",
-        "Le thème de cette année était les MST. Ce site à été fait en Javascript, HTML, en utilisant Node.js et Git ainsi que Figma pour les designs."
-      ],
-      "images": [
-        "pagedacceuil.png",
-        "acceuil.png",
-        "personnages.png",
-        "LogoTitre.png",
-        "festival.png",
-        "background-party.png",
-        "salon.png",
-        "window.png"
-      ],
-      "webpImages": [
-        "pagedacceuil.webp",
-        "acceuil.webp",
-        "personnages.webp",
-        "LogoTitre.webp",
-        "festival.webp",
-        "background-party.webp",
-        "salon.webp",
-        "window.webp"
-      ],
+    "link": [
+      "https://akkibi.github.io/SAE-S4-dispositif-interactif/",
+      "Lien du site du dispositif"
+    ],
+    "colors": ["#bae074", "#1a1a1a"]
+  },
+  {
+    "type": "Developpeur",
+    "name": "nuit-de-linfo",
+    "title": "La Nuit de L'info",
+    "description": [
+      "Ce site a été créé lors de l'évènement de la Nuit De l'Info, concours qui a lieu chaque année dans lequel on doit faire un site web en 24h dans un thème donné.",
+      "Le thème de cette année était les MST. Ce site à été fait en Javascript, HTML, en utilisant Node.js et Git ainsi que Figma pour les designs."
+    ],
+    "images": [
+      "pagedacceuil.png",
+      "acceuil.png",
+      "personnages.png",
+      "LogoTitre.png",
+      "festival.png",
+      "background-party.png",
+      "salon.png",
+      "window.png"
+    ],
+    "webpImages": [
+      "pagedacceuil.webp",
+      "acceuil.webp",
+      "personnages.webp",
+      "LogoTitre.webp",
+      "festival.webp",
+      "background-party.webp",
+      "salon.webp",
+      "window.webp"
+    ],
 
-      "list": {
-        "Date": "1-2/12/2022",
-        "Cadre": "BUT MMI",
-        "Technologies": "Javascript, HTML, Node.js, Git",
-        "Durée": "24h"
-      },
-      "link": [
-        "http://meauxlotov.poisson.butmmi.o2switch.site/",
-        "Lien du site de notre équipe meauxlotov."
-      ],
-      "colors": ["#110022", "#ffbe9d"]
+    "list": {
+      "Date": "1-2/12/2022",
+      "Cadre": "BUT MMI",
+      "Technologies": "Javascript, HTML, Node.js, Git",
+      "Durée": "24h"
     },
-    {
-      "name": "portrait-chinois",
-      "title": "Portrait Chinois",
-      "description": [
-        "Ce projet me représente (de 2021) avec 8 éléments.",
-        "Ce site a été créé dans le but d'en apprendre plus sur le code en JavaScript. C'est aussi le premier site avec lequel j'ai utilisé Git et Github."
-      ],
-      "images": [
-        "ecran.png",
-        "Frame3.png",
-        "Frame54.png",
-        "Frame81.png",
-        "Frame17.png"
-      ],
-      "webpImages": [
-        "ecran.webp",
-        "Frame3.webp",
-        "Frame54.webp",
-        "Frame81.webp",
-        "Frame17.webp"
-      ],
+    "link": [
+      "http://meauxlotov.poisson.butmmi.o2switch.site/",
+      "Lien du site de notre équipe meauxlotov."
+    ],
+    "colors": ["#110022", "#ffbe9d"]
+  },
+  {
+    "type": "Developpeur",
+    "name": "portrait-chinois",
+    "title": "Portrait Chinois",
+    "description": [
+      "Ce projet me représente (de 2021) avec 8 éléments.",
+      "Ce site a été créé dans le but d'en apprendre plus sur le code en JavaScript. C'est aussi le premier site avec lequel j'ai utilisé Git et Github."
+    ],
+    "images": [
+      "ecran.png",
+      "Frame3.png",
+      "Frame54.png",
+      "Frame81.png",
+      "Frame17.png"
+    ],
+    "webpImages": [
+      "ecran.webp",
+      "Frame3.webp",
+      "Frame54.webp",
+      "Frame81.webp",
+      "Frame17.webp"
+    ],
 
-      "list": {
-        "Date": "18/03/2022",
-        "Cadre": "BUT MMI",
-        "Technologies": "Javascript, HTML, Git",
-        "Durée": "1 semaine"
-      },
-      "link": [
-        "https://akkibi.github.io/myfirstproject/",
-        "Lien vers le site."
-      ],
-      "colors": ["#606EB5", "#000000"]
+    "list": {
+      "Date": "18/03/2022",
+      "Cadre": "BUT MMI",
+      "Technologies": "Javascript, HTML, Git",
+      "Durée": "1 semaine"
     },
-    {
-      "name": "dataviz",
-      "title": "Dataviz",
-      "description": [
-        "Ce projet de groupe m'a appris à utiliser d3js pour faire de la visualisation de données.",
-        "Le but de ce site est de comparer les courbes de croissance des utilisateurs de Netflix, des entrées de cinéma et celle du Covid pour y voir une corellation."
-      ],
-      "images": [
-        "Maquette-Resp-desktop-version-exportable-lisible-2.png",
-        "Maquette-Resp-desktop-version-exportable-lisible.png",
-        "Niveau-Annee-responsive.png",
-        "NiveauTrimestre-responsive.png",
-        "NiveauMois.png"
-      ],
-      "webpImages": [
-        "Maquette-Resp-desktop-version-exportable-lisible-2.webp",
-        "Maquette-Resp-desktop-version-exportable-lisible.webp",
-        "Niveau-Annee-responsive.webp",
-        "NiveauTrimestre-responsive.webp",
-        "NiveauMois.webp"
-      ],
+    "link": ["https://akkibi.github.io/myfirstproject/", "Lien vers le site."],
+    "colors": ["#606EB5", "#000000"]
+  },
+  {
+    "type": "Developpeur",
+    "name": "dataviz",
+    "title": "Dataviz",
+    "description": [
+      "Ce projet de groupe m'a appris à utiliser d3js pour faire de la visualisation de données.",
+      "Le but de ce site est de comparer les courbes de croissance des utilisateurs de Netflix, des entrées de cinéma et celle du Covid pour y voir une corellation."
+    ],
+    "images": [
+      "Maquette-Resp-desktop-version-exportable-lisible-2.png",
+      "Maquette-Resp-desktop-version-exportable-lisible.png",
+      "Niveau-Annee-responsive.png",
+      "NiveauTrimestre-responsive.png",
+      "NiveauMois.png"
+    ],
+    "webpImages": [
+      "Maquette-Resp-desktop-version-exportable-lisible-2.webp",
+      "Maquette-Resp-desktop-version-exportable-lisible.webp",
+      "Niveau-Annee-responsive.webp",
+      "NiveauTrimestre-responsive.webp",
+      "NiveauMois.webp"
+    ],
 
-      "list": {
-        "Date": "21/10/2022",
-        "Cadre": "BUT MMI",
-        "Technologies": "Javascript, d3js, HTML, Git",
-        "Durée": "1 mois"
-      },
-
-      "colors": ["#ff5555", "#110022"]
-    }
-  ],
-  "Artiste2D": [
-    {
-      "name": "akkibi-chromatic",
-      "title": "Animation logo Akkibi",
-      "description": [
-        "Ce projet m'a appris à faire des animations sur Figma en utilisant un peu de créativité et de morphing avec Smart Animate."
-      ],
-      "images": ["carre.jpg", "stretch.jpg", "normal.jpg", "colors-break.jpg"],
-      "webpImages": [
-        "carre.webp",
-        "stretch.webp",
-        "normal.webp",
-        "colors-break.webp"
-      ],
-      "videos": ["iulmVPjB35U"],
-      "list": {
-        "Date": "26/12/2022",
-        "Cadre": "Projet personnel",
-        "Technologies": "Figma"
-      },
-
-      "colors": ["#ffffff", "#000000"]
+    "list": {
+      "Date": "21/10/2022",
+      "Cadre": "BUT MMI",
+      "Technologies": "Javascript, d3js, HTML, Git",
+      "Durée": "1 mois"
     },
-    {
-      "name": "refonte-mmi",
-      "title": "Refonte éditoriale de MMind",
-      "description": [
-        "Voici la participation au concours de refonte de la ligne éditoriale de MMind de mon groupe de travail."
-      ],
-      "images": [
-        "Frame22.png",
-        "Frame17.png",
-        "Frame24.png",
-        "Frame25.png",
-        "Frame26.png",
-        "Frame23.png"
-      ],
-      "webpImages": [
-        "Frame22.webp",
-        "Frame17.webp",
-        "Frame24.webp",
-        "Frame25.webp",
-        "Frame26.webp",
-        "Frame23.webp"
-      ],
 
-      "list": {
-        "Date": "5/10/2022",
-        "Cadre": "BUT MMI",
-        "Outils": "Figma"
-      },
-      "link": [
-        "https://www.instagram.com/mmind_mmi/",
-        "Compte à l'origine de la refonte."
-      ],
-      "colors": ["#1ed7a3", "#000000"]
+    "colors": ["#ff5555", "#110022"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "akkibi-chromatic",
+    "title": "Animation logo Akkibi",
+    "description": [
+      "Ce projet m'a appris à faire des animations sur Figma en utilisant un peu de créativité et de morphing avec Smart Animate."
+    ],
+    "images": ["carre.jpg", "stretch.jpg", "normal.jpg", "colors-break.jpg"],
+    "webpImages": [
+      "carre.webp",
+      "stretch.webp",
+      "normal.webp",
+      "colors-break.webp"
+    ],
+    "videos": ["iulmVPjB35U"],
+    "list": {
+      "Date": "26/12/2022",
+      "Cadre": "Projet personnel",
+      "Technologies": "Figma"
     },
-    {
-      "name": "allo-infirmier",
-      "title": "Maquettes Allo Infirmier",
-      "description": [
-        "Ce projet a été de créer des maquettes d'une application de mise en relation d'infirmier à des patients en suivant les directives d'un product owner."
-      ],
-      "images": [
-        "Frame59.png",
-        "Connexion.png",
-        "Creeruncompte.png",
-        "creeruncompteinfirmier.png",
-        "pagecompteutilisateur.png",
-        "Parametres.png"
-      ],
-      "webpImages": [
-        "Frame59.webp",
-        "Connexion.webp",
-        "Creeruncompte.webp",
-        "creeruncompteinfirmier.webp",
-        "pagecompteutilisateur.webp",
-        "Parametres.webp"
-      ],
 
-      "list": {
-        "Date": "10/11/2022",
-        "Cadre": "BUT MMI",
-        "Outils": "Figma"
-      },
-      "colors": ["#0085ff", "#000000"]
+    "colors": ["#ffffff", "#000000"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "refonte-mmi",
+    "title": "Refonte éditoriale de MMind",
+    "description": [
+      "Voici la participation au concours de refonte de la ligne éditoriale de MMind de mon groupe de travail."
+    ],
+    "images": [
+      "Frame22.png",
+      "Frame17.png",
+      "Frame24.png",
+      "Frame25.png",
+      "Frame26.png",
+      "Frame23.png"
+    ],
+    "webpImages": [
+      "Frame22.webp",
+      "Frame17.webp",
+      "Frame24.webp",
+      "Frame25.webp",
+      "Frame26.webp",
+      "Frame23.webp"
+    ],
+
+    "list": {
+      "Date": "5/10/2022",
+      "Cadre": "BUT MMI",
+      "Outils": "Figma"
     },
-    {
-      "name": "petsitting",
-      "title": "Maquettes Petsitting",
-      "description": [
-        "L'objectif de ce projet était de créer des maquettes d'une start up fictive 'Petsitting' dans le but de créer une image marketting à la hauteur du service qu'il donne."
-      ],
-      "images": [
-        "Logo.png",
-        "Offres.png",
-        "Profil.png",
-        "Recherche.png",
-        "SousProfilAnimal.png",
-        "ResultatRecherche.png"
-      ],
-      "webpImages": [
-        "Logo.webp",
-        "Offres.webp",
-        "Profil.webp",
-        "Recherche.webp",
-        "SousProfilAnimal.webp",
-        "ResultatRecherche.webp"
-      ],
+    "link": [
+      "https://www.instagram.com/mmind_mmi/",
+      "Voir le compte Instagram"
+    ],
+    "colors": ["#1ed7a3", "#000000"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "allo-infirmier",
+    "title": "Maquettes Allo Infirmier",
+    "description": [
+      "Ce projet a été de créer des maquettes d'une application de mise en relation d'infirmier à des patients en suivant les directives d'un product owner."
+    ],
+    "images": [
+      "Frame59.png",
+      "Connexion.png",
+      "Creeruncompte.png",
+      "creeruncompteinfirmier.png",
+      "pagecompteutilisateur.png",
+      "Parametres.png"
+    ],
+    "webpImages": [
+      "Frame59.webp",
+      "Connexion.webp",
+      "Creeruncompte.webp",
+      "creeruncompteinfirmier.webp",
+      "pagecompteutilisateur.webp",
+      "Parametres.webp"
+    ],
 
-      "list": {
-        "Date": "5/10/2022",
-        "Cadre": "BUT MMI",
-        "Outils": "Figma"
-      },
-
-      "colors": ["#dcb99a", "#231107"]
+    "list": {
+      "Date": "10/11/2022",
+      "Cadre": "BUT MMI",
+      "Outils": "Figma"
     },
-    {
-      "name": "wireframe-but-mmi",
-      "title": "Refonte But MMi",
-      "description": [
-        "Ce projet a été de refaire le site de mon université avec un design plus récent, la maquette à été réalisée sur Figma. La première image est une référence pour les détails et les couleurs et les autres sont les wireframes."
-      ],
-      "images": [
-        "Frame38.png",
-        "Frame37.png",
-        "Frame60.png",
-        "Frame61.png",
-        "Frame75.png",
-        "Frame76.png"
-      ],
-      "webpImages": [
-        "Frame38.webp",
-        "Frame37.webp",
-        "Frame60.webp",
-        "Frame61.webp",
-        "Frame75.webp",
-        "Frame76.webp"
-      ],
+    "colors": ["#0085ff", "#000000"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "petsitting",
+    "title": "Maquettes Petsitting",
+    "description": [
+      "L'objectif de ce projet était de créer des maquettes d'une start up fictive 'Petsitting' dans le but de créer une image marketting à la hauteur du service qu'il donne."
+    ],
+    "images": [
+      "Logo.png",
+      "Offres.png",
+      "Profil.png",
+      "Recherche.png",
+      "SousProfilAnimal.png",
+      "ResultatRecherche.png"
+    ],
+    "webpImages": [
+      "Logo.webp",
+      "Offres.webp",
+      "Profil.webp",
+      "Recherche.webp",
+      "SousProfilAnimal.webp",
+      "ResultatRecherche.webp"
+    ],
 
-      "list": {
-        "Date": "1/12/2022",
-        "Cadre": "BUT MMI",
-        "Outils": "Figma"
-      },
-
-      "colors": ["#ffffff", "#20102a"]
+    "list": {
+      "Date": "5/10/2022",
+      "Cadre": "BUT MMI",
+      "Outils": "Figma"
     },
-    {
-      "name": "leboncoin",
-      "title": "Redesign Leboncoin",
-      "description": [
-        "L'objectif de ce projet était de faire une analyse du site de Leboncoin sur ordinateur pour ajouter des fonctionalités utiles au site tout en mettant à jour ses visuels."
-      ],
-      "images": [
-        "Pagedacceuil.png",
-        "Pagecompte.png",
-        "Pagemessage.png",
-        "Pageproduit.png"
-      ],
-      "webpImages": [
-        "Pagedacceuil.webp",
-        "Pagecompte.webp",
-        "Pagemessage.webp",
-        "Pageproduit.webp"
-      ],
 
-      "list": {
-        "Date": "14/03/2022",
-        "Cadre": "BUT MMI",
-        "Outils": "Figma"
-      },
-      "link": [
-        "https://drive.google.com/file/d/1ZnBO2kTXkFXPy29Gp7WRxDrfUxAalJ6g/view?usp=sharing",
-        "Voir l'analyse."
-      ],
-      "colors": ["#4183D7", "#F6F9FD"]
+    "colors": ["#dcb99a", "#231107"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "wireframe-but-mmi",
+    "title": "Refonte But MMi",
+    "description": [
+      "Ce projet a été de refaire le site de mon université avec un design plus récent, la maquette à été réalisée sur Figma. La première image est une référence pour les détails et les couleurs et les autres sont les wireframes."
+    ],
+    "images": [
+      "Frame38.png",
+      "Frame37.png",
+      "Frame60.png",
+      "Frame61.png",
+      "Frame75.png",
+      "Frame76.png"
+    ],
+    "webpImages": [
+      "Frame38.webp",
+      "Frame37.webp",
+      "Frame60.webp",
+      "Frame61.webp",
+      "Frame75.webp",
+      "Frame76.webp"
+    ],
+
+    "list": {
+      "Date": "1/12/2022",
+      "Cadre": "BUT MMI",
+      "Outils": "Figma"
     },
-    {
-      "name": "background",
-      "title": "Fond d'écran",
-      "description": [
-        "Voici les différentes étapes qui ont menés à mon fond d'écran actuel. Je suis parti d'une base simple, deux logos, Figma et Blender qui me passionnent (pas la place pour les multiples langages de code) que j'ai utilisé pour la composition et les éléments 3D."
-      ],
-      "images": [
-        "background-new.png",
-        "v05.png",
-        "v04.png",
-        "v03.png",
-        "v02.png",
-        "v01.png",
-        "background.png",
-        "akira-valade.png"
-      ],
-      "webpImages": [
-        "background-new.webp",
-        "v05.webp",
-        "v04.webp",
-        "v03.webp",
-        "v02.webp",
-        "v01.webp",
-        "background.webp",
-        "akira-valade.webp"
-      ],
 
-      "list": {
-        "Date": "01/02/2023",
-        "Cadre": "Projet personnel",
-        "Outils": "Figma, Blender"
-      },
+    "colors": ["#ffffff", "#20102a"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "leboncoin",
+    "title": "Redesign Leboncoin",
+    "description": [
+      "L'objectif de ce projet était de faire une analyse du site de Leboncoin sur ordinateur pour ajouter des fonctionalités utiles au site tout en mettant à jour ses visuels."
+    ],
+    "images": [
+      "Pagedacceuil.png",
+      "Pagecompte.png",
+      "Pagemessage.png",
+      "Pageproduit.png"
+    ],
+    "webpImages": [
+      "Pagedacceuil.webp",
+      "Pagecompte.webp",
+      "Pagemessage.webp",
+      "Pageproduit.webp"
+    ],
 
-      "colors": ["#e5a597", "#002046"]
+    "list": {
+      "Date": "14/03/2022",
+      "Cadre": "BUT MMI",
+      "Outils": "Figma"
     },
-    {
-      "name": "portrait-chinois-design",
-      "title": "Portrait Chinois Designs",
-      "description": [
-        "Ce projet m'a appris à céeer des illustrations vectorielles pour illustrer des propos (toutes les illustrations ont été faites avec Figma)."
-      ],
-      "images": [
-        "thumbnail.png",
-        "Frame89.png",
-        "Frame90.png",
-        "Frame91.png",
-        "Frame93.png",
-        "Frame100.png",
-        "Frame101.png",
-        "Frame104.png",
-        "Frame105.png",
-        "Frame110.png",
-        "Frame111.png",
-        "Frame112.png",
-        "Frame117.png",
-        "mouche.png",
-        "piege_a_loup.png",
-        "violette.png",
-        "Frame77.png",
-        "acid.png"
-      ],
-      "webpImages": [
-        "thumbnail.webp",
-        "Frame89.webp",
-        "Frame90.webp",
-        "Frame91.webp",
-        "Frame93.webp",
-        "Frame100.webp",
-        "Frame101.webp",
-        "Frame104.webp",
-        "Frame105.webp",
-        "Frame110.webp",
-        "Frame111.webp",
-        "Frame112.webp",
-        "Frame117.webp",
-        "mouche.webp",
-        "piege_a_loup.webp",
-        "violette.webp",
-        "Frame77.webp",
-        "acid.webp"
-      ],
+    "link": [
+      "https://drive.google.com/file/d/1ZnBO2kTXkFXPy29Gp7WRxDrfUxAalJ6g/view?usp=sharing",
+      "Voir l'analyse."
+    ],
+    "colors": ["#4183D7", "#F6F9FD"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "background",
+    "title": "Fond d'écran",
+    "description": [
+      "Voici les différentes étapes qui ont menés à mon fond d'écran actuel. Je suis parti d'une base simple, deux logos, Figma et Blender qui me passionnent (pas la place pour les multiples langages de code) que j'ai utilisé pour la composition et les éléments 3D."
+    ],
+    "images": [
+      "background-new.png",
+      "v05.png",
+      "v04.png",
+      "v03.png",
+      "v02.png",
+      "v01.png",
+      "background.png",
+      "akira-valade.png"
+    ],
+    "webpImages": [
+      "background-new.webp",
+      "v05.webp",
+      "v04.webp",
+      "v03.webp",
+      "v02.webp",
+      "v01.webp",
+      "background.webp",
+      "akira-valade.webp"
+    ],
 
-      "list": {
-        "Date": "18/03/2022",
-        "Cadre": "BUT MMI",
-        "Outils": "Figma"
-      },
-
-      "colors": ["#b8d3f8", "#181523"]
+    "list": {
+      "Date": "01/02/2023",
+      "Cadre": "Projet personnel",
+      "Outils": "Figma, Blender"
     },
-    {
-      "name": "gatesnfences",
-      "title": "Refonte de Gates N Fences",
-      "description": [
-        "Ce projet m'a appris à céeer une identitée visuelle pour un site qui n'en a pas ou peu."
-      ],
-      "images": [
-        "Frame2.png",
-        "Frame25.png",
-        "logo.png",
-        "Frame37.png",
-        "Frame34.png",
-        "Frame24.png",
-        "Frame33.png"
-      ],
-      "webpImages": [
-        "Frame2.webp",
-        "Frame25.webp",
-        "logo.webp",
-        "Frame37.webp",
-        "Frame34.webp",
-        "Frame24.webp",
-        "Frame33.webp"
-      ],
 
-      "list": {
-        "Date": "16/10/2021",
-        "Cadre": "BUT MMI",
-        "Outils": "Figma"
-      },
-      "link": ["http://www.gatesnfences.com/", "Le site de Gates N Fences."],
-      "colors": ["#a4cbd8", "#2a2626"]
+    "colors": ["#e5a597", "#002046"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "portrait-chinois-design",
+    "title": "Portrait Chinois Designs",
+    "description": [
+      "Ce projet m'a appris à créer des illustrations vectorielles pour illustrer des propos (toutes les illustrations ont été faites avec Figma)."
+    ],
+    "images": [
+      "thumbnail.png",
+      "Frame89.png",
+      "Frame90.png",
+      "Frame91.png",
+      "Frame93.png",
+      "Frame100.png",
+      "Frame101.png",
+      "Frame104.png",
+      "Frame105.png",
+      "Frame110.png",
+      "Frame111.png",
+      "Frame112.png",
+      "Frame117.png",
+      "mouche.png",
+      "piege_a_loup.png",
+      "violette.png",
+      "Frame77.png",
+      "acid.png"
+    ],
+    "webpImages": [
+      "thumbnail.webp",
+      "Frame89.webp",
+      "Frame90.webp",
+      "Frame91.webp",
+      "Frame93.webp",
+      "Frame100.webp",
+      "Frame101.webp",
+      "Frame104.webp",
+      "Frame105.webp",
+      "Frame110.webp",
+      "Frame111.webp",
+      "Frame112.webp",
+      "Frame117.webp",
+      "mouche.webp",
+      "piege_a_loup.webp",
+      "violette.webp",
+      "Frame77.webp",
+      "acid.webp"
+    ],
+
+    "list": {
+      "Date": "18/03/2022",
+      "Cadre": "BUT MMI",
+      "Outils": "Figma"
     },
-    {
-      "name": "skvry",
-      "title": "Charte graphique skvry",
-      "description": [
-        "Ce projet à été réalisé pour la marque skvry dont les ventes n'ont pas commencé qui est sur le marché des masques d'horreur en série limitée."
-      ],
-      "images": ["skvry.png", "maquette.png", "skvr2y.png", "skvr3y.png"],
-      "webpImages": [
-        "skvry.webp",
-        "maquette.webp",
-        "skvr2y.webp",
-        "skvr3y.webp"
-      ],
 
-      "list": {
-        "Date": "1/03/2023",
-        "Cadre": "Collaboration",
-        "Outils": "Figma"
-      },
+    "colors": ["#b8d3f8", "#181523"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "gatesnfences",
+    "title": "Refonte de Gates N Fences",
+    "description": [
+      "Ce projet m'a appris à céeer une identitée visuelle pour un site qui n'en a pas ou peu."
+    ],
+    "images": [
+      "Frame2.png",
+      "Frame25.png",
+      "logo.png",
+      "Frame37.png",
+      "Frame34.png",
+      "Frame24.png",
+      "Frame33.png"
+    ],
+    "webpImages": [
+      "Frame2.webp",
+      "Frame25.webp",
+      "logo.webp",
+      "Frame37.webp",
+      "Frame34.webp",
+      "Frame24.webp",
+      "Frame33.webp"
+    ],
 
-      "colors": ["#c9ebeb", "#172222"]
+    "list": {
+      "Date": "16/10/2021",
+      "Cadre": "BUT MMI",
+      "Outils": "Figma"
     },
-    {
-      "name": "polices",
-      "title": "Cloudy Round Serif et Cloudy Round Sans",
-      "description": [
-        "Voici ma première police d'écriture, basée sur des formes simples elle peut représenter une marque épurée, à formes rondes."
-      ],
-      "images": ["letters.jpg", "true.jpg", "Frame14.jpg", "see-more.jpg"],
-      "webpImages": [
-        "letters.webp",
-        "true.webp",
-        "Frame14.webp",
-        "see-more.webp"
-      ],
+    "link": ["http://www.gatesnfences.com/", "Le site de Gates N Fences."],
+    "colors": ["#a4cbd8", "#2a2626"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "skvry",
+    "title": "Charte graphique skvry",
+    "description": [
+      "Ce projet à été réalisé pour la marque skvry dont les ventes n'ont pas commencé qui est sur le marché des masques d'horreur en série limitée."
+    ],
+    "images": ["skvry.png", "maquette.png", "skvr2y.png", "skvr3y.png"],
+    "webpImages": ["skvry.webp", "maquette.webp", "skvr2y.webp", "skvr3y.webp"],
 
-      "list": {
-        "Date": "01/03/2022",
-        "Cadre": "Projet personnel",
-        "Outils": "Figma"
-      },
-
-      "colors": ["#000000", "#ffffff"]
+    "list": {
+      "Date": "1/03/2023",
+      "Cadre": "Collaboration",
+      "Outils": "Figma"
     },
-    {
-      "name": "letters",
-      "title": "Illustration caractères",
-      "description": [
-        "Le but de cet exercice était de créer des illustrations à base uniquement de police d'ecriture, chaques courbe, chaque angle visibles sont donc une partie de lettre."
-      ],
-      "images": ["Frame1.png", "original.png"],
-      "webpImages": ["Frame1.webp", "original.webp"],
 
-      "list": {
-        "Date": "05/06/2022",
-        "Cadre": "Projet personnel",
-        "Outils": "Figma"
-      },
+    "colors": ["#c9ebeb", "#172222"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "polices",
+    "title": "Cloudy Round Serif et Cloudy Round Sans",
+    "description": [
+      "Voici ma première police d'écriture, basée sur des formes simples elle peut représenter une marque épurée, à formes rondes."
+    ],
+    "images": ["letters.jpg", "true.jpg", "Frame14.jpg", "see-more.jpg"],
+    "webpImages": [
+      "letters.webp",
+      "true.webp",
+      "Frame14.webp",
+      "see-more.webp"
+    ],
 
-      "colors": ["#ffffff", "#000000"]
+    "list": {
+      "Date": "01/03/2022",
+      "Cadre": "Projet personnel",
+      "Outils": "Figma"
     },
-    {
-      "name": "kirby",
-      "title": "kirby design",
-      "description": [
-        "Ce projet m'a appris à faire des effets 3d sur Figma en jouant avec les lumières."
-      ],
-      "images": ["kirby.png", "kirby-king.png"],
-      "webpImages": ["kirby.webp", "kirby-king.webp"],
 
-      "list": {
-        "Date": "16/10/2021",
-        "Cadre": "Projet personnel",
-        "Outils": "Figma"
-      },
+    "colors": ["#000000", "#ffffff"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "letters",
+    "title": "Illustration caractères",
+    "description": [
+      "Le but de cet exercice était de créer des illustrations à base uniquement de police d'ecriture, chaques courbe, chaque angle visibles sont donc une partie de lettre."
+    ],
+    "images": ["Frame1.png", "original.png"],
+    "webpImages": ["Frame1.webp", "original.webp"],
 
-      "colors": ["#ffc8d9", "#2d3962"]
+    "list": {
+      "Date": "05/06/2022",
+      "Cadre": "Projet personnel",
+      "Outils": "Figma"
     },
-    {
-      "name": "depression",
-      "title": "Illustration dépression",
-      "description": [
-        "Cette illustration est une partie d'un projet plus gros nommé le livre des sept mots dans lequel 7 mots forts ont été choisis pour les illustrer de façon créative."
-      ],
-      "images": ["Page2.png", "Page1.png"],
-      "webpImages": ["Page2.webp", "Page1.webp"],
 
-      "list": {
-        "Date": "18/09/2022",
-        "Cadre": "BUT MMI",
-        "Outils": "Figma, Papier"
-      },
+    "colors": ["#ffffff", "#000000"]
+  },
+  {
+    "type": "Artiste2D",
+    "name": "depression",
+    "title": "Illustration dépression",
+    "description": [
+      "Cette illustration est une partie d'un projet plus gros nommé le livre des sept mots dans lequel 7 mots forts ont été choisis pour les illustrer de façon créative."
+    ],
+    "images": ["Page2.png", "Page1.png"],
+    "webpImages": ["Page2.webp", "Page1.webp"],
 
-      "colors": ["#ffffff", "#000000"]
-    }
-  ],
-  "Artiste3D": [
-    {
-      "name": "araignee-qui-marche",
-      "title": "Mr spider walkin'",
-      "description": [
-        "Ce projet m'a appris à créer une animation procédurale de marche pour une araignée."
-      ],
-      "images": ["step4.png", "no-shader.png"],
-      "webpImages": ["step4.webp", "no-shader.webp"],
-      "videos": ["tTwpU5etMNE", "_X9301nrFYA", "XbXeqAd5QDg"],
-      "list": {
-        "Date": "29/11/2022",
-        "Cadre": "Projet personnel",
-        "Outils": "Blender"
-      },
-
-      "colors": ["#00b986", "#221107"]
+    "list": {
+      "Date": "18/09/2022",
+      "Cadre": "BUT MMI",
+      "Outils": "Figma, Papier"
     },
-    {
-      "name": "cv-video",
-      "title": "My ancestors",
-      "description": [
-        "Ce projet m'a appris à faire du montage vidéo sur Blender, à utiliser Stable Diffusion ainsi que d'autres IA de génération d'images pour la création d'image, de depth map et autres éléments."
-      ],
-      "images": [
-        "miniature.png",
-        "end-screen.png",
-        "pinboard.png",
-        "church.png",
-        "depth.png",
-        "cadre.png",
-        "cadre-dust.png"
-      ],
-      "webpImages": [
-        "miniature.webp",
-        "end-screen.webp",
-        "pinboard.webp",
-        "church.webp",
-        "depth.webp",
-        "cadre.webp",
-        "cadre-dust.webp"
-      ],
-      "videos": ["JpRU3J0zjig"],
-      "list": {
-        "Date": "11/01/2023",
-        "Cadre": "BUT MMI",
-        "Outils": "Blender, Figma, Stable Diffusion"
-      },
 
-      "colors": ["#ffffff", "#261613"]
+    "colors": ["#ffffff", "#000000"]
+  },
+  {
+    "type": "Artiste3D",
+    "name": "araignee-qui-marche",
+    "title": "Mr spider walkin'",
+    "description": [
+      "Ce projet m'a appris à créer une animation procédurale de marche pour une araignée."
+    ],
+    "images": ["step4.png", "no-shader.png"],
+    "webpImages": ["step4.webp", "no-shader.webp"],
+    "videos": ["tTwpU5etMNE", "_X9301nrFYA", "XbXeqAd5QDg"],
+    "list": {
+      "Date": "29/11/2022",
+      "Cadre": "Projet personnel",
+      "Outils": "Blender"
     },
-    {
-      "name": "video-eiffel",
-      "title": "L'histoire de Claire Eiffel",
-      "description": [
-        "Ce projet a été produit dans le cadre d'un travail à l'université Gustave Eiffel. L'objectif du projet est de faire un podcast sur le thème de la femme de Gustave Eiffel, pour ce faire j'ai du prendre rendez-vous avec Savun Yeatman Eiffel ainsi que faire des visuels en 3d pour l'illustrer. Ce projet m'a appris à créer des scènes Blender complexes en utilisant des géometry nodes."
-      ],
-      "images": [
-        "3d-video.png",
-        "image-eiffel-4.jpg",
-        "image-eiffel-1.jpg",
-        "image-eiffel-2.jpg",
-        "image-eiffel-3.jpg"
-      ],
-      "webpImages": [
-        "3d-video.webp",
-        "image-eiffel-4.webp",
-        "image-eiffel-1.webp",
-        "image-eiffel-2.webp",
-        "image-eiffel-3.webp"
-      ],
-      "videos": ["nm0cn8qMjdo"],
-      "list": {
-        "Date": "16/12/2022",
-        "Cadre": "BUT MMI",
-        "Outils": "Blender, Audacity"
-      },
 
-      "colors": ["#f4dfc0", "#37313f"]
+    "colors": ["#00b986", "#221107"]
+  },
+  {
+    "type": "Artiste3D",
+    "name": "cv-video",
+    "title": "My ancestors",
+    "description": [
+      "Ce projet m'a appris à faire du montage vidéo sur Blender, à utiliser Stable Diffusion ainsi que d'autres IA de génération d'images pour la création d'image, de depth map et autres éléments."
+    ],
+    "images": [
+      "miniature.png",
+      "end-screen.png",
+      "pinboard.png",
+      "church.png",
+      "depth.png",
+      "cadre.png",
+      "cadre-dust.png"
+    ],
+    "webpImages": [
+      "miniature.webp",
+      "end-screen.webp",
+      "pinboard.webp",
+      "church.webp",
+      "depth.webp",
+      "cadre.webp",
+      "cadre-dust.webp"
+    ],
+    "videos": ["JpRU3J0zjig"],
+    "list": {
+      "Date": "11/01/2023",
+      "Cadre": "BUT MMI",
+      "Outils": "Blender, Figma, Stable Diffusion"
     },
-    {
-      "name": "space-trou-noir",
-      "title": "Black hole",
-      "description": [
-        "Ce projet m'a appris à utiliser du compositing pour accélerer la production d'un plan ainsi qu'à utiliser certains shaders et volumes"
-      ],
-      "images": ["miniature.png", "spaceship.png", "trou-noir.png"],
-      "webpImages": ["miniature.webp", "spaceship.webp", "trou-noir.webp"],
-      "videos": ["NQF0whHEVkY", "Dt3rhUTB5qA"],
-      "list": {
-        "Date": "16/12/2022",
-        "Cadre": "Projet personnel",
-        "Outils": "Blender"
-      },
 
-      "colors": ["#beb2c1", "#04070b"]
+    "colors": ["#ffffff", "#261613"]
+  },
+  {
+    "type": "Artiste3D",
+    "name": "video-eiffel",
+    "title": "L'histoire de Claire Eiffel",
+    "description": [
+      "Ce projet a été produit dans le cadre d'un travail à l'université Gustave Eiffel. L'objectif du projet est de faire un podcast sur le thème de la femme de Gustave Eiffel, pour ce faire j'ai du prendre rendez-vous avec Savun Yeatman Eiffel ainsi que faire des visuels en 3d pour l'illustrer. Ce projet m'a appris à créer des scènes Blender complexes en utilisant des géometry nodes."
+    ],
+    "images": [
+      "3d-video.png",
+      "image-eiffel-4.jpg",
+      "image-eiffel-1.jpg",
+      "image-eiffel-2.jpg",
+      "image-eiffel-3.jpg"
+    ],
+    "webpImages": [
+      "3d-video.webp",
+      "image-eiffel-4.webp",
+      "image-eiffel-1.webp",
+      "image-eiffel-2.webp",
+      "image-eiffel-3.webp"
+    ],
+    "videos": ["nm0cn8qMjdo"],
+    "list": {
+      "Date": "16/12/2022",
+      "Cadre": "BUT MMI",
+      "Outils": "Blender, Audacity"
     },
-    {
-      "name": "robot-rating",
+
+    "colors": ["#f4dfc0", "#37313f"]
+  },
+  {
+    "type": "Artiste3D",
+    "name": "space-trou-noir",
+    "title": "Black hole",
+    "description": [
+      "Ce projet m'a appris à utiliser du compositing pour accélerer la production d'un plan ainsi qu'à utiliser certains shaders et volumes"
+    ],
+    "images": ["miniature.png", "spaceship.png", "trou-noir.png"],
+    "webpImages": ["miniature.webp", "spaceship.webp", "trou-noir.webp"],
+    "videos": ["NQF0whHEVkY", "Dt3rhUTB5qA"],
+    "list": {
+      "Date": "16/12/2022",
+      "Cadre": "Projet personnel",
+      "Outils": "Blender"
+    },
+
+    "colors": ["#beb2c1", "#04070b"]
+  },
+  {
+    "type": "Artiste3D",
+    "name": "robot-rating",
+    "title": "Chilling with the boys",
+    "description": [
+      "Une animations de robots humains dans un hangar, ce projet m'a appris à utiliser du compositing pour accélerer la production d'un plan ainsi que l'utilisation de certains shaders et volumes"
+    ],
+    "images": ["hangar.png", "hangar-with-man.png"],
+    "webpImages": ["hangar.webp", "hangar-with-man.webp"],
+    "videos": ["0j72j8q1Egg", "79bDVgpSPBc"],
+
+    "list": {
       "date": "10/11/2022",
-      "title": "Chilling with the boys",
-      "description": [
-        "Une animations de robots humains dans un hangar, ce projet m'a appris à utiliser du compositing pour accélerer la production d'un plan ainsi que l'utilisation de certains shaders et volumes"
-      ],
-      "images": ["hangar.png", "hangar-with-man.png"],
-      "webpImages": ["hangar.webp", "hangar-with-man.webp"],
-      "videos": ["0j72j8q1Egg", "79bDVgpSPBc"],
-
-      "colors": ["#9fa790", "#242316"]
+      "Cadre": "Projet personnel",
+      "Outils": "Blender"
     },
-    {
-      "name": "firby",
-      "title": "3D Cursed worm Firby",
-      "description": [
-        "C'est mon premier personnage 3D avec des poils, un Furby étrange. Je l'ai créé avec l'intention d'en apprendre plus sur la génération de particules sur Blender."
-      ],
-      "images": [
-        "firby-close-128-lighten.jpg",
-        "firby-large.jpg",
-        "firby-wireframe.jpg"
-      ],
-      "webpImages": [
-        "firby-close-128-lighten.webp",
-        "firby-large.webp",
-        "firby-wireframe.webp"
-      ],
 
-      "list": {
-        "Date": "25/02/2023",
-        "Cadre": "Projet personnel",
-        "Outils": "Blender"
-      },
-      "colors": ["#d4c9a9", "#34192b"]
-    }
-  ]
-}
+    "colors": ["#9fa790", "#242316"]
+  },
+  {
+    "type": "Artiste3D",
+    "name": "firby",
+    "title": "3D Cursed worm Firby",
+    "description": [
+      "C'est mon premier personnage 3D avec des poils, un Furby étrange. Je l'ai créé avec l'intention d'en apprendre plus sur la génération de particules sur Blender."
+    ],
+    "images": [
+      "firby-close-128-lighten.jpg",
+      "firby-large.jpg",
+      "firby-wireframe.jpg"
+    ],
+    "webpImages": [
+      "firby-close-128-lighten.webp",
+      "firby-large.webp",
+      "firby-wireframe.webp"
+    ],
+
+    "list": {
+      "Date": "25/02/2023",
+      "Cadre": "Projet personnel",
+      "Outils": "Blender"
+    },
+    "colors": ["#d4c9a9", "#34192b"]
+  }
+]
