@@ -58,7 +58,7 @@ function LoadProject({
   const navigate = useNavigate()
   const navigationType: string | null = useNavigationType()
 
-  var x: MediaQueryList = window.matchMedia('(max-width: 768px)')
+  const x: MediaQueryList = window.matchMedia('(max-width: 768px)')
 
   useEffect(() => {
     if (navigationType === 'POP') {
