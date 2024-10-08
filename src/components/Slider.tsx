@@ -10,6 +10,7 @@ import { LocationState } from "../Types";
 import Navbar from "./Navbar";
 import Titles from "./Titles";
 import { useNavigate } from "react-router-dom";
+import { Suspense } from "react";
 
 const toRad = (deg: number) => {
   return (deg * Math.PI) / 180;
@@ -140,28 +141,41 @@ const Slider = () => {
             />
           ))}
         </div>
-        <Canvas frameloop="demand">
-          <OrthographicCamera
-            makeDefault
-            zoom={40}
-            near={1}
-            far={200}
-            position={[0, 0, 100]}
-          />
-          <group rotation={[toRad(40), toRad(-40), 0]}>
-            {projectsData.map((project, i) => (
-              <Thumbnail
-                key={i}
-                index={i}
-                project={project}
-                progress={progress}
-                isMobile={isMobile}
-                isHome={isHome}
-                isOpen={prog === i}
-              />
-            ))}
-          </group>
-        </Canvas>
+        <Suspense
+          fallback={
+            <div
+              className=" h-[15vh] w-[20vh] bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              style={{ transform: "skew(0deg, 15deg) translate(-50%, -50%)" }}
+            >
+              <p className=" text-black text-sm absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                Loading ...
+              </p>
+            </div>
+          }
+        >
+          <Canvas frameloop="demand">
+            <OrthographicCamera
+              makeDefault
+              zoom={40}
+              near={1}
+              far={200}
+              position={[0, 0, 100]}
+            />
+            <group rotation={[toRad(40), toRad(-40), 0]}>
+              {projectsData.map((project, i) => (
+                <Thumbnail
+                  key={i}
+                  index={i}
+                  project={project}
+                  progress={progress}
+                  isMobile={isMobile}
+                  isHome={isHome}
+                  isOpen={prog === i}
+                />
+              ))}
+            </group>
+          </Canvas>
+        </Suspense>
       </div>
     </>
   );
