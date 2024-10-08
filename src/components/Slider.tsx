@@ -128,21 +128,6 @@ const Slider = () => {
     }
   }, [prog]);
 
-  useGSAP(() => {
-    if (loadingRef.current) {
-      gsap.fromTo(
-        loadingRef.current,
-        { textContent: 0 },
-        {
-          textContent: 99,
-          duration: 10,
-          ease: "expo.out",
-          snap: { textContent: 1 },
-        }
-      );
-    }
-  }, []);
-
   return (
     <>
       <Navbar progress={progress} isMobile={isMobile} isHome={isHome} />
@@ -158,21 +143,31 @@ const Slider = () => {
           ))}
         </div>
         <Suspense
-          fallback={
-            <div
-              className=" h-[15vh] w-[21vh] bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              style={{ transform: "skew(0deg, 20deg) translate(-50%, -50%)" }}
-            >
-              <p className=" text-white text-sm absolute top-1/2 left-1/2 flex gap-1 -translate-x-1/2 -translate-y-1/2">
-                Loading{" "}
-                <span className="font-bold inline-block text-[2vh] w-[5vh]">
-                  <span ref={loadingRef}></span>%
+        // fallback={
+        // }
+        >
+          <div
+            className=" h-[20vh] w-[25vh] bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            style={{ transform: "skew(0deg, 20deg) translate(-50%, -50%)" }}
+          >
+            <div className="top-1/2 left-1/2 flex absolute gap-1 -translate-x-1/2 -translate-y-1/2">
+              <p className=" text-white text-sm">Loading</p>
+              <p className="relative h-5 w-5 overflow-hidden">
+                <span id="anim-loading" className="absolute flex flex-col">
+                  {[...Array(100)].map((_, i) => (
+                    <span
+                      key={i}
+                      className="text-white h-5 leading-5 text-sm inline-block"
+                    >
+                      {i}
+                    </span>
+                  ))}
                 </span>
               </p>
+              <p>%</p>
             </div>
-          }
-        >
-          <Canvas frameloop="demand">
+          </div>
+          {/* <Canvas frameloop="demand">
             <OrthographicCamera
               makeDefault
               zoom={40}
@@ -193,7 +188,7 @@ const Slider = () => {
                 />
               ))}
             </group>
-          </Canvas>
+          </Canvas> */}
         </Suspense>
       </div>
     </>

@@ -117,3 +117,19 @@ h3 {
 .stroke-outline {
   paint-order: stroke fill;
 }
+
+#anim-loading {
+  animation: loading 10s forwards;
+  left: 50%;
+}
+
+@keyframes loading {
+  0% {
+    top: 0%;
+    transform: translate(-50%, 0%);
+  }
+  100% {
+    top: 100%;
+    transform: translate(-50%, -100%);
+  }
+}
