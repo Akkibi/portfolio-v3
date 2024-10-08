@@ -10,7 +10,7 @@ import { LocationState } from "../Types";
 import Navbar from "./Navbar";
 import Titles from "./Titles";
 import { useNavigate } from "react-router-dom";
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 
 const toRad = (deg: number) => {
   return (deg * Math.PI) / 180;
@@ -28,6 +28,7 @@ const progressFromLocation = (location: LocationState) => {
 };
 
 const Slider = () => {
+  const loadingRef = useRef<HTMLSpanElement>(null);
   const navigate = useNavigate();
   const location = useLocation();
   const isMobile = window.innerWidth < 768;
@@ -127,6 +128,21 @@ const Slider = () => {
     }
   }, [prog]);
 
+  useGSAP(() => {
+    if (loadingRef.current) {
+      gsap.fromTo(
+        loadingRef.current,
+        { textContent: 0 },
+        {
+          textContent: 99,
+          duration: 10,
+          ease: "expo.out",
+          snap: { textContent: 1 },
+        }
+      );
+    }
+  }, []);
+
   return (
     <>
       <Navbar progress={progress} isMobile={isMobile} isHome={isHome} />
@@ -144,11 +160,14 @@ const Slider = () => {
         <Suspense
           fallback={
             <div
-              className=" h-[15vh] w-[20vh] bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              style={{ transform: "skew(0deg, 15deg) translate(-50%, -50%)" }}
+              className=" h-[15vh] w-[21vh] bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              style={{ transform: "skew(0deg, 20deg) translate(-50%, -50%)" }}
             >
-              <p className=" text-black text-sm absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                Loading ...
+              <p className=" text-white text-sm absolute top-1/2 left-1/2 flex gap-1 -translate-x-1/2 -translate-y-1/2">
+                Loading{" "}
+                <span className="font-bold inline-block text-[2vh] w-[5vh]">
+                  <span ref={loadingRef}></span>%
+                </span>
               </p>
             </div>
           }
