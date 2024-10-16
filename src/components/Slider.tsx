@@ -10,7 +10,6 @@ import { LocationState } from "../Types";
 import Navbar from "./Navbar";
 import Titles from "./Titles";
 import { useNavigate } from "react-router-dom";
-import { Suspense, useRef } from "react";
 
 const toRad = (deg: number) => {
   return (deg * Math.PI) / 180;
@@ -28,7 +27,6 @@ const progressFromLocation = (location: LocationState) => {
 };
 
 const Slider = () => {
-  const loadingRef = useRef<HTMLSpanElement>(null);
   const navigate = useNavigate();
   const location = useLocation();
   const isMobile = window.innerWidth < 768;
@@ -113,15 +111,17 @@ const Slider = () => {
   useGSAP(() => {
     if (prog === -1) {
       gsap.to("#canvas", {
-        backgroundColor: "#111111",
+        backgroundColor: "#111115",
         duration: 1,
         ease: "expo.Out",
+        overwrite: true,
       });
     } else if (prog === -2) {
       gsap.to("#canvas", {
         backgroundColor: "#000000",
         duration: 1,
         ease: "expo.out",
+        overwrite: true,
       });
     } else {
       setProgress(prog);
@@ -129,7 +129,7 @@ const Slider = () => {
   }, [prog]);
 
   return (
-    <>
+    <main className="z-10 relative">
       <Navbar progress={progress} isMobile={isMobile} isHome={isHome} />
       <div className="h-[100svh] w-full relative" id="canvas">
         <div className="h-full w-full absolute z-10 pointer-events-none">
@@ -142,56 +142,30 @@ const Slider = () => {
             />
           ))}
         </div>
-        <Suspense
-        // fallback={
-        // }
-        >
-          <div
-            className=" h-[20vh] w-[25vh] bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            style={{ transform: "skew(0deg, 20deg) translate(-50%, -50%)" }}
-          >
-            <div className="top-1/2 left-1/2 flex absolute gap-1 -translate-x-1/2 -translate-y-1/2">
-              <p className=" text-white text-sm">Loading</p>
-              <p className="relative h-5 w-5 overflow-hidden">
-                <span id="anim-loading" className="absolute flex flex-col">
-                  {[...Array(100)].map((_, i) => (
-                    <span
-                      key={i}
-                      className="text-white h-5 leading-5 text-sm inline-block"
-                    >
-                      {i}
-                    </span>
-                  ))}
-                </span>
-              </p>
-              <p>%</p>
-            </div>
-          </div>
-          {/* <Canvas frameloop="demand">
-            <OrthographicCamera
-              makeDefault
-              zoom={40}
-              near={1}
-              far={200}
-              position={[0, 0, 100]}
-            />
-            <group rotation={[toRad(40), toRad(-40), 0]}>
-              {projectsData.map((project, i) => (
-                <Thumbnail
-                  key={i}
-                  index={i}
-                  project={project}
-                  progress={progress}
-                  isMobile={isMobile}
-                  isHome={isHome}
-                  isOpen={prog === i}
-                />
-              ))}
-            </group>
-          </Canvas> */}
-        </Suspense>
+        <Canvas frameloop="demand">
+          <OrthographicCamera
+            makeDefault
+            zoom={40}
+            near={1}
+            far={200}
+            position={[0, 0, 100]}
+          />
+          <group rotation={[toRad(40), toRad(-40), 0]}>
+            {projectsData.map((project, i) => (
+              <Thumbnail
+                key={i}
+                index={i}
+                project={project}
+                progress={progress}
+                isMobile={isMobile}
+                isHome={isHome}
+                isOpen={prog === i}
+              />
+            ))}
+          </group>
+        </Canvas>
       </div>
-    </>
+    </main>
   );
 };
 

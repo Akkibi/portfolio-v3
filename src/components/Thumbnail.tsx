@@ -48,6 +48,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
       },
       z: pos,
       duration: 1,
+      overwrite: true,
       ease: "expo.out",
     });
     if (!isHome) return;
@@ -64,6 +65,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
           progressScale(progress - index) *
           (isMobile ? 0.8 : 1),
         duration: 1,
+        overwrite: true,
         ease: "expo.out",
       });
       gsap.to(planeRef.current.rotation, {
@@ -71,6 +73,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
         y: 0,
         z: 0,
         duration: 1,
+        overwrite: true,
         ease: "expo.out",
       });
     } else {
@@ -78,6 +81,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
         x: 0,
         y: 0,
         duration: 1,
+        overwrite: true,
         ease: "expo.out",
       });
     }
@@ -94,6 +98,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
         x: 0,
         y: 0,
         duration: 1,
+        overwrite: true,
         ease: "expo.out",
       });
       gsap.to(planeRef.current.rotation, {
@@ -101,6 +106,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
         y: 0,
         z: 0,
         duration: 1,
+        overwrite: true,
         ease: "expo.out",
       });
     } else {
@@ -112,17 +118,20 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
         y: 0.5148495139047413,
         z: 0.4946398262521617,
         duration: 1,
+        overwrite: true,
         ease: "expo.out",
       });
       gsap.to(planeRef.current.scale, {
         x: planeScale.x,
         y: planeScale.y,
         duration: 1,
+        overwrite: true,
         ease: "expo.out",
       });
       gsap.to("#canvas", {
         backgroundColor: project.colors[1],
         duration: 1,
+        overwrite: true,
         ease: "expo.out",
       });
     }

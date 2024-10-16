@@ -501,10 +501,10 @@ const About = () => {
         .fromTo(
           scrollIconRef.current,
           {
-            opacity: 1,
+            opacity: 0.5,
           },
           {
-            duration: 1,
+            duration: 0.5,
             ease: "expo.in",
             opacity: 0,
             y: "100%",
@@ -520,6 +520,8 @@ const About = () => {
     { scope: containerRef }
   );
 
+  console.log(scrollRef.current);
+
   const calculateScrollPercent = useCallback(() => {
     if (!scrollRef.current || !tl.current) return;
 
@@ -529,7 +531,8 @@ const About = () => {
 
     const timelinePercent = (scrollPercent / 100) * tl.current.duration();
     tl.current.progress(timelinePercent / tl.current.duration());
-  }, []);
+  }, [scrollRef, tl]);
+
   const mouseMove = useCallback(
     (event: MouseEvent) => {
       const x = event.clientX / window.innerWidth - 0.5;
@@ -573,10 +576,10 @@ const About = () => {
 
   return (
     <div
-      className="max-h-[100svh] overflow-y-scroll fixed inset-0 w-full bg-black"
+      className="max-h-[100svh] overflow-y-scroll fixed inset-0 w-full bg-black z-50"
       ref={scrollRef}
     >
-      <div id="scroll" className="h-[2000vh] w-full"></div>
+      <div id="scroll" className="h-[3000vh] w-full"></div>
       <div
         className=" h-screen w-full fixed pointer-events-none top-0 left-0 [perspective:800px]"
         ref={containerRef}
@@ -592,17 +595,13 @@ const About = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-              <g id="SVGRepo_tracerCarrier"></g>
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  d="M7 17L16.5 7.5M17 7H8M17 7V16"
-                  stroke="#ffffff"
-                  strokeWidth="1"
-                  strokeLinecap="square"
-                  strokeLinejoin="miter"
-                ></path>
-              </g>
+              <path
+                d="M7 17L16.5 7.5M17 7H8M17 7V16"
+                stroke="#ffffff"
+                strokeWidth="1"
+                strokeLinecap="square"
+                strokeLinejoin="miter"
+              ></path>
             </svg>
             {
               {
@@ -631,35 +630,27 @@ const About = () => {
           xmlns="http://www.w3.org/2000/svg"
           ref={scrollIconRef}
         >
-          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
+          <path
+            d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
+            stroke="#fff"
+            strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
-              stroke="#fff"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-            <path
-              d="M12 6V14"
-              stroke="#fff"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-            <path
-              d="M15 11L12 14L9 11"
-              stroke="#fff"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-          </g>
+          ></path>
+          <path
+            d="M12 6V14"
+            stroke="#fff"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></path>
+          <path
+            d="M15 11L12 14L9 11"
+            stroke="#fff"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></path>
         </svg>
         <p
           className=" top-2/3 absolute left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl z-0 text-center w-[90vw] sm:w-auto"
@@ -676,7 +667,7 @@ const About = () => {
           }
         </p>
         <div
-          className="h-full w-full z-0 absolute bg-[url(https://akirav.art/akiravaladeillustration.png)] bg-center bg-no-repeat bg-cover"
+          className="h-full w-full z-0 absolute bg-[url(/akiravaladeillustration.png)] bg-center bg-no-repeat bg-cover"
           style={{
             clipPath: "polygon(0% 50%, 100% 50%, 100% 50%, 0 50%)",
             boxShadow: "inset 0 0 0 100vmax rgba(0, 0, 0, .2)",
@@ -945,11 +936,7 @@ const About = () => {
               }}
             ></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[35vh] bg-black overflow-hidden border-2 border-solid border-black rounded-xl scale-[0.65] sm:scale-100">
-              <img
-                src="https://akirav.art/opquast-logo.svg"
-                className="w-full p-0 m-0"
-                alt=""
-              />
+              <img src="/opquast-logo.svg" className="w-full p-0 m-0" alt="" />
             </div>
           </div>
           <div className="sm:w-0 flex justify-center items-center w-full h-0 sm:h-full overflow-visible z-10 relative">

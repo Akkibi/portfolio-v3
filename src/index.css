@@ -42,7 +42,7 @@
   /* clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); */
   transition: clip-path 0.5s ease-out;
   /* animation: open 1s cubic-bezier(0.87, 0, 0.13, 1) forwards; */
-  background-color: #111111;
+  background-color: #111115;
 }
 /* 
 @keyframes open {
