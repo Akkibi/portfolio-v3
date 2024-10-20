@@ -142,7 +142,9 @@ const Slider = () => {
             />
           ))}
         </div>
-        <Canvas frameloop="demand">
+        <Canvas
+        //  frameloop="demand"
+        >
           <OrthographicCamera
             makeDefault
             zoom={40}

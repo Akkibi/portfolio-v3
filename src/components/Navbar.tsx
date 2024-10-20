@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ progress, isMobile, isHome }) => {
           {ProjectsData.map((_, index) => (
             <div
               key={index}
-              className="w-[1px] bg-white"
+              className="w-[1px] bg-white opacity-50"
               style={{
                 height: `${progressNavScale(
                   (progress - index) * (isMobile ? 1 : 2)
